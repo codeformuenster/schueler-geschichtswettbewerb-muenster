@@ -20,3 +20,5 @@ The query.py file contains the Query class with methods to execute all queries a
 The insertData.py file is a simple script that can be used to enter .xlsx tables into the database.
 
 The tables file contains all database tables in an .xlsx format that was used to correct all entries.
+
+The Geocoding Scripts file contains all scripts used to convert places to coordinates for OpenStreetMap maps.
