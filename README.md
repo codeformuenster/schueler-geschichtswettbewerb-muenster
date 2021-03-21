@@ -11,7 +11,8 @@ A django admin user exists with the following login data:
   password: Geschichtswettbewerb123
 
 with python manage.py createsuperuser a new one can be added.
-Under localhost/admin the database entries can be edited. This includes the possibility to add new ones and remove entries.
+Under localhost/admin the database entries can be edited. This includes the possibility to add new ones and remove entries. 
+The page to edit place entries (localhost/admin/karte/ort) includes the functionality to reverse-geocode the entered place to a location.
 
 The dump files contain the underlying database with all their entries.
 
