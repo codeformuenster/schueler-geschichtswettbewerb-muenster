@@ -1,25 +1,88 @@
-#Script to translate single address and check if it is correct
+import pandas as pd
+import geopandas as gpd
 import geopy
 from geopy.geocoders import Nominatim
+from geopy.extra.rate_limiter import RateLimiter
+import matplotlib.pyplot as plt
 import folium
+from folium.plugins import FastMarkerCluster
+from folium.plugins import MarkerCluster
+from folium.plugins import Draw
 
-#creates a new map
-map = folium.Map(location=[51.94986285,7.60407079384229],
-                        zoom_start=12,
-                        tiles='cartodbpositron')
+from geopy.extra.rate_limiter import RateLimiter
 
+import json
 
+import mysql.connector
+
+#The script converts all addresses from the "Ort" table into coordinates using the geopy library
+
+db = mysql.connector.connect(
+    host="127.0.0.1",
+    user="root",
+    passwd="",
+    database="geschichtswettbewerb",
+    auth_plugin='caching_sha2_password'
+)
+
+mycursor = db.cursor()
 
 locator = Nominatim(user_agent="myGeocoder")
-lat = None
-lon = None
 
-#Converts an address given as string into longitude and latitude coordinates and adds the location to map1
-def convertPlaceToCoord(p):
-    location = locator.geocode(p)
-    lat = location.latitude
-    lon = location.longitude
+#Convert all addresses to coordinates
 
-    if (lat != None and lon != None):
-        folium.Marker([lat, lon], popup=p).add_to(map)
-    map.save("singleCoord.html")
+df = pd.read_csv("/Users/richardalbrecht/Desktop/BA/BA Dokumente/csvTabellen/Ort.csv", sep=",")
+print(df)
+
+df['ADDRESS'] = df['Ortbezeichnung'].astype(str)
+print(df['ADDRESS'])
+
+geocode = RateLimiter(locator.geocode, min_delay_seconds=1, error_wait_seconds=10)
+df['location'] = df['ADDRESS'].apply(geocode)
+df['point'] = df['location'].apply(lambda loc: tuple(loc.point) if loc else None)
+df[['latitude', 'longitude', 'altitude']] = pd.DataFrame(df['point'].tolist(), index=df.index)
+print(df['latitude'])
+df = df.drop(['location', 'lat', 'lon', 'altitude', 'point'], axis=1)
+df.to_csv(r'Ort.csv', index = False)
+
+
+df = pd.read_csv("/Users/richardalbrecht/Desktop/BA/geschichtswettbewerb/Ort.csv", sep=",")
+
+df = df[pd.notnull(df["latitude"])]
+
+
+#create new map
+folium_map = folium.Map(location=[51.94986285,7.60407079384229],
+                        zoom_start=12,
+                        tiles='cartodbpositron')#CartoDB dark_matter
+
+#create a marker cluster
+marker_cluster = MarkerCluster().add_to(folium_map)
+
+#Get coordinates from database
+la = []
+lo = []
+ortBez = []
+def getCoords():
+    Q = 'SELECT o.lon, o.lat, o.Ortbezeichnung from Ort  o'
+    mycursor.execute(Q)
+    for x in mycursor:
+        print(x[0])
+        lo.append(x[0])
+        print(x[1])
+        la.append(x[1])
+        print(x[2])
+        ortBez.append(x[2])
+
+getCoords()
+
+#add markers to map
+for i in range(0, len(la)):
+    if la[i] != None:
+        folium.Marker([lo[i], la[i]], popup=ortBez[i]).add_to(marker_cluster)
+
+
+
+folium.LayerControl().add_to(folium_map)
+
+folium_map.save("map.html")
