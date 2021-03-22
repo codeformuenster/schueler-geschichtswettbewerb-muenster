@@ -11,7 +11,10 @@ db = mysql.connector.connect(
 
 
 class Query:
-    """A class that contains methods to execute all required queries and prints them to the command line."""
+    """A class that contains methods to execute all required queries and prints them to the command line.
+        The methods provide the functionallity to execute all queries defined in 2020_11_11_Vorschlage_Suchanfragen.pdf
+    """
+
     def __init__(self):
         """Constructs the cursor attribute for the query object."""
         self.mycursor = db.cursor()
