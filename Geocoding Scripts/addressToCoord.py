@@ -7,7 +7,6 @@ from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 import matplotlib.pyplot as plt
 import folium
-from folium.plugins import FastMarkerCluster
 from folium.plugins import MarkerCluster
 from folium.plugins import Draw
 from geopy.extra.rate_limiter import RateLimiter
@@ -41,14 +40,10 @@ df[['latitude', 'longitude', 'altitude']] = pd.DataFrame(df['point'].tolist(), i
 df = df.drop(['location', 'lat', 'lon', 'altitude', 'point'], axis=1)
 df.to_csv(r'Ort.csv', index = False)
 
-df = pd.read_csv("/Users/richardalbrecht/Desktop/BA/geschichtswettbewerb/Ort.csv", sep=",")
-
-df = df[pd.notnull(df["latitude"])]
-
 #create new map
 folium_map = folium.Map(location=[51.94986285,7.60407079384229],
                         zoom_start=12,
-                        tiles='cartodbpositron')#CartoDB dark_matter
+                        tiles='cartodbpositron')
 
 #create a marker cluster
 marker_cluster = MarkerCluster().add_to(folium_map)
