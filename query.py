@@ -1,3 +1,5 @@
+"""The file contains a class to execute queries on the geschichtswettbewerb database"""
+
 import mysql.connector
 
 db = mysql.connector.connect(
@@ -35,7 +37,6 @@ class Query:
         self.mycursor.execute(Q)
         self.printCursor(self.mycursor)
         return self.mycursor
-    #autorinBeitrag()
 
     ####################################
     #1 Content
