@@ -21,7 +21,7 @@
     <tbody>
       {% for autor in beitrag.autorin_set.all %}
       <tr>
-        <td>{{ autor }}, {{ autor.id}}</td>
+        <td>{{ autor }}</td>
         <td>{{ autor.schule.all|join:", " }}</td>
         <td>{% for x in autor.autorinschule_set.all %}
           {{ x.jahrgangsstufe }}
