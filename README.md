@@ -1,17 +1,17 @@
 The website folder contains the prototype for the website.
 
-The url localhost/karte presents the starting view of the prototype.
+The url localhost/karte/karte presents the starting view of the prototype.
+The view contains the map with all places of the database marked on it. Each marker contains a popup linking to a detail-view of each place. Above the map a filter is included in which places can be searched by their name.
 
-localhost/karte/karte contains the map with all locations marked on it. Clicken on a marker shows the name of the location and provides a link to a detailed view of the location
-
-localhost/karte/orte displays a list of all locations that are entered in the database. The list can be filtered by name. Every entry links to a detail view that shows the location on a map and lists all submissions related to the location.
+localhost/karte/beitraege contains a filter with which all submissions can be filtered. The filter includes options for every query listed in the 2020_11_11_Verschlage_Suchanfragen.pdf file. The results are displayed in a table and every table entry links to a detailed view of the submission.
+The detailed view displays all data regarding the submission.
 
 A django admin user exists with the following login data:
   user: admin
   password: Geschichtswettbewerb123
 
 with python manage.py createsuperuser a new one can be added.
-Under localhost/admin the database entries can be edited. This includes the possibility to add new ones and remove entries. 
+Under localhost/admin the database entries can be edited. This includes the possibility to add new ones and remove entries.
 The page to edit place entries (localhost/admin/karte/ort) includes the functionality to reverse-geocode the entered place to a location.
 
 In the Website/geschichtswettbewerb/geschichtswettbewerb/settings.py file the connection to the sql database needs to be made. Once the connection is established, the database needs to be migrated to the project.
@@ -29,8 +29,6 @@ postgis 3.1.1
 With the command python manage.py runserver, the website will be started on the localhost. The command has to be run in the Website/geschichtswettbewerb directory.
 
 The dump files contain the underlying database with all their entries.
-
-The query.py file contains the Query class with methods to execute all queries as defined in the 2020_11_11_Verschlage_Suchanfragen.pdf file.
 
 The insertData.py file is a simple script that can be used to enter .xlsx tables into the database.
 

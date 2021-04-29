@@ -65,7 +65,7 @@ class Wettbewerb(models.Model):
 
     def __str__(self):
         """returns the thema and id of the model as string"""
-        return self.thema + '(' + str(self.jahr) + ')'
+        return self.thema + ' (' + str(self.jahr) + ')'
 
 class Materialgrundlage(models.Model):
     """A class that represents the model for source materials, containing a name and an id attribute"""

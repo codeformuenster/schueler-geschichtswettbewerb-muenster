@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.contrib.gis.db.backends.mysql',
         'NAME': 'geschichtswettbewerb',
         'USER': 'root',
-        'PASSWORD': 'LemanRuss1',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306'
     }
