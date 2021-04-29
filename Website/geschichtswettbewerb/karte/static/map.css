@@ -1,0 +1,14 @@
+html, body {
+  height: 100%;
+  margin: 25;
+  background-color: #ebd5b3;
+  text-align: center;
+  align-content: center;
+}
+#map {
+  width: 90%;
+  height: 75%;
+  background-color: #ebd5b3;
+  align-self: center;
+  align-content: center;
+}

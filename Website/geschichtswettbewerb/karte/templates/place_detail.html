@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block detail %}
+
+  <head>
+    <title>Markers Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'map.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="{% static 'leaflet.markercluster.js' %}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  </head>
+
+<body>
+  <div>
+  <h1>{{ ort.ortbezeichnung }}</h1>
+  <h3>{{ ort.histName.all|join:", "}}</h3>
+  <h3>{{ ort.histRegion.all|join:", "}}</h3>
+
+  <h4>Beiträge zu diesem Ort:</h4>
+  <table class="table table-bordered", style="display: block; height: 80px; overflow: auto;">
+    <thead>
+      <tr>
+        <th>Titel</th>
+        <th>Signatur</th>
+        <th>Detailansicht</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for beitrag in ort.beitraege.all %}
+        <tr>
+          <td>{{ beitrag.titel }}</td>
+          <td>{{ beitrag.signatur }}</td>
+          <td><a href="{% url 'karte:beitraege' %}{{beitrag.id}}">Detail</a></td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p>Auf der Karte ist der gewählte Ort markiert.</p>
+</div>
+  <div id="map"></div>
+  <script type="text/javascript">
+    const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    //var x = {{ort.location.x}};
+    //var y = {{ort.location.y}};
+    const map = L.map('map', {
+      center: [parseFloat("{{ ort.location.y }}".replace(/,/g, '.')), parseFloat("{{ ort.location.x }}".replace(/,/g, '.'))],
+      minZoom: 2,
+      zoom: 14,
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', { attribution: attribution }).addTo(map);
+  //var coordinates = {{ ort.location }};
+  //var marker = new 7.62082, 51.969
+  // {{ort.location.x }} and .y does not work properly
+    marker = new L.marker([parseFloat("{{ ort.location.y }}".replace(/,/g, '.')), parseFloat("{{ ort.location.x }}".replace(/,/g, '.'))]).addTo(map).bindPopup("{{ ort.ortbezeichnung }}");
+  //const markers = JSON.parse(document.getElementById('markers-data').textContent);
+
+  //let feature = L.geoJSON(markers).bindPopup(function (layer)
+  //{ return layer.feature.properties.ortbezeichnung + ' <a href="' + layer.feature.properties.pk + '" target="_blank">' + 'id: ' + layer.feature.properties.pk + '</a>';
+  //});//.addTo(map);
+  //map.addLayer(feature);
+
+    //map.fitBounds(feature.getBounds(), { padding: [100, 100] });
+
+    //map.fitWorld();
+  </script>
+</body>
+
+{% endblock %}

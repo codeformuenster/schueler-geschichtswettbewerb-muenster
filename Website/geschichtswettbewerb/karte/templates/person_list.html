@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load widget_tweaks %}
+
+{% block filter %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
+
+  <title>Personenfilter</title>
+</head>
+<body>
+
+
+<form method="get">
+  <div class="well">
+    <h1 style="margin-top: 0">Beitragsfilter</h1>
+    <p>In den folgenden Filtern können alle Kategorien ausgewählt werden, nach denen Beiträge gefiltert werden sollen.</p>
+    <div class="form-row">
+    Filter zum Thema:
+    <details open>
+      <div class="form-group col">
+        Titel enthält:
+        {% render_field filter.form.titel__icontains class="form-control" %}
+
+        Regest enthält
+        {% render_field filter.form.regest__icontains class="form-control" %}
+      </div>
+      <div class="form-group col">
+        Signatur:
+        {% render_field filter.form.signatur__icontains class="form-control" %}
+      </div>
+    </details>
+    </div>
+
+    <div class="form-row">
+    Filter zum Themenzeitraum der Beiträge:
+    <details>
+      <div class="form-group col">
+
+        Zeitraum Start (exakt):
+        {% render_field filter.form.zeitraumVon class="form-control" %}
+        Zeitraum Start (maximal):
+        {% render_field filter.form.zeitraumVon__lt class="form-control" %}
+        Zeitraum Start (mindestens):
+        {% render_field filter.form.zeitraumVon__gt class="form-control" %}
+<div>
+        <div class="form-group col">
+
+        Zeitraum Ende (exakt):
+        {% render_field filter.form.zeitraumBis class="form-control" %}
+        Zeitraum Ende (maximal):
+        {% render_field filter.form.zeitraumBis__lt class="form-control" %}
+        Zeitraum Ende (mindestens):
+        {% render_field filter.form.zeitraumBis__gt class="form-control" %}
+      </div>
+    </details>
+  </div>
+  <div class="form-row">
+
+    Filter zum Beitragtypen und verwendeten Quellen
+    <details>
+      {{ filter.form.typ.label_tag }}
+      {% render_field filter.form.typ class="form-control" %}
+
+      {{ filter.form.grundlagen.label_tag }}
+      {% render_field filter.form.grundlagen class="form-control" %}
+
+    </details>
+  </div>
+
+    <div class="form-row">
+
+    Filter bezüglich der Wettbewerbe:
+    <details>
+      {% render_field filter.form.wettbewerb class="form-control" %}
+      Wettbewerbsjahr:
+      {% render_field filter.form.wettbewerb__jahr class="form-control" %}
+      Wettbewerbsjahr (mindestens):
+      {% render_field filter.form.wettbewerb__jahr__gt class="form-control" %}
+      Wettbewerbsjahr (maximal):
+      {% render_field filter.form.wettbewerb__jahr__lt class="form-control" %}
+      Beiträge mit Auszeichnung:
+      {% render_field filter.form.auszeichnungeinreichung__auszeichnung class="form-control" %}
+    </details>
+  </div>
+  <div class="form-row">
+
+    Filter bezüglich der Autoren und Arbeitsweise der Schüler:
+    <details>
+      Jahrgangsstufe (exakt):
+      {% render_field filter.form.autorin__autorinschule__jahrgangsstufe class="form-control" %}
+
+      Jahrgangsstufe (mindestens):
+      {% render_field filter.form.autorin__autorinschule__jahrgangsstufe__gt class="form-control" %}
+
+      Jahrgangsstufe (maximal):
+      {% render_field filter.form.autorin__autorinschule__jahrgangsstufe__lt class="form-control" %}
+
+      Einzelarbeit?:
+      {% render_field filter.form.einzel_gruppe class="form-control" %}
+      Beiträge mit Dokumenttyp:
+      {% render_field filter.form.dokument__typ class="form-control" %}
+
+    </details>
+  </div>
+  <div class="form-row">
+
+    Filter zum Ort der Beiträge:
+    <details>
+      {% render_field filter.form.ort class="form-control" %}
+      Ortbezeichnung enthält:
+      {% render_field filter.form.ort__ortbezeichnung__icontains class="form-control" %}
+    </details>
+  </div>
+  <div class="form-row">
+
+    Filter zu untersuchten Persönlichkeiten der Beiträge:
+    <details>
+      Persönlichkeiten
+      {% render_field filter.form.persoenlichkeiten class="form-control" %}
+
+      Persönlichkeit enthält:
+      {% render_field filter.form.persoenlichkeiten__name__icontains class="form-control" %}
+    </details>
+  </div>
+  <div class="form-row">
+
+    Filter zu behandelten Institutionen:
+    <details>
+      {% render_field filter.form.institutionen class="form-control" %}
+      Institution enthält:
+      {% render_field filter.form.institutionen__name__icontains class="form-control" %}
+    </details>
+  </div>
+    <button type="submit" class="btn btn-primary">
+      <span class="glyphicon glyphicon-search"></span> Suche
+    </button>
+  </div>
+</form>
+
+<table class="table", style="display: block; height: 500px; overflow: auto; border-color: black">
+  <caption>Anzahl Beiträge: {{filter.qs.count}}</caption>
+  <thead>
+    <tr>
+      <th>Titel</th>
+      <th>Signatur</th>
+      <th>Detailansicht</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for beitrag in filter.qs %}
+      <tr>
+        <td>{{ beitrag.titel }}</td>
+        <td>{{ beitrag.signatur }}</td>
+        <td><a href="{{beitrag.id}}"target="_blank">(Detail)</a></td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="5">No data</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<div>
+</div>
+</body>
+
+{% endblock %}

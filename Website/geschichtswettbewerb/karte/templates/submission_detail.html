@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block detail %}
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
+</head>
+
+<body>
+  <h1>{{ beitrag.titel }} ({{ beitrag.signatur }})</h1>
+  <h4>Autoren:</h4>
+  <table class="table", style="display: block; overflow: auto;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Schule (Schulart)</th>
+        <th>Jahrgangsstufe</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for autor in beitrag.autorin_set.all %}
+      <tr>
+        <td>{{ autor }}, {{ autor.id}}</td>
+        <td>{{ autor.schule.all|join:", " }}</td>
+        <td>{% for x in autor.autorinschule_set.all %}
+          {{ x.jahrgangsstufe }}
+          {% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <h4>Regest:</h4>
+  {{ beitrag.regest }}
+
+  <table class="table", style="display: block; overflow: auto;">
+    <thead>
+      <tr>
+        <th>Umfang</th>
+        <th>Zeitraum Von</th>
+        <th>Zeitraum Bis</th>
+        <th>Persönlichkeiten</th>
+        <th>Institutionen</th>
+        <th>Orte</th>
+        <th>Materialgrundlagen</th>
+        <th>Beitragsart</th>
+        <th>Auszeichnung</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ beitrag.umfang }} S.</td>
+        <td>{{ beitrag.zeitraumVon }}</td>
+        <td>{{ beitrag.zeitraumBis }}</td>
+        <td>{{ beitrag.persoenlichkeiten.all|join:", " }}</td>
+        <td>{{ beitrag.institutionen.all|join:", " }}</td>
+        <td>{{ beitrag.ort_set.all|join:", " }}</td>
+        <td>{{ beitrag.grundlagen.all|join:", " }}</td>
+        <td>{{ beitrag.typ.all|join:", " }}</td>
+        <td>{% for i in beitrag.auszeichnungeinreichung_set.all %}
+          {{ i.auszeichnung }}
+        {% endfor %}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+{% endblock %}
