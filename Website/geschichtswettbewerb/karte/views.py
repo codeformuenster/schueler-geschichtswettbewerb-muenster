@@ -53,6 +53,7 @@ class PlaceDetailView(generic.DetailView):
         context['markers'] = json.loads(serialize('geojson', Ort.objects.all()))
         return context
 
+
 class PersonQueryView(generic.ListView):
     model = Beitrag
     template_name = 'person_list.html'

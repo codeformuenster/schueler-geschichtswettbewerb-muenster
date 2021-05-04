@@ -5,18 +5,15 @@
 {% block detail %}
 
   <head>
-    <title>Markers Map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static 'map.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'map.css' %}">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="{% static 'leaflet.markercluster.js' %}"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   </head>
 
 <body>
-  <div>
   <h1>{{ ort.ortbezeichnung }}</h1>
   <h3>{{ ort.histName.all|join:", "}}</h3>
   <h3>{{ ort.histRegion.all|join:", "}}</h3>
@@ -46,7 +43,6 @@
   </table>
 
   <p>Auf der Karte ist der gewählte Ort markiert.</p>
-</div>
   <div id="map"></div>
   <script type="text/javascript">
     const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
