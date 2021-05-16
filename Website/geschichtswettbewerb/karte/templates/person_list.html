@@ -29,8 +29,6 @@
         Suche nach Beiträgen zu folgendem Thema:
         {% render_field filter.form.topic class="form-control" %}
 
-
-
       </div>
       <div class="form-group col">
         Signatur:
@@ -114,6 +112,9 @@
       Einzelarbeit oder Gruppenarbeit:
       {% render_field filter.form.einzel_gruppe class="form-control" %}
 
+      Wurde der Beitrag tutoriert?
+      {% render_field filter.form.tutor__isnull class="form-control" %}
+      
       Beiträge mit Dokumenttyp:
       {% render_field filter.form.dokument__typ class="form-control" %}
     </details>

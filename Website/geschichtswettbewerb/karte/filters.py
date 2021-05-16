@@ -14,8 +14,12 @@ class OrtFilter(django_filters.FilterSet):
 GROUP_CHOICES = {
     ('0', 'Gruppenarbeit'),
     ('1', 'Einzelarbeit'),
-    ('', 'Alle')
 }
+
+#TUT_CHOICES = {
+#    ('null', 'Nicht tutoriert'),
+#    ('notnull', 'Tutoriert'),
+#}
 class PersonFilter(django_filters.FilterSet):
     """Class to filter submissions by persons"""
     topic = django_filters.CharFilter(label='test', method='lookupTopic')
@@ -27,6 +31,8 @@ class PersonFilter(django_filters.FilterSet):
     dokument__typ = django_filters.ModelMultipleChoiceFilter(label = 'dokumentTypen', queryset=DokumentTyp.objects.all())
 
     auszeichnungeinreichung__auszeichnung = django_filters.ModelMultipleChoiceFilter(label = 'auszeichnungen', queryset=Auszeichnung.objects.all())
+
+    #tutor = django_filters.ChoiceFilter(label='tutoriert', choices=TUT_CHOICES)
 
     #autorin__autorinschule__jahrgangsstufe = django_filters.NumberFilter(label='jahrgang', method='lookupGrade')
     #autorin__autorinschule__jahrgangsstufe__gt = django_filters.NumberFilter(label='jahrgangMin')
@@ -69,6 +75,7 @@ class PersonFilter(django_filters.FilterSet):
             'institutionen': ['exact'],
             'institutionen__name': ['icontains'],
             'grundlagen': ['exact'],
+            'tutor': ['exact', 'isnull'],
             #'autorin__autorinschule__schule__art' : ['exact'],
             #'autorin__autorinschule__jahrgangsstufe': ['exact', 'gt', 'lt',],
             #'auszeichnungeinreichung__auszeichnung': ['exact'],
