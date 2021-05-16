@@ -64,5 +64,29 @@
       </tr>
     </tbody>
   </table>
+
+  <table class="table", style="display: block; overflow: auto;">
+    <thead>
+      <tr>
+        <th>Titel</th>
+        <th>Jahr</th>
+        <th>Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+           {% for x in beitrag.wettbewerb.all %}
+            {{ x.thema }}
+          {% endfor %}
+</td>
+        <td>
+          {% for x in beitrag.wettbewerb.all %}
+{{ x.jahr }}
+{% endfor %}
+</td>
+      </tr>
+    </tbody>
+  </table>
 </body>
 {% endblock %}

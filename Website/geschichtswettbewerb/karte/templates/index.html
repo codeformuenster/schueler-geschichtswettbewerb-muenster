@@ -27,6 +27,9 @@
 <body>
   <h1>Karte</h1>
   <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge geschrieben wurden.</p><body>
+    <div id="map"></div>
+    {{ markers|json_script:"markers-data" }}
+    <script src="{% static 'map.js' %}"></script>
   <details open>
     <summary>Suche nach bestimmten Ort:</summary>
   <div class="container">
@@ -75,10 +78,8 @@
        </tbody>
      </table>
   </details>
-  </body>
-  <div id="map"></div>
-  {{ markers|json_script:"markers-data" }}
-  <script src="{% static 'map.js' %}"></script>
+</div>
+
 </body>
 
 {% endblock %}

@@ -1,5 +1,6 @@
 from .models import *
 import django_filters
+from django.db.models import Q
 
 class OrtFilter(django_filters.FilterSet):
     """Class to filter place data"""
@@ -10,13 +11,19 @@ class OrtFilter(django_filters.FilterSet):
             'ortbezeichnung': ['icontains'],
         }
 
+
 class PersonFilter(django_filters.FilterSet):
     """Class to filter submissions by persons"""
     #titel = django_filters.CharFilter(lookup_expr='icontains')
-
+    #grpWork = ChoiceFilter(choices=GROUP_CHOICES)
+    topic = django_filters.CharFilter(label='test', method='lookupTopic')
         #persoenlichkeiten = django_filters.ModelMultipleChoiceFilter(queryset=Persoenlichkeit.objects.all())
+    def lookupTopic(self, queryset, name, value):
+        return queryset.filter(Q(titel__icontains=value)|Q(regest__icontains=value))
     class Meta:
         model = Beitrag
+
+
         #fields = ['titel', 'persoenlichkeiten']
         fields = {
             'titel': ['icontains'],
@@ -39,9 +46,3 @@ class PersonFilter(django_filters.FilterSet):
             'autorin__autorinschule__jahrgangsstufe': ['exact', 'gt', 'lt',],
             'auszeichnungeinreichung__auszeichnung': ['exact'],
         }
-#
-"""      <ul class="sidebar-nav">
-        <li><a href="{% url 'karte:karte' %}">Startseite</a></li>
-        <li><a href="{% url 'karte:beitraege' %}">Filter</a></li>
-      </ul>
-"""

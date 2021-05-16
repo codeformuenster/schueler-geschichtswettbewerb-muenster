@@ -19,7 +19,8 @@
   <h3>{{ ort.histRegion.all|join:", "}}</h3>
 
   <h4>Beiträge zu diesem Ort:</h4>
-  <table class="table table-bordered", style="display: block; overflow: auto;">
+  <table class="table", style="display: block; height: 400px; overflow: auto; border-color: black">
+    <caption>Anzahl Beiträge: {{ort.beitraege.all.count}}</caption>
     <thead>
       <tr>
         <th>Titel</th>

@@ -25,6 +25,9 @@
 
         Regest enthält
         {% render_field filter.form.regest__icontains class="form-control" %}
+        Regest oder Titel enthalten:
+        {% render_field filter.form.topic class="form-control" %}
+
       </div>
       <div class="form-group col">
         Signatur:
@@ -97,7 +100,7 @@
       Jahrgangsstufe (maximal):
       {% render_field filter.form.autorin__autorinschule__jahrgangsstufe__lt class="form-control" %}
 
-      Einzelarbeit?:
+      Einzelarbeit (Ja)/Gruppenarbeit (Nein):
       {% render_field filter.form.einzel_gruppe class="form-control" %}
       Beiträge mit Dokumenttyp:
       {% render_field filter.form.dokument__typ class="form-control" %}
@@ -145,6 +148,7 @@
     <tr>
       <th>Titel</th>
       <th>Signatur</th>
+      <th>Wettbewerb</th>
       <th>Detailansicht</th>
     </tr>
   </thead>
@@ -152,7 +156,8 @@
     {% for beitrag in filter.qs %}
       <tr>
         <td>{{ beitrag.titel }}</td>
-        <td>{{ beitrag.signatur }}</td>
+        <td>{{ beitrag.signatur }} ... {{beitrag.id}}</td>
+        <td>{{ beitrag.wettbewerb.all | join:", "}}</td>
         <td><a href="{{beitrag.id}}"target="_blank">(Detail)</a></td>
       </tr>
     {% empty %}
