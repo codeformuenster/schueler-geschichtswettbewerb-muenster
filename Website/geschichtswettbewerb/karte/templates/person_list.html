@@ -64,18 +64,23 @@
   </div>
   <div class="form-row">
 
-    Filter zum Beitragtypen und verwendeten Quellen
+    Filter zum Beitragtypen
     <details>
       {{ filter.form.typ.label_tag }}
       {% render_field filter.form.typ class="form-control" %}
-
-      {{ filter.form.grundlagen.label_tag }}
-      {% render_field filter.form.grundlagen class="form-control" %}
-
     </details>
   </div>
 
-    <div class="form-row">
+  <div class="form-row">
+
+    Filter zu den verwendeten Quellen
+    <details>
+      {{ filter.form.grundlagen.label_tag }}
+      {% render_field filter.form.grundlagen class="form-control" %}
+    </details>
+  </div>
+
+  <div class="form-row">
 
     Filter bezüglich der Wettbewerbe:
     <details>
