@@ -58,6 +58,7 @@ class Wettbewerb(models.Model):
     thema = models.TextField()
     kurztitel = models.TextField()
     jahr = models.IntegerField()
+    jahrBis = models.IntegerField(null=True)
     zusammenfassung = models.TextField(default = 'Zusammenfassung')
 
     class Meta:
@@ -65,7 +66,7 @@ class Wettbewerb(models.Model):
 
     def __str__(self):
         """returns the thema and id of the model as string"""
-        return self.thema + ' (' + str(self.jahr) + ')'
+        return self.thema + ' (' + str(self.jahr) + '-' + str(self.jahrBis) + ')'
 
 class Materialgrundlage(models.Model):
     """A class that represents the model for source materials, containing a name and an id attribute"""
@@ -146,8 +147,8 @@ class Beitrag(models.Model):
     signatur = models.CharField(max_length=255)
     einzel_gruppe = models.BooleanField(default=True)
     umfang = models.IntegerField()
-    zeitraumVon = models.IntegerField()
-    zeitraumBis = models.IntegerField()
+    zeitraumVon = models.IntegerField(null=True)
+    zeitraumBis = models.IntegerField(null=True)
     tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, null=True)
     grundlagen = models.ManyToManyField(Materialgrundlage, blank=True)
     persoenlichkeiten = models.ManyToManyField(Persoenlichkeit, blank=True)

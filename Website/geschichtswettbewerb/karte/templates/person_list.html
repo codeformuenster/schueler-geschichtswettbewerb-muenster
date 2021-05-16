@@ -25,8 +25,11 @@
 
         Regest enthält
         {% render_field filter.form.regest__icontains class="form-control" %}
-        Regest oder Titel enthalten:
+
+        Suche nach Beiträgen zu folgendem Thema:
         {% render_field filter.form.topic class="form-control" %}
+
+
 
       </div>
       <div class="form-group col">
@@ -92,19 +95,22 @@
     Filter bezüglich der Autoren und Arbeitsweise der Schüler:
     <details>
       Jahrgangsstufe (exakt):
-      {% render_field filter.form.autorin__autorinschule__jahrgangsstufe class="form-control" %}
+      {% render_field filter.form.jahrgang class="form-control" %}
 
       Jahrgangsstufe (mindestens):
-      {% render_field filter.form.autorin__autorinschule__jahrgangsstufe__gt class="form-control" %}
+      {% render_field filter.form.jahrgangMin class="form-control" %}
 
       Jahrgangsstufe (maximal):
-      {% render_field filter.form.autorin__autorinschule__jahrgangsstufe__lt class="form-control" %}
+      {% render_field filter.form.jahrgangMax class="form-control" %}
 
-      Einzelarbeit (Ja)/Gruppenarbeit (Nein):
+      Schulart:
+      {% render_field filter.form.autorin__autorinschule__schule__art class="form-control" %}
+
+      Einzelarbeit oder Gruppenarbeit:
       {% render_field filter.form.einzel_gruppe class="form-control" %}
+
       Beiträge mit Dokumenttyp:
       {% render_field filter.form.dokument__typ class="form-control" %}
-
     </details>
   </div>
   <div class="form-row">
@@ -156,7 +162,7 @@
     {% for beitrag in filter.qs %}
       <tr>
         <td>{{ beitrag.titel }}</td>
-        <td>{{ beitrag.signatur }} ... {{beitrag.id}}</td>
+        <td>{{ beitrag.signatur }}</td>
         <td>{{ beitrag.wettbewerb.all | join:", "}}</td>
         <td><a href="{{beitrag.id}}"target="_blank">(Detail)</a></td>
       </tr>
