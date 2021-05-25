@@ -9,7 +9,7 @@
 
 <body>
   <h1>{{ beitrag.titel }} ({{ beitrag.signatur }})</h1>
-  <h4>Autoren:</h4>
+  <h4 style="text-align: left">Autoren:</h4>
   <table class="table", style="display: block; overflow: auto;">
     <thead>
       <tr>
@@ -31,9 +31,10 @@
       {% endfor %}
     </tbody>
   </table>
-  <h4>Regest:</h4>
-  {{ beitrag.regest }}
-
+  <h4 style="text-align: left">Regest:</h4>
+  <div style="text-align: justify">
+    {{ beitrag.regest }}
+  </div>
   <table class="table", style="display: block; overflow: auto;">
     <thead>
       <tr>

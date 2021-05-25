@@ -20,7 +20,7 @@ GROUP_CHOICES = {
 #    ('null', 'Nicht tutoriert'),
 #    ('notnull', 'Tutoriert'),
 #}
-class PersonFilter(django_filters.FilterSet):
+class BeitragFilter(django_filters.FilterSet):
     """Class to filter submissions by persons"""
     topic = django_filters.CharFilter(label='test', method='lookupTopic')
 

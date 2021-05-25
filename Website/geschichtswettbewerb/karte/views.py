@@ -54,13 +54,13 @@ class PlaceDetailView(generic.DetailView):
         return context
 
 
-class PersonQueryView(generic.ListView):
+class SubmissionFilterView(generic.ListView):
     model = Beitrag
-    template_name = 'person_list.html'
+    template_name = 'beitrag_filter.html'
     def get_context_data(self, **kwargs):
         """returns the place data that is to be filtered in the view"""
         context = super().get_context_data(**kwargs)
-        context['filter'] = PersonFilter(self.request.GET, queryset=self.get_queryset())
+        context['filter'] = BeitragFilter(self.request.GET, queryset=self.get_queryset())
         return context
 
 class SubmissionDetailView(generic.DetailView):

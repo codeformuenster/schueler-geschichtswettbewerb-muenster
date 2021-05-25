@@ -20,12 +20,12 @@
     Filter zum Thema:
     <details open>
       <div class="form-group col">
-        Titel enthält:
+    <!--    Titel enthält:
         {% render_field filter.form.titel__icontains class="form-control" %}
 
         Regest enthält
         {% render_field filter.form.regest__icontains class="form-control" %}
-
+    -->
         Suche nach Beiträgen zu folgendem Thema:
         {% render_field filter.form.topic class="form-control" %}
 
@@ -114,7 +114,7 @@
 
       Wurde der Beitrag tutoriert?
       {% render_field filter.form.tutor__isnull class="form-control" %}
-      
+
       Beiträge mit Dokumenttyp:
       {% render_field filter.form.dokument__typ class="form-control" %}
     </details>
