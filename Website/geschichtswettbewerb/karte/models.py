@@ -172,6 +172,9 @@ class Dokument(models.Model):
     class Meta:
         verbose_name_plural = "Dokumente"
 
+    def __str__(self):
+        return self.beitrag.titel + ': ' + self.typ.typName
+
 class BeitragWettbewerb(models.Model):
     """A class that represents the relation between competitions and submissions"""
     beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE, null=True, unique=True)
