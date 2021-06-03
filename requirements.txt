@@ -1,5 +1,5 @@
 mysql-connector==2.2.9
-mysql==8.0.22
+mysql==0.0.2
 gdal==3.2.1
 geos==3.9.1
 django==3.1.7
