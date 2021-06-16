@@ -11,7 +11,4 @@ geopy==2.0.0
 geographiclib==1.50
 geopandas==0.8.1
 PyMySQL==0.10.1
-PyQt5==5.15.2
-PyQt5-sip==12.8.1
-PyQtWebEngine==5.15.2
 mysql-connector-python==8.0.22
