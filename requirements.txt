@@ -1,8 +1,10 @@
 mysql-connector==2.2.9
 mysql==0.0.2
 django==3.1.7
+django-filter==2.4.0
+django-tables2==2.3.4
+django-widget-tweaks==1.4.8
 mysqlclient==2.0.1
-libgeoip==1.6.12
 numpy==1.19.4
 pandas==1.1.4
 folium==0.11.0
@@ -12,8 +14,4 @@ geopy==2.0.0
 geographiclib==1.50
 geopandas==0.8.1
 PyMySQL==0.10.1
-mysql-client==8.0.23
-PyQt5==5.15.2
-PyQt5-sip==12.8.1
-PyQtWebEngine==5.15.2
 mysql-connector-python==8.0.22
