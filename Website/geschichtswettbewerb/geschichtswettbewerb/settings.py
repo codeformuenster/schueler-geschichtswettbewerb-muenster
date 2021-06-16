@@ -86,8 +86,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.mysql',
         'NAME': 'geschichtswettbewerb',
-        'USER': 'root',
-        'PASSWORD': 'Tripolitania1',
+        'USER': 'website',
+        'PASSWORD': 'SarmatiaEuropaca1*',
         'HOST': 'localhost',
         'PORT': '3306'
     }
