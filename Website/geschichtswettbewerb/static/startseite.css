@@ -1,0 +1,64 @@
+html, body, #startseite {
+  height: 100%;
+  margin: 25;
+  background-color: #ebd5b3;
+  text-align: center;
+  align-content: center;
+}
+
+.navbar-default {
+  box-shadow: 0 1px 10px rgba(0,0,0,.1);
+  height: 100px;
+  background-color: #ebd5b3 !important;
+  background-image: url(header-background.png);
+  background-size: 800px;
+  background-repeat:no-repeat;
+  background-position: center center;
+  color: black !important;
+}
+
+.navbar-brand {
+    text-align: left;
+    color: black;
+  }
+
+.navbar-header{
+  text-align: : left;
+  position: absolute;
+}
+
+.nav-link {
+  color: black !important;
+}
+
+.table-bordered {
+  background-color: #ebd5b3;
+}
+
+.well {
+  background-color: #ebd5b3;
+}
+
+.form {
+  background-color: #ebd5b3;
+  float: left;
+}
+.form-control {
+  width: 100%;
+}
+
+.table {
+  column-rule-color: black;
+  border-collapse: collapse;
+  background-color: #ebd5b3;
+  text-align: left;
+}
+.td {
+  border: 1px solid black
+}
+.tr {
+  border: 1px solid black
+}
+.details{
+  display: list-item;
+}
