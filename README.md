@@ -22,9 +22,6 @@ python 3.8.2
 mysql 8.0.22
 gdal 3.2.1
 geos 3.9.1
-mysqlclient 2.0.1
-postgresql 13.2
-postgis 3.1.1
 
 With the command python manage.py runserver, the website will be started on the localhost. The command has to be run in the Website/geschichtswettbewerb directory.
 
