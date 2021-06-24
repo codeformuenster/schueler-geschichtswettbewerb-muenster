@@ -27,7 +27,7 @@ CREATE TABLE `auth_group` (
   `name` varchar(150) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,7 +55,7 @@ CREATE TABLE `auth_group_permissions` (
   KEY `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` (`permission_id`),
   CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,7 +82,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_codename_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=105 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +116,7 @@ CREATE TABLE `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +145,7 @@ CREATE TABLE `auth_user_groups` (
   KEY `auth_user_groups_group_id_97559544_fk_auth_group_id` (`group_id`),
   CONSTRAINT `auth_user_groups_group_id_97559544_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
   CONSTRAINT `auth_user_groups_user_id_6a12ed8b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `auth_user_user_permissions` (
   KEY `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` (`permission_id`),
   CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -207,7 +207,7 @@ CREATE TABLE `django_admin_log` (
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`),
   CONSTRAINT `django_admin_log_chk_1` CHECK ((`action_flag` >= 0))
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -233,7 +233,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_model_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -259,7 +259,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -285,7 +285,7 @@ CREATE TABLE `django_session` (
   `expire_date` datetime(6) NOT NULL,
   PRIMARY KEY (`session_key`),
   KEY `django_session_expire_date_a5c62663` (`expire_date`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -309,7 +309,7 @@ CREATE TABLE `karte_auszeichnung` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -338,7 +338,7 @@ CREATE TABLE `karte_auszeichnungeinreichung` (
   KEY `karte_auszeichnungei_einreichung_id_2b6141f5_fk_karte_bei` (`einreichung_id`),
   CONSTRAINT `karte_auszeichnungei_auszeichnung_id_2b2349da_fk_karte_aus` FOREIGN KEY (`auszeichnung_id`) REFERENCES `karte_auszeichnung` (`id`),
   CONSTRAINT `karte_auszeichnungei_einreichung_id_2b6141f5_fk_karte_bei` FOREIGN KEY (`einreichung_id`) REFERENCES `karte_beitrag` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=346 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=346 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -366,7 +366,7 @@ CREATE TABLE `karte_autorin` (
   PRIMARY KEY (`id`),
   KEY `karte_autorin_beitrag_id_328a716f_fk_karte_beitrag_id` (`beitrag_id`),
   CONSTRAINT `karte_autorin_beitrag_id_328a716f_fk_karte_beitrag_id` FOREIGN KEY (`beitrag_id`) REFERENCES `karte_beitrag` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2486 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2486 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -396,7 +396,7 @@ CREATE TABLE `karte_autorinschule` (
   KEY `karte_autorinschule_autorin_id_fc08713c_fk_karte_autorin_id` (`autorin_id`),
   CONSTRAINT `karte_autorinschule_autorin_id_fc08713c_fk_karte_autorin_id` FOREIGN KEY (`autorin_id`) REFERENCES `karte_autorin` (`id`),
   CONSTRAINT `karte_autorinschule_schule_id_4341927a_fk_karte_sch` FOREIGN KEY (`schule_id`) REFERENCES `karte_schuleschulart` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2480 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2480 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -429,7 +429,7 @@ CREATE TABLE `karte_beitrag` (
   PRIMARY KEY (`id`),
   KEY `karte_beitrag_tutor_id_0c0322a9_fk_karte_tutor_id` (`tutor_id`),
   CONSTRAINT `karte_beitrag_tutor_id_0c0322a9_fk_karte_tutor_id` FOREIGN KEY (`tutor_id`) REFERENCES `karte_tutor` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1531 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1531 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -459,7 +459,7 @@ CREATE TABLE `karte_beitrag_grundlagen` (
   KEY `karte_beitrag_grundl_materialgrundlage_id_c5516c78_fk_karte_mat` (`materialgrundlage_id`),
   CONSTRAINT `karte_beitrag_grundl_materialgrundlage_id_c5516c78_fk_karte_mat` FOREIGN KEY (`materialgrundlage_id`) REFERENCES `karte_materialgrundlage` (`id`),
   CONSTRAINT `karte_beitrag_grundlagen_beitrag_id_a85e3acc_fk_karte_beitrag_id` FOREIGN KEY (`beitrag_id`) REFERENCES `karte_beitrag` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5398 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5398 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -488,7 +488,7 @@ CREATE TABLE `karte_beitrag_institutionen` (
   KEY `karte_beitrag_instit_institution_id_bf0cf1e0_fk_karte_ins` (`institution_id`),
   CONSTRAINT `karte_beitrag_instit_beitrag_id_f559a18e_fk_karte_bei` FOREIGN KEY (`beitrag_id`) REFERENCES `karte_beitrag` (`id`),
   CONSTRAINT `karte_beitrag_instit_institution_id_bf0cf1e0_fk_karte_ins` FOREIGN KEY (`institution_id`) REFERENCES `karte_institution` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -516,7 +516,7 @@ CREATE TABLE `karte_beitrag_persoenlichkeiten` (
   KEY `karte_beitrag_persoe_persoenlichkeit_id_ebb1c7ee_fk_karte_per` (`persoenlichkeit_id`),
   CONSTRAINT `karte_beitrag_persoe_beitrag_id_04b0be69_fk_karte_bei` FOREIGN KEY (`beitrag_id`) REFERENCES `karte_beitrag` (`id`),
   CONSTRAINT `karte_beitrag_persoe_persoenlichkeit_id_ebb1c7ee_fk_karte_per` FOREIGN KEY (`persoenlichkeit_id`) REFERENCES `karte_persoenlichkeit` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=469 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=469 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -545,7 +545,7 @@ CREATE TABLE `karte_beitrag_typ` (
   KEY `karte_beitrag_typ_beitragsart_id_741b4611_fk_karte_bei` (`beitragsart_id`),
   CONSTRAINT `karte_beitrag_typ_beitrag_id_150c84e9_fk_karte_beitrag_id` FOREIGN KEY (`beitrag_id`) REFERENCES `karte_beitrag` (`id`),
   CONSTRAINT `karte_beitrag_typ_beitragsart_id_741b4611_fk_karte_bei` FOREIGN KEY (`beitragsart_id`) REFERENCES `karte_beitragsart` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1681 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1681 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -569,7 +569,7 @@ CREATE TABLE `karte_beitragsart` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -599,7 +599,7 @@ CREATE TABLE `karte_beitragwettbewerb` (
   KEY `karte_beitragwettbew_wettbewerb_id_5758d6c0_fk_karte_wet` (`wettbewerb_id`),
   CONSTRAINT `karte_beitragwettbew_wettbewerb_id_5758d6c0_fk_karte_wet` FOREIGN KEY (`wettbewerb_id`) REFERENCES `karte_wettbewerb` (`id`),
   CONSTRAINT `karte_beitragwettbewerb_beitrag_id_725efc76_fk_karte_beitrag_id` FOREIGN KEY (`beitrag_id`) REFERENCES `karte_beitrag` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1530 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1530 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -629,7 +629,7 @@ CREATE TABLE `karte_dokument` (
   KEY `karte_dokument_beitrag_id_c543a586_fk_karte_beitrag_id` (`beitrag_id`),
   CONSTRAINT `karte_dokument_beitrag_id_c543a586_fk_karte_beitrag_id` FOREIGN KEY (`beitrag_id`) REFERENCES `karte_beitrag` (`id`),
   CONSTRAINT `karte_dokument_typ_id_33991791_fk_karte_dokumenttyp_id` FOREIGN KEY (`typ_id`) REFERENCES `karte_dokumenttyp` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1201 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1201 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -653,7 +653,7 @@ CREATE TABLE `karte_dokumenttyp` (
   `id` int NOT NULL AUTO_INCREMENT,
   `typName` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -677,7 +677,7 @@ CREATE TABLE `karte_historischeregion` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -701,7 +701,7 @@ CREATE TABLE `karte_historischerort` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -725,7 +725,7 @@ CREATE TABLE `karte_institution` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -748,7 +748,7 @@ CREATE TABLE `karte_materialgrundlage` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -774,7 +774,7 @@ CREATE TABLE `karte_ort` (
   `location` point NOT NULL,
   PRIMARY KEY (`id`),
   SPATIAL KEY `karte_ort_location_id` (`location`)
-) ENGINE=InnoDB AUTO_INCREMENT=401 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=401 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1159,7 +1159,7 @@ CREATE TABLE `karte_ort_beitraege` (
   KEY `karte_ort_beitraege_beitrag_id_e3c86800_fk_karte_beitrag_id` (`beitrag_id`),
   CONSTRAINT `karte_ort_beitraege_beitrag_id_e3c86800_fk_karte_beitrag_id` FOREIGN KEY (`beitrag_id`) REFERENCES `karte_beitrag` (`id`),
   CONSTRAINT `karte_ort_beitraege_ort_id_7dd22305_fk_karte_ort_id` FOREIGN KEY (`ort_id`) REFERENCES `karte_ort` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=926 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=926 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1188,7 +1188,7 @@ CREATE TABLE `karte_ort_histName` (
   KEY `karte_ort_histName_historischerort_id_ea110146_fk_karte_his` (`historischerort_id`),
   CONSTRAINT `karte_ort_histName_historischerort_id_ea110146_fk_karte_his` FOREIGN KEY (`historischerort_id`) REFERENCES `karte_historischerort` (`id`),
   CONSTRAINT `karte_ort_histName_ort_id_405b9d32_fk_karte_ort_id` FOREIGN KEY (`ort_id`) REFERENCES `karte_ort` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1217,7 +1217,7 @@ CREATE TABLE `karte_ort_histRegion` (
   KEY `karte_ort_histRegion_historischeregion_id_f8da13a8_fk_karte_his` (`historischeregion_id`),
   CONSTRAINT `karte_ort_histRegion_historischeregion_id_f8da13a8_fk_karte_his` FOREIGN KEY (`historischeregion_id`) REFERENCES `karte_historischeregion` (`id`),
   CONSTRAINT `karte_ort_histRegion_ort_id_c4f086ea_fk_karte_ort_id` FOREIGN KEY (`ort_id`) REFERENCES `karte_ort` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1242,7 +1242,7 @@ CREATE TABLE `karte_persoenlichkeit` (
   `name` varchar(255) NOT NULL,
   `gnd` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=276 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=276 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1266,7 +1266,7 @@ CREATE TABLE `karte_schulart` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1290,7 +1290,7 @@ CREATE TABLE `karte_schule` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(1024) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1319,7 +1319,7 @@ CREATE TABLE `karte_schuleschulart` (
   KEY `karte_schuleschulart_art_id_0c296d4c_fk_karte_schulart_id` (`art_id`),
   CONSTRAINT `karte_schuleschulart_art_id_0c296d4c_fk_karte_schulart_id` FOREIGN KEY (`art_id`) REFERENCES `karte_schulart` (`id`),
   CONSTRAINT `karte_schuleschulart_schule_id_35169953_fk_karte_schule_id` FOREIGN KEY (`schule_id`) REFERENCES `karte_schule` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1345,7 +1345,7 @@ CREATE TABLE `karte_tutor` (
   `vorname` varchar(255) DEFAULT NULL,
   `nachname` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=355 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=355 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1373,7 +1373,7 @@ CREATE TABLE `karte_wettbewerb` (
   `zusammenfassung` longtext NOT NULL,
   `jahrBis` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
