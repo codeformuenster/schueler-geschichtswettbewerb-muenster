@@ -5,9 +5,9 @@ import pandas as pd
 import math
 
 db = mysql.connector.connect(
-    host="127.0.0.1",
-    user="root",
-    passwd="",
+    host="localhost",
+    user="website",
+    password="SarmatiaEuropaca1*",
     database="geschichtswettbewerb",
     auth_plugin='caching_sha2_password'
 )
@@ -16,7 +16,15 @@ mycursor = db.cursor()
 """There is a function for every database table to enter data with the given columns as parameters"""
 
 """read the file from which the data is to be entered"""
-data = pd.read_excel('path.xlsx').to_numpy()
+#data = pd.read_excel('path.xlsx').to_numpy()
+
+exportLocations()
+
+def exportLocations():
+    Q = 'SELECT * FROM karte_ort'
+    mycursor.execute(Q)
+    for i in mycursor:
+        print(i)
 
 def enterSubmission(id, title, regest, signatur, einzel_gruppe, umfang, zeitraumVon, zeitraumBis, tutor):
     """Enter submissions with a tutor"""
