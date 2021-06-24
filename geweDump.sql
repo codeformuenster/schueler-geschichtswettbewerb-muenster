@@ -783,7 +783,363 @@ CREATE TABLE `karte_ort` (
 
 LOCK TABLES `karte_ort` WRITE;
 /*!40000 ALTER TABLE `karte_ort` DISABLE KEYS */;
-INSERT INTO `karte_ort` VALUES (1,'Aa, MÃ¼nster',_binary '\0\0\0\0\0\0\0ZÈ‡©@ û’?ÿI@'),(2,'Aachen',_binary '\0\0\0\0\0\0\0.\ÅUe\ßU@¥N@acI@'),(3,'Aasee, MÃ¼nster',_binary '\0\0\0\0\0\0\0˜úyS‘j@6<½R–ùI@'),(4,'Aaseestadt',_binary '\0\0\0\0\0\0\0´Yõ¹\Új@Ôš\æ§øI@'),(5,'Aegidii-Kirche',_binary '\0\0\0\0\0\0\0tF”ö@Ğ³Yõ¹úI@'),(6,'Aegidiimarkt',_binary '\0\0\0\0\0\0\0 µ‰“û}@	Šc\îúI@'),(7,'Afghanistan ',_binary '\0\0\0\0\0\0\0%•CP@ü©ñ\ÒM\â@@'),(8,'Afrika',_binary '\0\0\0\0\0\0\0§\èH.ÿÁ1@S£’:\'@'),(9,'Ahaus ',_binary '\0\0\0\0\0\0\00ACÿ@Dú\í\ëÀ	J@'),(10,'Albachten',_binary '\0\0\0\0\0\0\0@j\'÷@Y·\Ñ\0öI@'),(11,'Albrechtsflor (Teremica Mira)',_binary '\0\0\0\0\0\0\0 ø1\æ~4@B>\èÙ¬úF@'),(12,'Alexianer-Krankenhaus, MÃ¼nster',_binary '\0\0\0\0\0\0\0Ral!\ÈA@ğHğI@'),(13,'Allenstein',_binary '\0\0\0\0\0\0\0_\ÎQz4@\Ïf\Õ\çj\ãJ@'),(14,'Altenberge',_binary '\0\0\0\0\0\0\0u<f 2\Ş@õ¹ÚŠıJ@'),(15,'Stara Kamienica',_binary '\0\0\0\0\0\0\0MŒJ\ê$/@\èÙ¬ú\\uI@'),(16,'Altstadt, MÃ¼nster',_binary '\0\0\0\0\0\0\0\å\Ğ\"\Ûù~@³\êsµûI@'),(17,'Alverskirchen',_binary '\0\0\0\0\0\0\0>\Ğ\nY=@[B>\è\ÙôI@'),(18,'AmelsbÃ¼ren',_binary '\0\0\0\0\0\0\0\Íh†l@©¤N@ñI@'),(19,'Amerika',_binary '\0\0\0\0\0\0\0•C‹YÀğHP\äC@'),(20,'Andalusien',_binary '\0\0\0\0\0\0\03ùf›SÀ\ìQ¸…«B@'),(22,'Anne-Frank-Gesamtschule, MÃ¼nster',_binary '\0\0\0\0\0\0\0`<ƒ†ş©@°rh‘\íüI@'),(23,'Annette-von-Droste-HÃ¼lshoff-Gymnasium, MÃ¼nster',_binary '\0\0\0\0\0\0\0X­Lø¥~@´\Èv¾ŸúI@'),(25,'Arnheim',_binary '\0\0\0\0\0\0\00ğ\Ü{¸¤@õ¹ÚŠııI@'),(27,'Ascheberg',_binary '\0\0\0\0\0\0\0s\×òA¯$@—ÿ~ûK@'),(28,'Ã„thiopien',_binary '\0\0\0\0\0\0\0]\ÜFxSC@\\ Añcl$@'),(29,'Auschwitz / Auschwitz-Birkenau',_binary '\0\0\0\0\0\0\0\ÎQ\Ú+3@>\èÙ¬úI@'),(30,'BÃ¤ckergasse, MÃ¼nster',_binary '\0\0\0\0\0\0\0\Òû\Æ×y@Á¨¤N@ûI@'),(31,'Bad Carlsruhe',_binary '\0\0\0\0\0\0\0ØsF”\Ö1@¬ZdsI@'),(32,'Bad Godesberg',_binary '\0\0\0\0\0\0\0>\Ğ\nY@«>W[±WI@'),(33,'Bad Reichenhall',_binary '\0\0\0\0\0\0\0\r\à-À)@MóSt\ÜG@'),(34,'Balkangebiet',_binary '\0\0\0\0\0\0\0z6«>\×5@š^™C@'),(35,'Banat, RumÃ¤nien',_binary '\0\0\0\0\0\0\0\èÙ¬ú\\5@)\ËÇº\àF@'),(36,'BaborÃ³w',_binary '\0\0\0\0\0\0\0\\ Añcü1@ŒJ\êI@'),(37,'Baumberge ',_binary '\0\0\0\0\0\0\0„Íª\Ïu*@\"lxz¥LJ@'),(38,'Baumgarten',_binary '\0\0\0\0\0\0\0Y·\Ñ\0¾\'@rŠ\äò\çJ@'),(39,'Beckum',_binary '\0\0\0\0\0\0\0\Û\Ä\Éı @bX9´\àI@'),(40,'Beelen',_binary '\0\0\0\0\0\0\0?RD†U< @×£p=\n÷I@'),(41,'Berg Fidel',_binary '\0\0\0\0\0\0\0>\\r\Ü)}@	ŠcöI@'),(42,'Berlin ',_binary '\0\0\0\0\0\0\0,Ôš\æ\Ç*@V-BJ@'),(43,'Bielefeld ',_binary '\0\0\0\0\0\0\0«²\ïŠ\à!@C­i\ŞqJ@'),(44,'Billerbeck',_binary '\0\0\0\0\0\0\0`·\î\æ)@\"uqıI@'),(45,'Bispinghof, MÃ¼nster',_binary '\0\0\0\0\0\0\0“o¶¹1}@^ºIûI@'),(46,'Bocholt',_binary '\0\0\0\0\0\0\0„*5{ u\Z@OjM\ëI@'),(47,'BoelestraÃŸe, MÃ¼nster',_binary '\0\0\0\0\0\0\0J\ï_{\Æ@Zd;\ßOõI@'),(48,'BÃ¶hmen',_binary '\0\0\0\0\0\0\05 ƒ8»¦*@öºLÅ I@'),(49,'Borghorst',_binary '\0\0\0\0\0\0\0¥k&\ßló#@9EGrù7K@'),(50,'BÃ¶sensell',_binary '\0\0\0\0\0\0\0“©‚Q\é@¡g³\êsõI@'),(51,'Bosnien',_binary '\0\0\0\0\0\0\0F%uš˜1@¼\'F@'),(52,'Bosnien-Herzegowina',_binary '\0\0\0\0\0\0\0F%uš˜1@¼\'F@'),(53,'Botanischer Garten, MÃ¼nster',_binary '\0\0\0\0\0\0\08ó«9@p@¥N@aûI@'),(54,'Brasilien',_binary '\0\0\0\0\0\0\0š™™™™™JÀ{ƒ/L¦ª$À'),(55,'Wroclaw',_binary '\0\0\0\0\0\0\0|ò°Pkú0@¾0™*I@'),(56,'Breslau',_binary '\0\0\0\0\0\0\0|ò°Pkú0@¾0™*I@'),(57,'BrÃ¼ningheide',_binary '\0\0\0\0\0\0\0\æ\\Š«\Ê^@\É\å?¤ÿI@'),(58,'Bobolice',_binary '\0\0\0\0\0\0\0-²ï§–0@\à¾œ3úJ@'),(59,'Buddenturm',_binary '\0\0\0\0\0\0\0\Ë\ÛN~@ùé·¯ûI@'),(60,'Buldernweg',_binary '\0\0\0\0\0\0\0H¿}8g@ØsF”öI@'),(61,'Burg Davensberg',_binary '\0\0\0\0\0\0\0­Lø¥~^@Tt$—ÿ\èI@'),(62,'CafÃ© Grotemeyer, MÃ¼nster',_binary '\0\0\0\0\0\0\0\ÖV\ì/»‡@\Â&SûI@'),(63,'CafÃ© Kleimann, MÃ¼nster',_binary '\0\0\0\0\0\0\0H§®|–§@;pÎˆ\ÒşI@'),(64,'CafÃ© Schucan, MÃ¼nster',_binary '\0\0\0\0\0\0\0\ÂLÛ¿²‚@IhË¹ûI@'),(65,'Cavete, MÃ¼nster',_binary '\0\0\0\0\0\0\0{—|@kšwœ¢ûI@'),(66,'Chemnitz',_binary '\0\0\0\0\0\0\0Dú\í\ëÀ\Ù)@û:pÎˆjI@'),(67,'China ',_binary '\0\0\0\0\0\0\0\0\0\0\0\0@Z@d]\ÜF€A@'),(68,'Cincinnati',_binary '\0\0\0\0\0\0\0\Í\Ì\Ì\Ì\Ì UÀ¢E¶óıŒC@'),(70,'Coerde',_binary '\0\0\0\0\0\0\0ôø½M–@s\×òAÿI@'),(71,'Coesfeld',_binary '\0\0\0\0\0\0\0Ì´ı++­@©¤N@ùI@'),(73,'Cottbus',_binary '\0\0\0\0\0\0\0Îˆ\Ò\Ş\à«,@\rq¬‹\Û\àI@'),(74,'Dachau',_binary '\0\0\0\0\0\0\0W[±¿\ì\Ş&@Å1w-!H@'),(75,'DÃ¤nemark',_binary '\0\0\0\0\0\0\0{ƒ/L¦ª$@½\ã\É\ÕK@'),(76,'GdaÅ„sk',_binary '\0\0\0\0\0\0\0\âX·Ñ 2@ c\îZB.K@'),(77,'Davensberg',_binary '\0\0\0\0\0\0\0>?Œ^@b¡\Ö4\ï\èI@'),(78,'DDR',_binary '\0\0\0\0\0\0\0\ÇK7‰A (@ƒÀÊ¡\rJ@'),(79,'Diakonissenhaus',_binary '\0\0\0\0\0\0\0¥ŸÁ³€@\İ\Ø\×2oüI@'),(80,'St.-Paulus-Dom, MÃ¼nster',_binary '\0\0\0\0\0\0\0ÿ	.VÔ€@ˆc]\ÜFûI@'),(81,'Domaslaw',_binary '\0\0\0\0\0\0\0ioğ…\Éô0@a\Ã\Ó+eI@'),(83,'Dorsten',_binary '\0\0\0\0\0\0\0y’t\Í\ä\Û@£#¹ü‡\ÔI@'),(84,'Dortmund',_binary '\0\0\0\0\0\0\0x\î=\\r\Ü@6\Í;N\ÑÁI@'),(85,'Dortmund-Ems-Kanal',_binary '\0\0\0\0\0\0\0§®|–\ç!@®G\áz$J@'),(86,'DrachterstraÃŸe',_binary '\0\0\0\0\0\0\0Y£¢\Ñ}@<NÑ‘\\öI@'),(87,'Dreizehnerdenkmal',_binary '\0\0\0\0\0\0\0z6«>w@&S£úI@'),(88,'Drensteinfurt',_binary '\0\0\0\0\0\0\0bg\n÷@\çŒ(\í\r\æI@'),(89,'Dresden',_binary '\0\0\0\0\0\0\0\îZB>\èy+@®\Ø_vO†I@'),(90,' OÅ›no Lubuskie',_binary '\0\0\0\0\0\0\0?\ÆÜµ„¼-@n4€·@:J@'),(91,'DÃ¼esbergweg',_binary '\0\0\0\0\0\0\0÷\äa¡\Öt@\åa¡\Ö4÷I@'),(92,'DÃ¼lmen',_binary '\0\0\0\0\0\0\0’L\à\Ö@\Ò\0\Ş	\êI@'),(93,'DÃ¼sseldorf',_binary '\0\0\0\0\0\0\0%;6ñ\Z@[B>\èÙœI@'),(94,'Cheb',_binary '\0\0\0\0\0\0\0v\àœ¥½(@RI€&\nI@'),(95,'Eichsfeld',_binary '\0\0\0\0\0\0\0€·@‚\âW#@§\èH.GI@'),(96,'Elsterwerda',_binary '\0\0\0\0\0\0\0{ƒ/L¦\n+@HPü»I@'),(97,'Ems',_binary '\0\0\0\0\0\0\0z\ä[@f÷\äa¡6J@'),(98,'Emsdetten',_binary '\0\0\0\0\0\0\0ùƒ\ç@<NÑ‘\\J@'),(99,'Emsland ',_binary '\0\0\0\0\0\0\0‚V`\È\êv@(~Œ¹kYJ@'),(100,'Epe',_binary '\0\0\0\0\0\0\0CV·zN\Ú@`\å\Ğ\"\Û)J@'),(101,'ErlÃ¶serkirche, MÃ¼nster',_binary '\0\0\0\0\0\0\0´)\"ÃŠ@\ĞD\ØğôúI@'),(102,'Fachklinik Hornheide',_binary '\0\0\0\0\0\0\0õ¾ñµg\Ö@‹l\çû©J@'),(103,'Finanzamt, MÃ¼nster',_binary '\0\0\0\0\0\0\0\Íu\Zi‰@ƒÀÊ¡ıI@'),(104,'FinkenstraÃŸe, MÃ¼nster',_binary '\0\0\0\0\0\0\0D†U¼‘y@®G\ázüI@'),(105,'Flughafen MÃ¼nster-OsnabrÃ¼ck',_binary '\0\0\0\0\0\0\0–\çÁ\İY»@Å1w-J@'),(106,'Flugplatz Loddenheide',_binary '\0\0\0\0\0\0\0\å³<\î@d${„š÷I@'),(107,'FrauenstraÃŸe 24',_binary '\0\0\0\0\0\0\0Š?¢›ay@-şOûI@'),(108,'Freckenhorst',_binary '\0\0\0\0\0\0\0\Ú\É\à(y\Õ@MóStôI@'),(109,'Freiherr-vom-Stein-Gymnasium, MÃ¼nster',_binary '\0\0\0\0\0\0\0õg?RDF@z¥,CûI@'),(110,'FÃ¼chtorf',_binary '\0\0\0\0\0\0\0ª¹n @\ç§\èHJ@'),(111,'Galizien',_binary '\0\0\0\0\0\0\0¸…\ëQ8@ú~j¼t\ëH@'),(112,'Gasselstiege',_binary '\0\0\0\0\0\0\0°¶-\Êl@[Ó¼\ãıI@'),(114,'GrudziÄ…dz',_binary '\0\0\0\0\0\0\0‰\Ò\Ş\à\Ã2@®G\áz¼J@'),(115,'Geelong, Australien',_binary '\0\0\0\0\0\0\0\ìQ¸…b@z¥,CCÀ'),(116,'Geistschule, MÃ¼nster',_binary '\0\0\0\0\0\0\0\é`ıŸ\Ã|@œ3¢´7øI@'),(117,'Geistviertel, MÃ¼nster',_binary '\0\0\0\0\0\0\0aO;ü5y@\ÇK7‰AøI@'),(119,'Geschwister-Scholl-Gymnasium, MÃ¼nster',_binary '\0\0\0\0\0\0\0\ĞD\Øğôj@\äò\ÒÿI@'),(120,'Gievenbeck',_binary '\0\0\0\0\0\0\0MÖ¨‡H@±PkšwüI@'),(121,'Glandorf',_binary '\0\0\0\0\0\0\0¨:\äf¸ @C­i\Şq\nJ@'),(123,'Gliwice',_binary '\0\0\0\0\0\0\0$(~Œ©2@­i\ŞqŠ&I@'),(124,'Gnadenkirche, MÃ¼nster',_binary '\0\0\0\0\0\0\0ó<¸;kw@V}®¶b÷I@'),(125,'Schloss Grafeneck',_binary '\0\0\0\0\0\0\0c±1iø\Û\"@t>\Ô\Î?2H@'),(126,'GorzanÃ³w',_binary '\0\0\0\0\0\0\0\Â&S£0@¾0™*-I@'),(127,'GrudziÄ…dz',_binary '\0\0\0\0\0\0\0‰\Ò\Ş\à\Ã2@®G\áz¼J@'),(128,'Gremmendorf',_binary '\0\0\0\0\0\0\0+‡Ù®@Ÿ<,ÔšöI@'),(129,'Greven',_binary '\0\0\0\0\0\0\0û®ş·r@2\æ®%\äJ@'),(130,'Grevener StraÃŸe',_binary '\0\0\0\0\0\0\0µû\Ë\î	(@\Ïf\Õ\çj»J@'),(131,'Griechenland ',_binary '\0\0\0\0\0\0\0[B>\è\Ùü5@8gDiC@'),(132,'Gronau',_binary '\0\0\0\0\0\0\0c\Ñtv2@z¥,CJ@'),(133,'Grundschule Berg Fidel',_binary '\0\0\0\0\0\0\0.­†\Ä=v@Ÿ«­\Ø_öI@'),(134,'GrÃ¼ner Grund, MÃ¼nster',_binary '\0\0\0\0\0\0\0Ù±ˆ\×u@¸¯\çŒøI@'),(135,'Gut Kinderhaus, MÃ¼nster',_binary '\0\0\0\0\0\0\0\Z†ˆ)q@›UŸ«­\0J@'),(136,'Gymnasium St. Mauritz, MÃ¼nster',_binary '\0\0\0\0\0\0\0ÿ••&¥À@\çŒ(\íıI@'),(137,'Innenhafen, MÃ¼nster',_binary '\0\0\0\0\0\0\0OjM“@µ¦y\ÇùI@'),(138,'HÃ¤ger, MÃ¼nster',_binary '\0\0\0\0\0\0\0To\rl•@@z¥,CJ@'),(139,'Hamm',_binary '\0\0\0\0\0\0\0û\Ë\î\É\ÃB@e\âX\×I@'),(140,'Hammer StraÃŸe, MÃ¼nster',_binary '\0\0\0\0\0\0\04ôOp±‚@\å\Ğ\"\ÛùöI@'),(141,'Handorf, MÃ¼nster',_binary '\0\0\0\0\0\0\0\ÍX4\Ì@ôlV}şI@'),(142,'Seniorentreff Hansahof, MÃ¼nster',_binary '\0\0\0\0\0\0\0®“\Ş7~@B\Ïf\Õ\çúI@'),(143,'Hasenbusch, MÃ¼nster',_binary '\0\0\0\0\0\0\0“5\ê!\Z]@,e\âXÿI@'),(144,'Hauptbahnhof, MÃ¼nster',_binary '\0\0\0\0\0\0\0F\ë¨j‚ˆ@•\Ô	húI@'),(146,'Alexianer-Krankenhaus, MÃ¼nster',_binary '\0\0\0\0\0\0\0Š«Ê¾+B@\ê!\Z\İAğI@'),(148,'KriegsgrÃ¤berstÃ¤tte Haus Spital, MÃ¼nster',_binary '\0\0\0\0\0\0\0®*û®>@ö(\\\ÂıI@'),(149,'Haus vom guten Hirten, MÃ¼nster',_binary '\0\0\0\0\0\0\0ş}Æ…¡@B`\å\Ğ\"ûI@'),(150,'Havixbeck',_binary '\0\0\0\0\0\0\0Hm\â\ä~§@0*©\ĞüI@'),(151,'Hel',_binary '\0\0\0\0\0\0\0gq\ì\Í2@A%Õ’NK@'),(152,'JÄ™drychowice',_binary '\0\0\0\0\0\0\0¿}8g\Ô1@†8\Ö\ÅmI@'),(153,'Herne',_binary '\0\0\0\0\0\0\0\Å\ÉıE\á@¾Ÿ\Z/\İ\ÄI@'),(154,'Herz-Jesu-Viertel,  MÃ¼nster',_binary '\0\0\0\0\0\0\0”M¹Â»œ@\Ñ\"\Ûù~úI@'),(155,'Hiltrup',_binary '\0\0\0\0\0\0\0B&9›@4€·@‚òI@'),(159,'HornstraÃŸe,  MÃ¼nster',_binary '\0\0\0\0\0\0\0Y‹O0~@¨W\Ê2\ÄùI@'),(160,'Horstmar ',_binary '\0\0\0\0\0\0\0f1±ù¸6@Q\Ú|a\nJ@'),(161,'HÃ¶velhof',_binary '\0\0\0\0\0\0\0S?o*RQ!@EGrù\éI@'),(162,'Hoyerswerda ',_binary '\0\0\0\0\0\0\0uq\r€,@¬­\Ø_v·I@'),(163,'IbbenbÃ¼ren',_binary '\0\0\0\0\0\0\0\ê>\0©M\Ü@\ìQ¸…#J@'),(164,'Ignatiuskirche,  MÃ¼nster',_binary '\0\0\0\0\0\0\0¨Œ@f½Ê‰úI@'),(166,'Gymnasium St. Mauritz',_binary '\0\0\0\0\0\0\0ÿ••&¥À@\çŒ(\íıI@'),(167,'Irak',_binary '\0\0\0\0\0\0\0fffffF@±¿\ì<Œ@@'),(168,'Iran',_binary '\0\0\0\0\0\0\0c\îZB>HK@{®G\áR@@'),(169,'Iserlohn',_binary '\0\0\0\0\0\0\0x¹ˆ\ï\Ä\Ì@\Õ\çj+ö¯I@'),(170,'Italien',_binary '\0\0\0\0\0\0\0·b\Ù=Y)@\âX·QE@'),(171,'Japan',_binary '\0\0\0\0\0\0\0.Q²VIDa@!\Ö\ÈüA@'),(172,'Johannes-Hospiz,  MÃ¼nster',_binary '\0\0\0\0\0\0\0&Â†§—@	Šc\îúI@'),(173,'Josefsschule,  MÃ¼nster',_binary '\0\0\0\0\0\0\0¬Zd;@sôø½ùI@'),(174,'Josefsviertel,  MÃ¼nster',_binary '\0\0\0\0\0\0\0O@a\Ãs@§\èH.ÿùI@'),(175,'JÃ¼defelderstraÃŸe',_binary '\0\0\0\0\0\0\0?:u\å³|@2U0*©ûI@'),(176,'JÃ¼discher Friedhof, Drensteinfurt',_binary '\0\0\0\0\0\0\08’L\0@¯”eˆc\åI@'),(177,'Jugoslawien',_binary '\0\0\0\0\0\0\0ª‚QI 2@Zõ¹ÚŠ=F@'),(178,'Juist',_binary '\0\0\0\0\0\0\0AH0û@ŸÍª\Ï\Õ\ÖJ@'),(179,'Kambodscha',_binary '\0\0\0\0\0\0\0V-²7Z@¥N@a+@'),(180,'Kanada',_binary '\0\0\0\0\0\0\0sh‘\í|ÿZÀTR\' ‰ˆN@'),(181,'Kappenberger-Damm-Bunker',_binary '\0\0\0\0\0\0\0s\×òAo@\å›mnL÷I@'),(182,'Kappenberger-Damm-Schule,  MÃ¼nster',_binary '\0\0\0\0\0\0\033333s@%z\År÷I@'),(183,'Kapuzinerkloster,  MÃ¼nster',_binary '\0\0\0\0\0\0\0“Vm@±¿\ì<üI@'),(185,'Kasachstan',_binary '\0\0\0\0\0\0\0a\Ã\Ó+eMP@\Ì\î\É\ÃBG@'),(186,'Katharinenkloster,  MÃ¼nster',_binary '\0\0\0\0\0\0\0jMóSt@;\ßO—şI@'),(187,'Kattenvenne',_binary '\0\0\0\0\0\0\0v‰ê­m@X\Ê2Ä±J@'),(188,'Kaufhaus Hertz,  MÃ¼nster',_binary '\0\0\0\0\0\0\0›kƒ@¬\â\Ì#ûI@'),(189,'Kiepenkerlviertel,  MÃ¼nster',_binary '\0\0\0\0\0\0\06v‰ê­@]\ÜFxûI@'),(191,'Kinderhausviertel, MÃ¼nster',_binary '\0\0\0\0\0\0\0\åD»\ni@s\×òAÿI@'),(192,'Klarissenkloster,  MÃ¼nster',_binary '\0\0\0\0\0\0\0oê›@³{ò°PûI@'),(195,'KÃ¶ln',_binary '\0\0\0\0\0\0\0‚,`\×@€H¿}xI@'),(197,'St.Konrad-Kirche, MÃ¼nster',_binary '\0\0\0\0\0\0\0÷’\Æhµ@³{ò°PûI@'),(198,'Kreis Frankenstein',_binary '\0\0\0\0\0\0\0_\ïşx¯:!@‚\âÇ˜»\ÖH@'),(200,'Kreuzviertel, MÃ¼nster',_binary '\0\0\0\0\0\0\0\"7\Ã\rø|@±¿\ì<üI@'),(202,'Kroatien',_binary '\0\0\0\0\0\0\0‰\Ò\Ş\à1@\0‘~û:\ÈF@'),(203,'Kronenburg',_binary '\0\0\0\0\0\0\0™»–j4@ÛŠıe÷´H@'),(204,'Kuhviertel, MÃ¼nster',_binary '\0\0\0\0\0\0\0\ë¨j‚¨{@¤ß¾œûI@'),(205,'Å ilutÄ—',_binary '\0\0\0\0\0\0\0 ‰°\á\éu5@]m\Åş²«K@'),(207,'Kurdistan',_binary '\0\0\0\0\0\0\06<½R–G@\Ù_vO\ÖA@'),(209,'Lamberti-Brunnen',_binary '\0\0\0\0\0\0\0\ÜZT„@\Èl«Y7ûI@'),(210,'Lamberti-Kirche, MÃ¼nster',_binary '\0\0\0\0\0\0\0gH\Üc\éƒ@¿¨¤N@ûI@'),(211,'LubaÅ„',_binary '\0\0\0\0\0\0\0ŒJ\ê”.@e\âXI@'),(212,'Waldfriedhof Lauheide',_binary '\0\0\0\0\0\0\0Ï ¡@œ\Ä °r\0J@'),(213,'Leer',_binary '\0\0\0\0\0\0\0¢—Q,·\Ô@ AñcÌJ@'),(214,'Leipzig',_binary '\0\0\0\0\0\0\0VŸ«­Ø¿(@A‚\âÇ˜«I@'),(215,'Lepramuseum MÃ¼nster-Kinderhaus',_binary '\0\0\0\0\0\0\0\Ã*\Ş\È<r@\0\0\0\0\0\0J@'),(217,'Lette',_binary '\0\0\0\0\0\0\0ñ‘˜\Óñ\Ã@ºÏ®óI@'),(218,'Litauen',_binary '\0\0\0\0\0\0\0\0\0\0\0\0À7@\Í\Ì\Ì\ÌÌ¬K@'),(219,'LoerstraÃŸe',_binary '\0\0\0\0\0\0\01¶ä „@û\\m\ÅşúI@'),(220,'Ludgeriplatz',_binary '\0\0\0\0\0\0\07\ZÀ[ @Q\Ú|aúI@'),(221,'LÃ¼dinghausen',_binary '\0\0\0\0\0\0\0HùIµO\Ç@Â†§W\Ê\âI@'),(224,'MÃ¤hren',_binary '\0\0\0\0\0\0\02$^–\â\Ú/@>M·\ÅÀH@'),(225,'Margaretenschule, MÃ¼nster',_binary '\0\0\0\0\0\0\0QfƒL2²@ı‡ô\Û\×ùI@'),(226,'Maria-Ludwig-Stift, DÃ¼lmen',_binary '\0\0\0\0\0\0\0RD†U¼@\Ğ\ÕV\ì/\ëI@'),(227,'MÃ¤dchengymnasium Marienschule, MÃ¼nster',_binary '\0\0\0\0\0\0\0®\Ø_vO~@|a2U0úI@'),(228,'Grundschule Marienschule, Roxel',_binary '\0\0\0\0\0\0\08J^c @Ñ‘\\şCúI@'),(229,'Martin Luther-Kirche, MÃ¼nster',_binary '\0\0\0\0\0\0\0¹ß¡(\ĞG@e\âX÷I@'),(230,'Martinischule, MÃ¼nster',_binary '\0\0\0\0\0\0\0¼³vÛ…†@\İ$•ûI@'),(231,'Mathilde-Anneke-Gesamtschule, MÃ¼nster',_binary '\0\0\0\0\0\0\0\ÌH¿}@|ò°PkúI@'),(232,'Mauritzviertel',_binary '\0\0\0\0\0\0\0’‘³°§@ú\í\ëÀ9ûI@'),(233,'Max-Clemens-Kanal',_binary '\0\0\0\0\0\0\0ë›\á|@eª`TRÿI@'),(234,'Mazedonien',_binary '\0\0\0\0\0\0\0\Ö\Åm4€·5@I.ÿ!ı\ÎD@'),(235,'Mecklenbeck',_binary '\0\0\0\0\0\0\0ˆô\Û×S@,Ôš\æ÷I@'),(236,'Mecklenbecker Str.',_binary '\0\0\0\0\0\0\0Àn\İ\ÍS@œ3¢´÷I@'),(238,'Meckmannweg',_binary '\0\0\0\0\0\0\0òÏ½G@×£p=\n÷I@'),(240,'Menden ',_binary '\0\0\0\0\0\0\0\æ‘?x.@+•\Ô	¸I@'),(241,'Mexiko',_binary '\0\0\0\0\0\0\0\0\0\0\0\0\0YÀ\0\0\0\0\0€6@'),(242,'Milte',_binary '\0\0\0\0\0\0\0™ğKı¼\É@VŸ«­\ØÿI@'),(243,'MÃ¼hlhausen',_binary '\0\0\0\0\0\0\0\ĞD\Øğô\ê$@&äƒÍšI@'),(244,'MÃ¼hlsdorf',_binary '\0\0\0\0\0\0\0…\ëQ¸(@\Ù\Î÷SsI@'),(245,'MÃ¼nsterland',_binary '\0\0\0\0\0\0\0\ÄX œ@[\"#\ÛJ@'),(246,'Museum fÃ¼r Vor- und FrÃ¼hgeschichte, MÃ¼nster',_binary '\0\0\0\0\0\0\0 c\îZB~@\Ş	ŠûI@'),(247,'MÃ¼ssingen',_binary '\0\0\0\0\0\0\0Ú¬ú\\m¥%@’\\şCúmJ@'),(248,'NeiÃŸe',_binary '\0\0\0\0\0\0\0‘~û:p\î-@®G\áz®I@'),(249,'Neuharlingersiel',_binary '\0\0\0\0\0\0\0q\Éq§t\Ğ@\á“©‚\ÙJ@'),(250,'Prudnik',_binary '\0\0\0\0\0\0\0\Üh\0o”1@Å1w-)I@'),(251,'New York',_binary '\0\0\0\0\0\0\0ªñ\ÒMb€RÀú\í\ëÀ9[D@'),(252,'Nienberge',_binary '\0\0\0\0\0\0\0\éÔ•\Ïò<@\Ç):’\ËÿI@'),(253,'Nottuln',_binary '\0\0\0\0\0\0\0\ïr\ßi@^)\Ë÷I@'),(254,'Oberhausen',_binary '\0\0\0\0\0\0\0d*\ã\ßg@\ÎQ\Ú¼I@'),(255,'Oberschlesien',_binary '\0\0\0\0\0\0\0~Œ¹k	\É2@. ø1&I@'),(256,'Konty',_binary '\0\0\0\0\0\0\0\Ó\Ş\à“ù1@¬­\Ø_vGI@'),(257,'Oelde',_binary '\0\0\0\0\0\0\0\í™%jJ @\àœ¥½\éI@'),(258,'Offenbach',_binary '\0\0\0\0\0\0\0ö\î÷ª…!@/\İ$\rI@'),(259,'OrlÃ©ans',_binary '\0\0\0\0\0\0\0\Ò­£ª‰ş?³q¬‹óG@'),(260,'OsnabrÃ¼ck',_binary '\0\0\0\0\0\0\0(›r…w @RI€&\"J@'),(261,'Ostberlin ',_binary '\0\0\0\0\0\0\0_)\Ë\Çú*@=›UŸCJ@'),(262,'Ostbevern',_binary '\0\0\0\0\0\0\0±¢\Ó0\\@¿œ3¢J@'),(263,'Ostdeutschland',_binary '\0\0\0\0\0\0\0\ÇK7‰A (@ƒÀÊ¡\rJ@'),(264,'OstpreuÃŸen',_binary '\0\0\0\0\0\0\0;\çó/O\Û3@\ßN^ø,K@'),(265,'Ottmarsbochholt',_binary '\0\0\0\0\0\0\0œ\Ü\ïP(@ğ§\ÆK7\éI@'),(266,'Oxford-Kaserne, MÃ¼nster',_binary '\0\0\0\0\0\0\0|›ş\ìGJ@\Ğ\ÕV\ì/ûI@'),(267,'PalÃ¤stina',_binary '\0\0\0\0\0\0\033333#A@Ÿ«­\Ø_v?@'),(268,'Papenburg ',_binary '\0\0\0\0\0\0\0\Ó0|DŒ@ˆô\Û×‹J@'),(269,'Gymnasium Paulinum, MÃ¼nster',_binary '\0\0\0\0\0\0\0¤ˆ«x@Â†§W\ÊúI@'),(270,'Peru ',_binary '\0\0\0\0\0\0\0»¸ğ\ÂRÀ&jj\ÙzÀ'),(271,'Petersiliengasse, MÃ¼nster',_binary '\0\0\0\0\0\0\0@ù»wÔˆ@`™DûI@'),(272,'Petrikirche, MÃ¼nster',_binary '\0\0\0\0\0\0\0“5\ê!\Z}@HPüûI@'),(273,'Pfalz',_binary '\0\0\0\0\0\0\0}®¶b\Ù$@O¯”eˆóI@'),(274,'Philippinen',_binary '\0\0\0\0\0\0\0X9´È®^@ª`TR\'€)@'),(275,'Platz der WeiÃŸen Rose, MÃ¼nster',_binary '\0\0\0\0\0\0\0scz\Âo@Dú\í\ëÀùI@'),(276,'Pluggendorf',_binary '\0\0\0\0\0\0\0,g~u@\à- øùI@'),(277,'Polen',_binary '\0\0\0\0\0\0\0üs\×23@\ßO—nJ@'),(278,'Polakowice',_binary '\0\0\0\0\0\0\0q¬‹\Ûh1@\Ô+e\âxI@'),(279,'Pommern',_binary '\0\0\0\0\0\0\02•\âŠ\Ñ\r0@dYNj6üJ@'),(280,'Portugal',_binary '\0\0\0\0\0\0\0t)®*ûÀxz¥,CD@'),(281,'PreuÃŸen',_binary '\0\0\0\0\0\0\0k\Ş+X*@V¨°ıU5J@'),(282,'Prinzipalmarkt',_binary '\0\0\0\0\0\0\0¢\îÚ„@\ŞqŠ\äúI@'),(284,'Promenade, MÃ¼nster',_binary '\0\0\0\0\0\0\0\\Uö]|@²\ï§\ÆûI@'),(285,'Qunduz ',_binary '\0\0\0\0\0\0\0q¬‹\Ûh0Q@HPüsoB@'),(286,'Raphaelsklinik, MÃ¼nster',_binary '\0\0\0\0\0\0\0Iô2Š…@û\Ë\î\É\ÃúI@'),(287,'Rathaus',_binary '\0\0\0\0\0\0\0ø#º\ŞEƒ@\Í\ÂûI@'),(288,'RacibÃ³rz',_binary '\0\0\0\0\0\0\0^)\Ë72@z\Ç):’I@'),(289,'Ratsgymnasium, MÃ¼nster',_binary '\0\0\0\0\0\0\0¯%äƒ@O@a\ÃûI@'),(290,'Recklinghausen',_binary '\0\0\0\0\0\0\0\í\r¾0™\Ê@\ÊTÁ¨¤\ÎI@'),(291,'Reims',_binary '\0\0\0\0\0\0\0B² @Tt$—ÿ H@'),(292,'Rheda-WiedenbrÃ¼ck',_binary '\0\0\0\0\0\0\0›\É7\ÛÜ˜ @Îˆ\Ò\Ş\à\ëI@'),(293,'Rheine',_binary '\0\0\0\0\0\0\0rP\ÂLÛ¿@İµ„|\Ğ#J@'),(294,'Rheinhausen',_binary '\0\0\0\0\0\0\0@¯?\Äj\Ô\Z@õo2³I@'),(295,'Rieselfelder',_binary '\0\0\0\0\0\0\0ŠF\â>½•@k…ªKJ@'),(296,'Rinkerode',_binary '\0\0\0\0\0\0\0\"«[=\'½@xz¥,C\ìI@'),(297,'RitterstraÃŸe, MÃ¼nster',_binary '\0\0\0\0\0\0\0µ¦y‡@l	ù gûI@'),(299,'Rom',_binary '\0\0\0\0\0\0\0z6«>÷(@\'Â†§WòD@'),(300,'Rote Erde, MÃ¼nster',_binary '\0\0\0\0\0\0\0\×ú\"¡-G@X9´\ÈöI@'),(301,'Rothenburg, MÃ¼nster',_binary '\0\0\0\0\0\0\0uq\r€@\ĞD\ØğôúI@'),(302,'Roxel',_binary '\0\0\0\0\0\0\05$\î±ô!@§y\Ç):úI@'),(304,'RumÃ¤nien',_binary '\0\0\0\0\0\0\0St$—¯8@ušşF@'),(305,'Russland',_binary '\0\0\0\0\0\0\0]m\Åş²oX@«\Ï\ÕV\ì+P@'),(306,'Sachsen',_binary '\0\0\0\0\0\0\0˜nƒÀ\ê*@I.ÿ!ıvI@'),(307,'SalzstraÃŸe, MÃ¼nster',_binary '\0\0\0\0\0\0\0ö#EdX…@\Ş	ŠûI@'),(308,'Sassenberg',_binary '\0\0\0\0\0\0\0Û¿²Ò¤ @X9´\ÈvşI@'),(309,'Sauerland',_binary '\0\0\0\0\0\0\0\Ù=yX @\Å °rh¡I@'),(311,'Schapdetten',_binary '\0\0\0\0\0\0\0`·\î\æ©@äƒÍª÷I@'),(312,'Schillergymnasium, MÃ¼nster',_binary '\0\0\0\0\0\0\0–\Ïò<¸{@y\é&1üI@'),(313,'Johann-Conrad-Schlaun-Gymnasium, MÃ¼nster',_binary '\0\0\0\0\0\0\0*\0\Æ3hˆ@%•CûI@'),(314,'Schlesien',_binary '\0\0\0\0\0\0\0—ÿ~ûz&@V-šJ@'),(315,'FÃ¼rstbischÃ¶fliches Schloss MÃ¼nster',_binary '\0\0\0\0\0\0\0Nz\ßø\Ús@z6«>WûI@'),(316,'Schlossgarten MÃ¼nster',_binary '\0\0\0\0\0\0\0\àó\Ã\áq@Añc\Ì]ûI@'),(317,'Schlossplatz MÃ¼nster',_binary '\0\0\0\0\0\0\0Ÿ«­\Ø_v@z6«>WûI@'),(319,'Wilhelm-Hittorf-Gymasium, MÃ¼nster',_binary '\0\0\0\0\0\0\0D†U¼‘y@\ZÀ[ AùI@'),(320,'SchÃ¼rkamp',_binary '\0\0\0\0\0\0\0Œg\Ğ\Ğ?!@¯”eˆcıI@'),(321,'SchÃ¼tzenhofbunker',_binary '\0\0\0\0\0\0\0!%Ì´}@F¶óı\ÔøI@'),(322,'Schwarzer Kamp',_binary '\0\0\0\0\0\0\0uK\äG@Zg´w½öI@'),(325,'Senden',_binary '\0\0\0\0\0\0\0\Õ\çj+ö$@Dioğ…)H@'),(326,'Sendenhorst',_binary '\0\0\0\0\0\0\0W&üR?O@_˜L\ìI@'),(327,'Sentruper Str.',_binary '\0\0\0\0\0\0\0ôı\Ôx\éF@\r\à- øI@'),(328,'Serbien',_binary '\0\0\0\0\0\0\0°\çŒ(4@kšwœ¢F@'),(329,'Servatii-Kirche, MÃ¼nster',_binary '\0\0\0\0\0\0\0\Ï#„‡@B\Ïf\Õ\çúI@'),(330,'Sibirien',_binary '\0\0\0\0\0\0\0ÿœ\Öyõ9[@‚8zO@'),(332,'SonnenstraÃŸe, MÃ¼nster',_binary '\0\0\0\0\0\0\0.\É†@\ìQ¸…ûI@'),(333,'Å»ary',_binary '\0\0\0\0\0\0\0•\Ô	h\"L.@«\Ï\ÕV\ì\ÏI@'),(334,'Sowjetunion',_binary '\0\0\0\0\0\0\0‘UG0¡\êB@/Ì\åXK@'),(335,'Spanien',_binary '\0\0\0\0\0\0\0\ÑWf,ZÀDú\í\ëÀ©C@'),(337,'Sri Lanka',_binary '\0\0\0\0\0\0\0¡ø1\æ®-T@)\İ^\Ò8@'),(338,'Sri-Kamadchi-Ampal-Tempel',_binary '\0\0\0\0\0\0\0¯%äƒ\Í@\Õ\çj+ö\×I@'),(339,'St. Clemens-Kirche, MÃ¼nster',_binary '\0\0\0\0\0\0\0Ÿ\ÇT†@\Ğa¾¼\0ûI@'),(340,'St. Josefs-Kirche, MÃ¼nster',_binary '\0\0\0\0\0\0\0Ş®—¦€@\É\é\ëùšùI@'),(341,'St. Mauritz',_binary '\0\0\0\0\0\0\0:\é}\ãk¯@\Ãdª`TúI@'),(342,'St. Rochus-Hospital, Telgte',_binary '\0\0\0\0\0\0\0v‰ê­\r@[Ó¼\ãıI@'),(343,'St. Sebastian-Kirche, Geistviertel, MÃ¼nster',_binary '\0\0\0\0\0\0\0s¢]…”@T:Xÿ\çøI@'),(344,'St. Stephanus, MÃ¼nster',_binary '\0\0\0\0\0\0\0t)®*ûn@7‰A`\åøI@'),(345,'Stadttheater, MÃ¼nster',_binary '\0\0\0\0\0\0\0£\Ó0|„@$—ÿ~ûI@'),(346,'Wolgograd',_binary '\0\0\0\0\0\0\0}Ğ³YõAF@{ƒ/L¦ZH@'),(347,'Stalowa Wola',_binary '\0\0\0\0\0\0\0\ÆÜµ„|6@\ã6\ZÀ[HI@'),(348,'Stever',_binary '\0\0\0\0\0\0\0ÁÿV²\Ã@£#¹ü‡\äI@'),(349,'Stift Tilbeck, Havixbeck',_binary '\0\0\0\0\0\0\0›kC\Å@\r\à- øI@'),(351,'SÃ¼dafrika',_binary '\0\0\0\0\0\0\0®¶b\Ùı8@\âé•²\Ñ<À'),(352,'SÃ¼damerika',_binary '\0\0\0\0\0\0\0¹ğ€NÀuq\r\05À'),(353,'Sudetenland',_binary '\0\0\0\0\0\0\0-\İ\ØTñ¯*@pğ\ï\î\ÅFI@'),(354,'Synagoge, MÃ¼nster',_binary '\0\0\0\0\0\0\0ğqm¨‡@ äƒ\ÍúI@'),(355,'Syrien',_binary '\0\0\0\0\0\0\06<½R†C@s\×òQA@'),(357,'Tecklenburg',_binary '\0\0\0\0\0\0\01|DL‰D@ø\Âdª`J@'),(358,'Teheran',_binary '\0\0\0\0\0\0\0\ÄB­iŞ±I@\0‘~û:\ØA@'),(359,'Telgte',_binary '\0\0\0\0\0\0\0ÁÿV²#@\Ù\Î÷S\ãıI@'),(360,'ThÃ¼ringen',_binary '\0\0\0\0\0\0\0Ş“‡…Z&@¬ZdsI@'),(361,'Train-Denkmal',_binary '\0\0\0\0\0\0\0©¤N@@•\Ô	húI@'),(362,'TrauttmansdorffstraÃŸe',_binary '\0\0\0\0\0\0\0\Ëø÷@ØsF”öI@'),(363,'Tschechoslowakei',_binary '\0\0\0\0\0\0\0@óÃ­ª¨1@F\ìÊ‚€¦H@'),(364,'Tunesien',_binary '\0\0\0\0\0\0\0”¤k&\ß\Ì\"@ŒJ\ê\ì@@'),(365,'TÃ¼rkei',_binary '\0\0\0\0\0\0\0fffffvA@´Yõ¹\ÚzC@'),(366,'Ãœberwasser-Kirche',_binary '\0\0\0\0\0\0\0’\ËH¿}@l	ù gûI@'),(367,'UdSSR',_binary '\0\0\0\0\0\0\0$(~Œ¹[B@ªñ\ÒMb\ÈK@'),(368,'Ukraine',_binary '\0\0\0\0\0\0\0„\rO¯”E?@<NÑ‘\\¾H@'),(369,'Ungarn',_binary '\0\0\0\0\0\0\0oÅ3@\×4\ï8E—G@'),(370,'USA',_binary '\0\0\0\0\0\0\0•C‹YÀğHP\äC@'),(372,'Venner Moor',_binary '\0\0\0\0\0\0\0 \àbE\r&@.ÿ!ıö\íI@'),(373,'Vietnam',_binary '\0\0\0\0\0\0\0\Ù\Î÷S[@M„\rO¯”*@'),(374,'Villa ten Hompel',_binary '\0\0\0\0\0\0\0ƒL2r–@ùé·¯ûI@'),(375,'Vinzenzwerk Handorf',_binary '\0\0\0\0\0\0\0\ætYLl\Ş@ºk	ù ÿI@'),(376,'Von-Kluck-Bunker',_binary '\0\0\0\0\0\0\0+Ù±ˆw@Îˆ\Ò\Ş\àûI@'),(377,'Vorderasien',_binary '\0\0\0\0\0\0\0ğ…\ÉTÁÀE@\Ïf\Õ\çj@@'),(378,'Trzebina',_binary '\0\0\0\0\0\0\0“:M„]4@\æ®%äƒ¶I@'),(381,'Waldfriedhof Lauheide',_binary '\0\0\0\0\0\0\0Ï ¡@œ\Ä °r\0J@'),(382,'Warburg',_binary '\0\0\0\0\0\0\0\\¬¨Á4L\"@Çº¸¾I@'),(383,'Warendorf',_binary '\0\0\0\0\0\0\0ACÿ÷@F%uúI@'),(384,'WarnemÃ¼nde',_binary '\0\0\0\0\0\0\0aTR\' )(@­ú\\m\ÅK@'),(385,'Wartburg-Grundschule, MÃ¼nster',_binary '\0\0\0\0\0\0\0LOX\âE@xœ¢#¹üI@'),(386,'Werne',_binary '\0\0\0\0\0\0\0´)\"ÃŠ@”‡…Z\Ó\ÔI@'),(387,'WestfalenfleiÃŸ',_binary '\0\0\0\0\0\0\0xz¥,Cœ@?\Æ\ÜõI@'),(388,'WestfÃ¤lische Klinik',_binary '\0\0\0\0\0\0\0Zõ\ïşw@BG\Ùe2ıI@'),(389,'WestfÃ¤lische Provinzial- und Pflegeanstalt, MÃ¼nster-Marienthal',_binary '\0\0\0\0\0\0\0\Ó–x@y@ğùa„ğüI@'),(390,'WWU MÃ¼nster',_binary '\0\0\0\0\0\0\0öÑ©+Ÿe@İµ„|\ĞûI@'),(391,'Wettringen ',_binary '\0\0\0\0\0\0\0q=\n×£P$@\âé•²¡H@'),(392,'Wien',_binary '\0\0\0\0\0\0\0\Âõ(\\_0@B>\èÙ¬\ZH@'),(393,'Wilhelm-Hittorf-Gymnasium, MÃ¼nster',_binary '\0\0\0\0\0\0\0\Òû\Æ×y@·b\Ù=ùI@'),(394,'Wolbeck',_binary '\0\0\0\0\0\0\0›8¹ß¡\è@KY†8\ÖõI@'),(395,'York',_binary '\0\0\0\0\0\0\0®\r\ãüMñ¿û\Ë\î\É\ÃúJ@'),(396,'York-Kaserne, MÃ¼nster',_binary '\0\0\0\0\0\0\0\ï÷ª•©@­i\ŞqŠöI@'),(397,'Yozgat',_binary '\0\0\0\0\0\0\0V-²gA@~Œ¹k	\éC@'),(398,'Zentralfriedhof, MÃ¼nster',_binary '\0\0\0\0\0\0\0«\ç¤÷o@\í\r¾0™úI@'),(399,'Zoo, MÃ¼nster',_binary '\0\0\0\0\0\0\0d¯w\\@a2U0*ùI@'),(400,'Zwinger',_binary '\0\0\0\0\0\0\0\Î\×ƒ\ã†@\']v\ÛûI@');
+INSERT INTO `karte_ort` VALUES (1, 'Aa, MÃ¼nster', Point(7.626623269656655, 51.99311060597233)),
+(2, 'Aachen', Point(6.08386, 50.7764)),
+(3, 'Aasee, MÃ¼nster', Point(7.60407, 51.9499)),
+(4, 'Aaseestadt', Point(7.60435, 51.9426)),
+(5, 'Aegidii-Kirche', Point(7.62405, 51.9588)),
+(6, 'Aegidiimarkt', Point(7.62303, 51.9604)),
+(7, 'Afghanistan ', Point(66.2385, 33.768)),
+(8, 'Afrika', Point(17.7578, 11.5024)),
+(9, 'Ahaus ', Point(7.00488, 52.0762)),
+(10, 'Albachten', Point(7.52731, 51.9219)),
+(11, 'Albrechtsflor (Teremica Mira)', Point(20.4957, 45.9584)),
+(12, 'Alexianer-Krankenhaus, MÃ¼nster', Point(7.56424, 51.8772)),
+(13, 'Allenstein', Point(20.4778, 53.7767)),
+(14, 'Altenberge', Point(7.46699, 52.0468)),
+(15, 'Stara Kamienica', Point(15.5721, 50.9169)),
+(16, 'Altstadt, MÃ¼nster', Point(7.624, 51.9616)),
+(17, 'Alverskirchen', Point(7.80991, 51.9129)),
+(18, 'AmelsbÃ¼ren', Point(7.60598, 51.8834)),
+(19, 'Amerika', Point(-100.446, 39.7837)),
+(20, 'Andalusien', Point(-4.58116, 37.34)),
+(21, 'Anne-Frank-Gesamtschule, MÃ¼nster', Point(7.41601, 51.976)),
+(22, 'Annette-von-Droste-HÃ¼lshoff-Gymnasium, MÃ¼nster', Point(7.62368, 51.958)),
+(23, 'Arnheim', Point(5.91086, 51.9843)),
+(24, 'Ascheberg', Point(10.3423, 54.1483)),
+(25, 'Ã„thiopien', Point(38.6521, 10.2117)),
+(26, 'Auschwitz / Auschwitz-Birkenau', Point(19.1713, 50.0389)),
+(27, 'BÃ¤ckergasse, MÃ¼nster', Point(7.61877, 51.9629)),
+(28, 'Bad Carlsruhe', Point(17.8382, 50.9015)),
+(29, 'Bad Godesberg', Point(7.15366, 50.6851)),
+(30, 'Bad Reichenhall', Point(12.8761, 47.7223)),
+(31, 'Balkangebiet', Point(21.8408, 39.1982)),
+(32, 'Banat, RumÃ¤nien', Point(21.5522, 45.7557)),
+(33, 'BaborÃ³w', Point(17.9859, 50.1564)),
+(34, 'Baumberge ', Point(13.2301, 52.5988)),
+(35, 'Baumgarten', Point(11.8711, 53.8121)),
+(36, 'Beckum', Point(8.04113, 51.7555)),
+(37, 'Beelen', Point(8.11784, 51.93)),
+(38, 'Berg Fidel', Point(7.62223, 51.9249)),
+(39, 'Berlin ', Point(13.3889, 52.517)),
+(40, 'Bielefeld ', Point(8.53101, 52.0191)),
+(41, 'Billerbeck', Point(7.29092, 51.9774)),
+(42, 'Bispinghof, MÃ¼nster', Point(7.62226, 51.961)),
+(43, 'Bocholt', Point(6.61487, 51.8383)),
+(44, 'BoelestraÃŸe, MÃ¼nster', Point(7.69383, 51.9165)),
+(45, 'BÃ¶hmen', Point(13.32564713097245, 50.17678133246038)),
+(46, 'Borghorst', Point(9.97544, 54.4373)),
+(47, 'BÃ¶sensell', Point(7.47785, 51.9176)),
+(48, 'Bosnien', Point(17.5961, 44.3053)),
+(49, 'Bosnien-Herzegowina', Point(17.5961, 44.3053)),
+(50, 'Botanischer Garten, MÃ¼nster', Point(7.60962, 51.9639)),
+(51, 'Brasilien', Point(-53.2, -10.3333)),
+(52, 'Wroclaw', Point(16.9782, 51.1263)),
+(53, 'Breslau', Point(16.9782, 51.1263)),
+(54, 'BrÃ¼ningheide', Point(7.59257, 51.9972)),
+(55, 'Bobolice', Point(16.5885, 53.9547)),
+(56, 'Buddenturm', Point(7.62309, 51.9663)),
+(57, 'Buldernweg', Point(7.6008, 51.9264)),
+(58, 'Burg Davensberg', Point(7.59228, 51.8203)),
+(59, 'CafÃ© Grotemeyer, MÃ¼nster', Point(7.63255, 51.9611)),
+(60, 'CafÃ© Kleimann, MÃ¼nster', Point(7.66366, 51.9908)),
+(61, 'CafÃ© Schucan, MÃ¼nster', Point(7.627635, 51.96157)),
+(62, 'Cavete, MÃ¼nster', Point(7.62167, 51.9659)),
+(63, 'Chemnitz', Point(12.9253, 50.8323)),
+(64, 'China ', Point(105.0, 35.0001)),
+(65, 'Cincinnati', Point(-84.5125, 39.1015)),
+(66, 'Coerde', Point(7.64697, 51.9942)),
+(67, 'Coesfeld', Point(7.16911, 51.9459)),
+(68, 'Cottbus', Point(14.3357, 51.7567)),
+(69, 'Dachau', Point(11.4354, 48.2592)),
+(70, 'DÃ¤nemark', Point(10.3333, 55.6702)),
+(71, 'GdaÅ„sk', Point(18.6282, 54.3614)),
+(72, 'Davensberg', Point(7.59186, 51.8198)),
+(73, 'DDR', Point(12.063, 52.1065)),
+(74, 'Diakonissenhaus', Point(7.625682931487892, 51.972143512148)),
+(75, 'St.-Paulus-Dom, MÃ¼nster', Point(7.62581, 51.9631)),
+(76, 'Domaslaw', Point(16.9562, 51.0109)),
+(77, 'Dorsten', Point(6.96474, 51.6604)),
+(78, 'Dortmund', Point(7.46528, 51.5142)),
+(79, 'Dortmund-Ems-Kanal', Point(7.53311, 52.285)),
+(80, 'DrachterstraÃŸe', Point(7.62287, 51.9247)),
+(81, 'Dreizehnerdenkmal', Point(7.61645, 51.9581)),
+(82, 'Drensteinfurt', Point(7.74181, 51.7973)),
+(83, 'Dresden', Point(13.7381, 51.0493)),
+(84, ' OÅ›no Lubuskie', Point(14.8682, 52.4551)),
+(85, 'DÃ¼esbergweg', Point(7.6141, 51.9313)),
+(86, 'DÃ¼lmen', Point(7.27914, 51.8284)),
+(87, 'DÃ¼sseldorf', Point(6.77631, 51.2254)),
+(88, 'Cheb', Point(12.3704, 50.0793)),
+(89, 'Eichsfeld', Point(9.67165, 50.5561)),
+(90, 'Elsterwerda', Point(13.5208, 51.4617)),
+(91, 'Ems', Point(7.33947, 52.4268)),
+(92, 'Emsdetten', Point(7.53018, 52.1747)),
+(93, 'Emsland ', Point(7.36613, 52.6986)),
+(94, 'Epe', Point(5.96319, 52.327)),
+(95, 'ErlÃ¶serkirche, MÃ¼nster', Point(7.63551, 51.9606)),
+(96, 'Fachklinik Hornheide', Point(7.70938, 52.013)),
+(97, 'Finanzamt, MÃ¼nster', Point(7.63419, 51.9815)),
+(98, 'FinkenstraÃŸe, MÃ¼nster', Point(7.61872, 51.9725)),
+(99, 'Flughafen MÃ¼nster-OsnabrÃ¼ck', Point(7.68296, 52.1342)),
+(100, 'Flugplatz Loddenheide', Point(7.655205, 51.934403)),
+(101, 'FrauenstraÃŸe 24', Point(7.618536407258839, 51.96336711663421)),
+(102, 'Freckenhorst', Point(7.95847, 51.9098)),
+(103, 'Freiherr-vom-Stein-Gymnasium, MÃ¼nster', Point(7.56862, 51.9618)),
+(104, 'FÃ¼chtorf', Point(8.03209, 52.0491)),
+(105, 'Galizien', Point(24.0325, 49.8395)),
+(106, 'Gasselstiege', Point(7.60624, 51.9772)),
+(107, 'GrudziÄ…dz', Point(18.7619, 53.4725)),
+(108, 'Geelong, Australien', Point(144.36, -38.1493)),
+(109, 'Geistschule, MÃ¼nster', Point(7.62184, 51.9392)),
+(110, 'Geistviertel, MÃ¼nster', Point(7.61837, 51.9395)),
+(111, 'Geschwister-Scholl-Gymnasium, MÃ¼nster', Point(7.60445, 51.9986)),
+(112, 'Gievenbeck', Point(7.57083, 51.9724)),
+(113, 'Glandorf', Point(8.00336, 52.0816)),
+(114, 'Gliwice', Point(18.6623, 50.3011)),
+(115, 'Gnadenkirche, MÃ¼nster', Point(7.61662, 51.9327)),
+(116, 'Schloss Grafeneck', Point(9.429629599872618, 48.39257226336932)),
+(117, 'GorzanÃ³w', Point(16.6368, 50.3523)),
+(118, 'GrudziÄ…dz', Point(18.7619, 53.4725)),
+(119, 'Gremmendorf', Point(7.67075, 51.9266)),
+(120, 'Greven', Point(7.61203, 52.0929)),
+(121, 'Grevener StraÃŸe', Point(12.0194, 53.4642)),
+(122, 'Griechenland ', Point(21.9877, 38.9954)),
+(123, 'Gronau', Point(7.02363, 52.2118)),
+(124, 'Grundschule Berg Fidel', Point(7.61547, 51.9248)),
+(125, 'GrÃ¼ner Grund, MÃ¼nster', Point(7.61508, 51.9418)),
+(126, 'Gut Kinderhaus, MÃ¼nster', Point(7.61051, 52.0053)),
+(127, 'Gymnasium St. Mauritz, MÃ¼nster', Point(7.68813, 51.9838)),
+(128, 'Innenhafen, MÃ¼nster', Point(7.64385, 51.9514)),
+(129, 'HÃ¤ger, MÃ¼nster', Point(7.56307, 52.0243)),
+(130, 'Hamm', Point(7.8152, 51.6804)),
+(131, 'Hammer StraÃŸe, MÃ¼nster', Point(7.62763, 51.9295)),
+(132, 'Handorf, MÃ¼nster', Point(7.69982, 51.9882)),
+(133, 'Seniorentreff Hansahof, MÃ¼nster', Point(7.62326, 51.9602)),
+(134, 'Hasenbusch, MÃ¼nster', Point(7.59092, 51.9949)),
+(135, 'Hauptbahnhof, MÃ¼nster', Point(7.63331, 51.9563)),
+(136, 'Alexianer-Krankenhaus, MÃ¼nster', Point(7.56462, 51.87701)),
+(137, 'KriegsgrÃ¤berstÃ¤tte Haus Spital, MÃ¼nster', Point(7.56058, 51.9825)),
+(138, 'Haus vom guten Hirten, MÃ¼nster', Point(7.65724, 51.962)),
+(139, 'Havixbeck', Point(7.41357, 51.9751)),
+(140, 'Hel', Point(18.8043834572758, 54.61385597533375)),
+(141, 'JÄ™drychowice', Point(17.8297, 50.0971)),
+(142, 'Herne', Point(7.21999, 51.538)),
+(143, 'Herz-Jesu-Viertel,  MÃ¼nster', Point(7.65306, 51.957)),
+(144, 'Hiltrup', Point(7.65141, 51.8946)),
+(145, 'HornstraÃŸe,  MÃ¼nster', Point(7.62323, 51.9513)),
+(146, 'Horstmar ', Point(7.30344, 52.0811)),
+(147, 'HÃ¶velhof', Point(8.65883, 51.8208)),
+(148, 'Hoyerswerda ', Point(14.2501, 51.4333)),
+(149, 'IbbenbÃ¼ren', Point(7.71514, 52.2775)),
+(150, 'Ignatiuskirche,  MÃ¼nster', Point(7.62451, 51.95733)),
+(151, 'Gymnasium St. Mauritz', Point(7.68813, 51.9838)),
+(152, 'Irak', Point(44.175, 33.0956)),
+(153, 'Iran', Point(54.5644, 32.6475)),
+(154, 'Iserlohn', Point(7.69997, 51.3747)),
+(155, 'Italien', Point(12.6743, 42.6384)),
+(156, 'Japan', Point(138.1339524729496, 35.9748790927954)),
+(157, 'Johannes-Hospiz,  MÃ¼nster', Point(7.6481, 51.9604)),
+(158, 'Josefsschule,  MÃ¼nster', Point(7.62425, 51.95111)),
+(159, 'Josefsviertel,  MÃ¼nster', Point(7.61305, 51.9531)),
+(160, 'JÃ¼defelderstraÃŸe', Point(7.62178, 51.9661)),
+(161, 'JÃ¼discher Friedhof, Drensteinfurt', Point(7.75029, 51.7921)),
+(162, 'Jugoslawien', Point(18.1274, 44.4808)),
+(163, 'Juist', Point(6.99561, 53.6784)),
+(164, 'Kambodscha', Point(104.869, 13.5066)),
+(165, 'Kanada', Point(-107.992, 61.0667)),
+(166, 'Kappenberger-Damm-Bunker', Point(7.60865, 51.93202)),
+(167, 'Kappenberger-Damm-Schule,  MÃ¼nster', Point(7.6125, 51.93319)),
+(168, 'Kapuzinerkloster,  MÃ¼nster', Point(7.6065, 51.9706)),
+(169, 'Kasachstan', Point(65.2093, 47.2286)),
+(170, 'Katharinenkloster,  MÃ¼nster', Point(7.6136, 51.989)),
+(171, 'Kattenvenne', Point(7.85694, 52.1148)),
+(172, 'Kaufhaus Hertz,  MÃ¼nster', Point(7.62834, 51.96203)),
+(173, 'Kiepenkerlviertel,  MÃ¼nster', Point(7.62664, 51.9646)),
+(174, 'Kinderhausviertel, MÃ¼nster', Point(7.60258, 51.9942)),
+(175, 'Klarissenkloster,  MÃ¼nster', Point(7.62657, 51.9634)),
+(176, 'KÃ¶ln', Point(6.95997, 50.9384)),
+(177, 'St.Konrad-Kirche, MÃ¼nster', Point(7.67687, 51.9634)),
+(178, 'Kreis Frankenstein', Point(8.61462, 49.6776)),
+(179, 'Kreuzviertel, MÃ¼nster', Point(7.62204, 51.9706)),
+(180, 'Kroatien', Point(17.0119, 45.5643)),
+(181, 'Kronenburg', Point(20.4143, 49.4138)),
+(182, 'Kuhviertel, MÃ¼nster', Point(7.62076, 51.9657)),
+(183, 'Å ilutÄ—', Point(21.4606, 55.3414)),
+(184, 'Kurdistan', Point(47.0124, 35.6728)),
+(185, 'Lamberti-Brunnen', Point(7.628979986191293, 51.9626266562496)),
+(186, 'Lamberti-Kirche, MÃ¼nster', Point(7.628819999999997, 51.96289999999998)),
+(187, 'LubaÅ„', Point(15.2891, 51.1179)),
+(188, 'Waldfriedhof Lauheide', Point(7.75244, 52.0035)),
+(189, 'Leer', Point(7.45773, 53.2328)),
+(190, 'Leipzig', Point(12.3747, 51.3406)),
+(191, 'Lepramuseum MÃ¼nster-Kinderhaus', Point(7.61156, 52.0)),
+(192, 'Lette', Point(7.191352182566775, 51.8985324719974)),
+(193, 'Litauen', Point(23.75, 55.35)),
+(194, 'LoerstraÃŸe', Point(7.62952, 51.9609)),
+(195, 'Ludgeriplatz', Point(7.6261, 51.9561)),
+(196, 'LÃ¼dinghausen', Point(7.44464, 51.7718)),
+(197, 'MÃ¤hren', Point(15.92750997447192, 49.50603381430527)),
+(198, 'Margaretenschule, MÃ¼nster', Point(7.67402, 51.9519)),
+(199, 'Maria-Ludwig-Stift, DÃ¼lmen', Point(7.26732, 51.8374)),
+(200, 'MÃ¤dchengymnasium Marienschule, MÃ¼nster', Point(7.62335, 51.9546)),
+(201, 'Grundschule Marienschule, Roxel', Point(7.53163, 51.9552)),
+(202, 'Martin Luther-Kirche, MÃ¼nster', Point(7.57013, 51.9304)),
+(203, 'Martinischule, MÃ¼nster', Point(7.63137, 51.9655)),
+(204, 'Mathilde-Anneke-Gesamtschule, MÃ¼nster', Point(7.6538, 51.9564)),
+(205, 'Mauritzviertel', Point(7.65396, 51.9627)),
+(206, 'Max-Clemens-Kanal', Point(7.62112, 51.9947)),
+(207, 'Mazedonien', Point(21.7168, 41.6171)),
+(208, 'Mecklenbeck', Point(7.58155, 51.9306)),
+(209, 'Mecklenbecker Str.', Point(7.58184, 51.9352)),
+(210, 'Meckmannweg', Point(7.57006, 51.93)),
+(211, 'Menden ', Point(7.79538, 51.4378)),
+(212, 'Mexiko', Point(-100.0, 22.5)),
+(213, 'Milte', Point(7.94701, 51.9988)),
+(214, 'MÃ¼hlhausen', Point(10.4589, 51.2094)),
+(215, 'MÃ¼hlsdorf', Point(12.01, 50.901)),
+(216, 'MÃ¼nsterland', Point(7.40295542427522, 52.01449729648149)),
+(217, 'Museum fÃ¼r Vor- und FrÃ¼hgeschichte, MÃ¼nster', Point(7.6233, 51.9619)),
+(218, 'MÃ¼ssingen', Point(10.8231, 52.8592)),
+(219, 'NeiÃŸe', Point(14.9657, 51.36)),
+(220, 'Neuharlingersiel', Point(7.70357, 53.6993)),
+(221, 'Prudnik', Point(17.5801, 50.3217)),
+(222, 'New York', Point(-74.006, 40.7127)),
+(223, 'Nienberge', Point(7.55952, 51.9984)),
+(224, 'Nottuln', Point(7.35339, 51.9302)),
+(225, 'Oberhausen', Point(6.85144, 51.4696)),
+(226, 'Oberschlesien', Point(18.7853, 50.2984)),
+(227, 'Konty', Point(17.9749, 50.5583)),
+(228, 'Oelde', Point(8.14534, 51.8261)),
+(229, 'Offenbach', Point(8.76107, 50.1055)),
+(230, 'OrlÃ©ans', Point(1.90861, 47.9027)),
+(231, 'OsnabrÃ¼ck', Point(8.04974, 52.2668)),
+(232, 'Ostberlin ', Point(13.4898, 52.5283)),
+(233, 'Ostbevern', Point(7.84003, 52.0362)),
+(234, 'Ostdeutschland', Point(12.063, 52.1065)),
+(235, 'OstpreuÃŸen', Point(19.85667705254239, 54.35132960142595)),
+(236, 'Ottmarsbochholt', Point(7.53914, 51.822)),
+(237, 'Oxford-Kaserne, MÃ¼nster', Point(7.57254, 51.9624)),
+(238, 'PalÃ¤stina', Point(34.275, 31.4624)),
+(239, 'Papenburg ', Point(7.38698, 53.0899)),
+(240, 'Gymnasium Paulinum, MÃ¼nster', Point(7.61784, 51.9593)),
+(241, 'Peru ', Point(-75.0459, -6.86997)),
+(242, 'Petersiliengasse, MÃ¼nster', Point(7.633623, 51.963031)),
+(243, 'Petrikirche, MÃ¼nster', Point(7.62217, 51.9617)),
+(244, 'Pfalz', Point(10.4248, 51.9026)),
+(245, 'Philippinen', Point(122.731, 12.7503)),
+(246, 'Platz der WeiÃŸen Rose, MÃ¼nster', Point(7.60847, 51.9512)),
+(247, 'Pluggendorf', Point(7.61474, 51.9529)),
+(248, 'Polen', Point(19.1956, 52.019)),
+(249, 'Polakowice', Point(17.0641, 50.9444)),
+(250, 'Pommern', Point(16.05397861511046, 53.97041062188762)),
+(251, 'Portugal', Point(-7.88963, 40.0333)),
+(252, 'PreuÃŸen', Point(13.01434456911152, 52.41668673635347)),
+(253, 'Prinzipalmarkt', Point(7.62974, 51.9601)),
+(254, 'Promenade, MÃ¼nster', Point(7.62116, 51.967)),
+(255, 'Qunduz ', Point(68.7564, 36.8707)),
+(256, 'Raphaelsklinik, MÃ¼nster', Point(7.63041, 51.9591)),
+(257, 'Rathaus', Point(7.628196220503916, 51.96158184006854)),
+(258, 'RacibÃ³rz', Point(18.2151, 50.0904)),
+(259, 'Ratsgymnasium, MÃ¼nster', Point(7.6383, 51.9669)),
+(260, 'Recklinghausen', Point(7.19785, 51.6144)),
+(261, 'Reims', Point(4.03193, 49.2578)),
+(262, 'Rheda-WiedenbrÃ¼ck', Point(8.29856, 51.8428)),
+(263, 'Rheine', Point(7.43736, 52.2798)),
+(264, 'Rheinhausen', Point(6.70743853224468, 51.40277376139412)),
+(265, 'Rieselfelder', Point(7.646229727326167, 52.03355914588504)),
+(266, 'Rinkerode', Point(7.68472, 51.8458)),
+(267, 'RitterstraÃŸe, MÃ¼nster', Point(7.6323, 51.9641)),
+(268, 'Rom', Point(12.4829, 41.8933)),
+(269, 'Rote Erde, MÃ¼nster', Point(7.56951, 51.928)),
+(270, 'Rothenburg, MÃ¼nster', Point(7.62505, 51.9606)),
+(271, 'Roxel', Point(7.53316, 51.9549)),
+(272, 'RumÃ¤nien', Point(24.6859, 45.9852)),
+(273, 'Russland', Point(97.7453, 64.6863)),
+(274, 'Sachsen', Point(13.4585, 50.9296)),
+(275, 'SalzstraÃŸe, MÃ¼nster', Point(7.63022, 51.9619)),
+(276, 'Sassenberg', Point(8.04032, 51.988)),
+(277, 'Sauerland', Point(8.04755, 51.261)),
+(278, 'Schapdetten', Point(7.41592, 51.9349)),
+(279, 'Schillergymnasium, MÃ¼nster', Point(7.62082, 51.969)),
+(280, 'Johann-Conrad-Schlaun-Gymnasium, MÃ¼nster', Point(7.63321, 51.963)),
+(281, 'Schlesien', Point(11.2402, 53.2045)),
+(282, 'FÃ¼rstbischÃ¶fliches Schloss MÃ¼nster', Point(7.61314, 51.9636)),
+(283, 'Schlossgarten MÃ¼nster', Point(7.61121, 51.9638)),
+(284, 'Schlossplatz MÃ¼nster', Point(7.6156, 51.9636)),
+(285, 'Wilhelm-Hittorf-Gymasium, MÃ¼nster', Point(7.61872, 51.9473)),
+(286, 'SchÃ¼rkamp', Point(7.53247, 51.9796)),
+(287, 'SchÃ¼tzenhofbunker', Point(7.62276, 51.944)),
+(288, 'Schwarzer Kamp', Point(7.570206812877826, 51.92765709217811)),
+(289, 'Senden', Point(10.0468, 48.3244)),
+(290, 'Sendenhorst', Point(7.82739, 51.8444)),
+(291, 'Sentruper Str.', Point(7.56925, 51.9424)),
+(292, 'Serbien', Point(20.5514, 44.1534)),
+(293, 'Servatii-Kirche, MÃ¼nster', Point(7.63234, 51.9602)),
+(294, 'Sibirien', Point(108.9056076618035, 62.95346358048211)),
+(295, 'SonnenstraÃŸe, MÃ¼nster', Point(7.63087, 51.965)),
+(296, 'Å»ary', Point(15.1487, 51.6244)),
+(297, 'Sowjetunion', Point(37.83304408534162, 54.69450578660886)),
+(298, 'Spanien', Point(-4.83806, 39.3262)),
+(299, 'Sri Lanka', Point(80.7138, 7.55549)),
+(300, 'Sri-Kamadchi-Ampal-Tempel', Point(7.9508, 51.6872)),
+(301, 'St. Clemens-Kirche, MÃ¼nster', Point(7.63118, 51.96096)),
+(302, 'St. Josefs-Kirche, MÃ¼nster', Point(7.625033, 51.950042)),
+(303, 'St. Mauritz', Point(7.67131, 51.9557)),
+(304, 'St. Rochus-Hospital, Telgte', Point(7.76319, 51.9772)),
+(305, 'St. Sebastian-Kirche, Geistviertel, MÃ¼nster', Point(7.62459, 51.94458)),
+(306, 'St. Stephanus, MÃ¼nster', Point(7.60838, 51.9445)),
+(307, 'Stadttheater, MÃ¼nster', Point(7.62938, 51.9648)),
+(308, 'Wolgograd', Point(44.5153, 48.7082)),
+(309, 'Stalowa Wola', Point(22.0644, 50.5653)),
+(310, 'Stever', Point(7.44111, 51.7854)),
+(311, 'Stift Tilbeck, Havixbeck', Point(7.44264, 51.9424)),
+(312, 'SÃ¼dafrika', Point(24.9916, -28.8166)),
+(313, 'SÃ¼damerika', Point(-61.0007, -21.0002)),
+(314, 'Sudetenland', Point(13.3436380877234, 50.55291544643194)),
+(315, 'Synagoge, MÃ¼nster', Point(7.631929999999997, 51.95939999999996)),
+(316, 'Syrien', Point(39.0494, 34.6402)),
+(317, 'Tecklenburg', Point(7.81693, 52.2217)),
+(318, 'Teheran', Point(51.3896, 35.6893)),
+(319, 'Telgte', Point(7.78486, 51.9835)),
+(320, 'ThÃ¼ringen', Point(11.0378, 50.9015)),
+(321, 'Train-Denkmal', Point(7.62605, 51.9563)),
+(322, 'TrauttmansdorffstraÃŸe', Point(7.63876, 51.9264)),
+(323, 'Tschechoslowakei', Point(17.65885435136738, 49.300796841701)),
+(324, 'Tunesien', Point(9.40014, 33.8439)),
+(325, 'TÃ¼rkei', Point(34.925, 38.9598)),
+(326, 'Ãœberwasser-Kirche', Point(7.6228, 51.9641)),
+(327, 'UdSSR', Point(36.7166, 55.5655)),
+(328, 'Ukraine', Point(31.2718, 49.4872)),
+(329, 'Ungarn', Point(19.5061, 47.1818)),
+(330, 'USA', Point(-100.446, 39.7837)),
+(331, 'Venner Moor', Point(7.53716, 51.8591)),
+(332, 'Vietnam', Point(108.427, 13.2904)),
+(333, 'Villa ten Hompel', Point(7.64657, 51.9663)),
+(334, 'Vinzenzwerk Handorf', Point(7.71721, 51.9971)),
+(335, 'Von-Kluck-Bunker', Point(7.61673, 51.9678)),
+(336, 'Vorderasien', Point(43.5059, 32.0267)),
+(337, 'Trzebina', Point(20.3653, 51.4259)),
+(338, 'Waldfriedhof Lauheide', Point(7.75244, 52.0035)),
+(339, 'Warburg', Point(9.14884, 51.4887)),
+(340, 'Warendorf', Point(7.99123, 51.9532)),
+(341, 'WarnemÃ¼nde', Point(12.0813, 54.1779)),
+(342, 'Wartburg-Grundschule, MÃ¼nster', Point(7.56739, 51.9744)),
+(343, 'Werne', Point(7.63551, 51.6627)),
+(344, 'WestfalenfleiÃŸ', Point(7.6526, 51.9208)),
+(345, 'WestfÃ¤lische Klinik', Point(7.617183446264349, 51.97810052022261)),
+(346, 'WestfÃ¤lische Provinzial- und Pflegeanstalt, MÃ¼nster-Marienthal', Point(7.61841, 51.97609)),
+(347, 'WWU MÃ¼nster', Point(7.59924, 51.9673)),
+(348, 'Wettringen ', Point(10.1575, 49.2582)),
+(349, 'Wien', Point(16.3725, 48.2084)),
+(350, 'Wilhelm-Hittorf-Gymnasium, MÃ¼nster', Point(7.61877, 51.9472)),
+(351, 'Wolbeck', Point(7.72718, 51.9206)),
+(352, 'York', Point(-1.08154, 53.9591)),
+(353, 'York-Kaserne, MÃ¼nster', Point(7.66561, 51.9261)),
+(354, 'Yozgat', Point(34.8095, 39.8206)),
+(355, 'Zentralfriedhof, MÃ¼nster', Point(7.60894, 51.9578)),
+(356, 'Zoo, MÃ¼nster', Point(7.59033, 51.9466)),
+(357, 'Zwinger', Point(7.631727264777465, 51.96762328891264));
 /*!40000 ALTER TABLE `karte_ort` ENABLE KEYS */;
 UNLOCK TABLES;
 
