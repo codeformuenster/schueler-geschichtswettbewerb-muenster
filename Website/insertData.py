@@ -3,6 +3,7 @@ from django.contrib.gis.geos import Point
 from django.contrib.gis.db.models import PointField
 import pandas as pd
 import math
+import struct
 
 db = mysql.connector.connect(
     host="localhost",
@@ -18,13 +19,16 @@ mycursor = db.cursor()
 """read the file from which the data is to be entered"""
 #data = pd.read_excel('path.xlsx').to_numpy()
 
-exportLocations()
 
 def exportLocations():
-    Q = 'SELECT * FROM karte_ort'
+    Q = 'SELECT ortbezeichnung, ST_X(location), ST_Y(location) FROM karte_ort'
     mycursor.execute(Q)
+    x = 1
     for i in mycursor:
-        print(i)
+        print("(" + str(x) + ", \'" + str(i[0]) + "\', Point(" + str(i[1]) + ", " + str(i[2]) + ")" + "), ")
+        x += 1
+
+exportLocations()
 
 def enterSubmission(id, title, regest, signatur, einzel_gruppe, umfang, zeitraumVon, zeitraumBis, tutor):
     """Enter submissions with a tutor"""
