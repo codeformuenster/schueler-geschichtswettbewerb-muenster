@@ -104,7 +104,7 @@ class Institution(models.Model):
 
 class Tutor(models.Model):
     """A class that represents the model for tutors, containing a code, id, first name and surname as attributes"""
-    code = models.CharField(max_length=255)
+    code = models.CharField(max_length=255, null=True)
     vorname = models.CharField(max_length=255, null=True, blank=True)
     nachname = models.CharField(max_length=255, null=True, blank=True)
 
