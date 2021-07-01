@@ -55,7 +55,7 @@ class SchuleSchulart(models.Model):
 
 class Wettbewerb(models.Model):
     """A class that represents the model for competitions, containing a id, thema,kurztitel, jahr and zusammenfassung attribute"""
-    thema = models.TextField()
+    thema = models.TextField(null=True)
     kurztitel = models.TextField(null=True, blank=True)
     jahr = models.IntegerField()
     jahrBis = models.IntegerField(null=True)
