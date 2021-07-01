@@ -55,7 +55,7 @@ class SchuleSchulart(models.Model):
 
 class Wettbewerb(models.Model):
     """A class that represents the model for competitions, containing a id, thema,kurztitel, jahr and zusammenfassung attribute"""
-    thema = models.TextField(null=True, blank=True)
+    thema = models.TextField()
     kurztitel = models.TextField(null=True, blank=True)
     jahr = models.IntegerField()
     jahrBis = models.IntegerField(null=True)
@@ -104,7 +104,7 @@ class Institution(models.Model):
 
 class Tutor(models.Model):
     """A class that represents the model for tutors, containing a code, id, first name and surname as attributes"""
-    code = models.CharField(max_length=255, null=True, blank=True)
+    code = models.CharField(max_length=255)
     vorname = models.CharField(max_length=255, null=True, blank=True)
     nachname = models.CharField(max_length=255, null=True, blank=True)
 
@@ -142,7 +142,7 @@ class Beitragsart(models.Model):
 
 class Beitrag(models.Model):
     """A class that represents the model for submissions, containing a titel, regest, signatur, einzel_gruppe, umfang, zeitraumVon, zeitraumBis and tutor and an id as attributes"""
-    titel = models.CharField(max_length=1024, null=True, blank=True)
+    titel = models.CharField(max_length=1024)
     regest = models.TextField(null=True, blank=True)
     signatur = models.CharField(max_length=255, null=True, blank=True)
     einzel_gruppe = models.BooleanField(default=True, blank=True, verbose_name="Einzelarbeit")
@@ -162,12 +162,16 @@ class Beitrag(models.Model):
 
     def __str__(self):
         """returns the titel and id of the model as string"""
-        return self.titel + '  \n Signatur: ' + self.signatur
+        if self.signatur is None:
+            return self.titel + '  \n Signatur: '
+        else:
+            return self.titel + '  \n Signatur: ' + self.signatur
+
 
 class Dokument(models.Model):
     """A class that represents the model for documents, containing a document, submission, document type an id as attributes"""
     dokument = models.FileField(null=True, blank=True)
-    beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE, null=True, blank=True)
+    beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE)
     typ = models.ForeignKey(DokumentTyp, on_delete=models.CASCADE)
     class Meta:
         verbose_name_plural = "Dokumente"
@@ -187,8 +191,8 @@ class BeitragWettbewerb(models.Model):
 
 class Autorin(models.Model):
     """A class that represents the model for authors, containing a first name, surname, submission and id attribute"""
-    vorname = models.CharField(max_length=255, null=True, blank=True)
-    nachname = models.CharField(max_length=255, null=True, blank=True)
+    vorname = models.CharField(max_length=255)
+    nachname = models.CharField(max_length=255)
     schule = models.ManyToManyField(SchuleSchulart, through='AutorinSchule', blank=True)
     beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE)
 
