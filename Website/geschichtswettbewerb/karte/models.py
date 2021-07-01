@@ -142,7 +142,7 @@ class Beitragsart(models.Model):
 
 class Beitrag(models.Model):
     """A class that represents the model for submissions, containing a titel, regest, signatur, einzel_gruppe, umfang, zeitraumVon, zeitraumBis and tutor and an id as attributes"""
-    titel = models.CharField(max_length=1024)
+    titel = models.CharField(max_length=1024, null=True)
     regest = models.TextField(null=True, blank=True)
     signatur = models.CharField(max_length=255, null=True, blank=True)
     einzel_gruppe = models.BooleanField(default=True, blank=True, verbose_name="Einzelarbeit")
@@ -252,8 +252,8 @@ class Ort(models.Model):
     ortbezeichnung = models.CharField(max_length=255)
     location = PointField(geography=True, default=Point(51.960667, 7.626135))
     beitraege = models.ManyToManyField(Beitrag, blank=True)
-    histName = models.ManyToManyField(HistorischerOrt, null=True, blank=True)
-    histRegion = models.ManyToManyField(HistorischeRegion, null=True, blank=True)
+    histName = models.ManyToManyField(HistorischerOrt, blank=True)
+    histRegion = models.ManyToManyField(HistorischeRegion, blank=True)
 
     class Meta:
         verbose_name_plural = "Orte"
