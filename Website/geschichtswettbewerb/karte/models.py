@@ -55,11 +55,11 @@ class SchuleSchulart(models.Model):
 
 class Wettbewerb(models.Model):
     """A class that represents the model for competitions, containing a id, thema,kurztitel, jahr and zusammenfassung attribute"""
-    thema = models.TextField()
-    kurztitel = models.TextField()
+    thema = models.TextField(blank=True)
+    kurztitel = models.TextField(blank=True)
     jahr = models.IntegerField()
     jahrBis = models.IntegerField(null=True)
-    zusammenfassung = models.TextField(default = 'Zusammenfassung')
+    zusammenfassung = models.TextField(default = 'Zusammenfassung', blank=True)
 
     class Meta:
         verbose_name_plural = "Wettbewerbe"
@@ -104,9 +104,9 @@ class Institution(models.Model):
 
 class Tutor(models.Model):
     """A class that represents the model for tutors, containing a code, id, first name and surname as attributes"""
-    code = models.CharField(max_length=255)
-    vorname = models.CharField(max_length=255, null=True)
-    nachname = models.CharField(max_length=255, null=True)
+    code = models.CharField(max_length=255, null=True, blank=True)
+    vorname = models.CharField(max_length=255, null=True, blank=True)
+    nachname = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         verbose_name = "Tutorin"
@@ -119,7 +119,7 @@ class Tutor(models.Model):
 class Persoenlichkeit(models.Model):
     """A class that represents the model for personalities, containing a name, id and gnd as attributes"""
     name = models.CharField(max_length=255)
-    gnd = models.CharField(max_length=255, null=True)
+    gnd = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         verbose_name = "Persönlichkeit"
@@ -142,14 +142,14 @@ class Beitragsart(models.Model):
 
 class Beitrag(models.Model):
     """A class that represents the model for submissions, containing a titel, regest, signatur, einzel_gruppe, umfang, zeitraumVon, zeitraumBis and tutor and an id as attributes"""
-    titel = models.CharField(max_length=1024)
-    regest = models.TextField()
-    signatur = models.CharField(max_length=255)
-    einzel_gruppe = models.BooleanField(default=True)
-    umfang = models.IntegerField()
-    zeitraumVon = models.IntegerField(null=True)
-    zeitraumBis = models.IntegerField(null=True)
-    tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, blank=True)
+    titel = models.CharField(max_length=1024, null=True, blank=True)
+    regest = models.TextField(null=True, blank=True)
+    signatur = models.CharField(max_length=255, null=True, blank=True)
+    einzel_gruppe = models.BooleanField(default=True, blank=True, verbose_name="Einzelarbeit")
+    umfang = models.IntegerField(null=True, blank=True)
+    zeitraumVon = models.IntegerField(null=True, blank=True)
+    zeitraumBis = models.IntegerField(null=True, blank=True)
+    tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, null=True, blank=True)
     grundlagen = models.ManyToManyField(Materialgrundlage, blank=True)
     persoenlichkeiten = models.ManyToManyField(Persoenlichkeit, blank=True)
     institutionen = models.ManyToManyField(Institution, blank=True)
@@ -166,8 +166,8 @@ class Beitrag(models.Model):
 
 class Dokument(models.Model):
     """A class that represents the model for documents, containing a document, submission, document type an id as attributes"""
-    dokument = models.FileField(blank=True)
-    beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE, null=True)
+    dokument = models.FileField(null=True, blank=True)
+    beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE, null=True, blank=True)
     typ = models.ForeignKey(DokumentTyp, on_delete=models.CASCADE)
     class Meta:
         verbose_name_plural = "Dokumente"
@@ -187,8 +187,8 @@ class BeitragWettbewerb(models.Model):
 
 class Autorin(models.Model):
     """A class that represents the model for authors, containing a first name, surname, submission and id attribute"""
-    vorname = models.CharField(max_length=255, null=True)
-    nachname = models.CharField(max_length=255, null=True)
+    vorname = models.CharField(max_length=255, null=True, blank=True)
+    nachname = models.CharField(max_length=255, null=True, blank=True)
     schule = models.ManyToManyField(SchuleSchulart, through='AutorinSchule', blank=True)
     beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE)
 
@@ -203,7 +203,7 @@ class AutorinSchule(models.Model):
     """A class that represents the relation between authors and schools containing a grade attribute"""
     autorin = models.ForeignKey(Autorin, on_delete=models.CASCADE)
     schule = models.ForeignKey(SchuleSchulart, on_delete=models.CASCADE)
-    jahrgangsstufe = models.IntegerField(null=True)
+    jahrgangsstufe = models.IntegerField(null=True, blank=True)
     class Meta:
         """Class to set unique constraint on schule and autorin"""
         unique_together = (('schule', 'autorin'),)
