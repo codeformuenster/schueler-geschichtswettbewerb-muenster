@@ -145,7 +145,7 @@ class Beitrag(models.Model):
     titel = models.CharField(max_length=1024, null=True)
     regest = models.TextField(null=True, blank=True)
     signatur = models.CharField(max_length=255, null=True, blank=True)
-    einzel_gruppe = models.BooleanField(default=True, blank=True, verbose_name="Einzelarbeit")
+    einzel_gruppe = models.BooleanField(default=True, blank=True, verbose_name="Einzelarbeit (Haken gesetzt=Einzelarbeit, Haken nicht gesetzt=Gruppenarbeit)")
     umfang = models.IntegerField(null=True, blank=True)
     zeitraumVon = models.IntegerField(null=True, blank=True)
     zeitraumBis = models.IntegerField(null=True, blank=True)
