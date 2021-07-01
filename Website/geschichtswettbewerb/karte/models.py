@@ -55,11 +55,11 @@ class SchuleSchulart(models.Model):
 
 class Wettbewerb(models.Model):
     """A class that represents the model for competitions, containing a id, thema,kurztitel, jahr and zusammenfassung attribute"""
-    thema = models.TextField(blank=True)
-    kurztitel = models.TextField(blank=True)
+    thema = models.TextField(null=True, blank=True)
+    kurztitel = models.TextField(null=True, blank=True)
     jahr = models.IntegerField()
     jahrBis = models.IntegerField(null=True)
-    zusammenfassung = models.TextField(default = 'Zusammenfassung', blank=True)
+    zusammenfassung = models.TextField(default = 'Zusammenfassung',null=True, blank=True)
 
     class Meta:
         verbose_name_plural = "Wettbewerbe"
@@ -246,10 +246,10 @@ class HistorischeRegion(models.Model):
 class Ort(models.Model):
     """A class that represents the model for places, containing a name, location and id attribute"""
     ortbezeichnung = models.CharField(max_length=255)
-    location = PointField(geography=True, default=Point(0.0, 0.0))
+    location = PointField(geography=True, default=Point(51.960667, 7.626135))
     beitraege = models.ManyToManyField(Beitrag, blank=True)
-    histName = models.ManyToManyField(HistorischerOrt, blank=True)
-    histRegion = models.ManyToManyField(HistorischeRegion, blank=True)
+    histName = models.ManyToManyField(HistorischerOrt, null=True, blank=True)
+    histRegion = models.ManyToManyField(HistorischeRegion, null=True, blank=True)
 
     class Meta:
         verbose_name_plural = "Orte"
