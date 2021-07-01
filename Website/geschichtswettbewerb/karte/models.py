@@ -149,7 +149,7 @@ class Beitrag(models.Model):
     umfang = models.IntegerField()
     zeitraumVon = models.IntegerField(null=True)
     zeitraumBis = models.IntegerField(null=True)
-    tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, null=True)
+    tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, blank=True)
     grundlagen = models.ManyToManyField(Materialgrundlage, blank=True)
     persoenlichkeiten = models.ManyToManyField(Persoenlichkeit, blank=True)
     institutionen = models.ManyToManyField(Institution, blank=True)
@@ -166,7 +166,7 @@ class Beitrag(models.Model):
 
 class Dokument(models.Model):
     """A class that represents the model for documents, containing a document, submission, document type an id as attributes"""
-    dokument = models.FileField(null=True)
+    dokument = models.FileField(blank=True)
     beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE, null=True)
     typ = models.ForeignKey(DokumentTyp, on_delete=models.CASCADE)
     class Meta:
