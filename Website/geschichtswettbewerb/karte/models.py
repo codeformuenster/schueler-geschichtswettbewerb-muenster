@@ -250,7 +250,7 @@ class HistorischeRegion(models.Model):
 class Ort(models.Model):
     """A class that represents the model for places, containing a name, location and id attribute"""
     ortbezeichnung = models.CharField(max_length=255)
-    location = PointField(geography=True, default=Point(51.960667, 7.626135))
+    location = PointField(geography=True, default=Point(7.626135, 51.960667))
     beitraege = models.ManyToManyField(Beitrag, blank=True)
     histName = models.ManyToManyField(HistorischerOrt, blank=True)
     histRegion = models.ManyToManyField(HistorischeRegion, blank=True)
