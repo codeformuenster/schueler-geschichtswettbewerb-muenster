@@ -248,8 +248,8 @@ class Ort(models.Model):
     ortbezeichnung = models.CharField(max_length=255)
     location = PointField(geography=True, default=Point(51.960667, 7.626135))
     beitraege = models.ManyToManyField(Beitrag, blank=True)
-    histName = models.ManyToManyField(HistorischerOrt, null=True, blank=True)
-    histRegion = models.ManyToManyField(HistorischeRegion, null=True, blank=True)
+    histName = models.ManyToManyField(HistorischerOrt, blank=True)
+    histRegion = models.ManyToManyField(HistorischeRegion, blank=True)
 
     class Meta:
         verbose_name_plural = "Orte"
