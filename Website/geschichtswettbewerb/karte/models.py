@@ -191,8 +191,8 @@ class BeitragWettbewerb(models.Model):
 
 class Autorin(models.Model):
     """A class that represents the model for authors, containing a first name, surname, submission and id attribute"""
-    vorname = models.CharField(max_length=255)
-    nachname = models.CharField(max_length=255)
+    vorname = models.CharField(max_length=255, null=True, blank=True)
+    nachname = models.CharField(max_length=255, null=True, blank=True)
     schule = models.ManyToManyField(SchuleSchulart, through='AutorinSchule', blank=True)
     beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE)
 
