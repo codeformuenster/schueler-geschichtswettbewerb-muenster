@@ -171,8 +171,8 @@ class Beitrag(models.Model):
 class Dokument(models.Model):
     """A class that represents the model for documents, containing a document, submission, document type an id as attributes"""
     dokument = models.FileField(null=True, blank=True)
-    beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE)
-    typ = models.ForeignKey(DokumentTyp, on_delete=models.CASCADE)
+    beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE, null=True)
+    typ = models.ForeignKey(DokumentTyp, on_delete=models.CASCADE, null=True)
     class Meta:
         verbose_name_plural = "Dokumente"
 
