@@ -215,7 +215,7 @@ class AutorinSchule(models.Model):
         verbose_name_plural = "Autorinnen Schulen"
 
     def __str__(self):
-        return self.autorin + ' ' + self.schule.name
+        return self.autorin.vorname + ' ' + self.autorin.nachname + ' ' + self.schule.name
 
 
 class AuszeichnungEinreichung(models.Model):
