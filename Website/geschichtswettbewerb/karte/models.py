@@ -198,6 +198,7 @@ class Autorin(models.Model):
 
     class Meta:
         verbose_name_plural = "Autorinnen"
+        ordering = ('nachname',)
 
     def __str__(self):
         """returns the vorname and nachname of the model as string"""
@@ -213,8 +214,6 @@ class AutorinSchule(models.Model):
         unique_together = (('schule', 'autorin'),)
         verbose_name_plural = "Autorinnen Schulen"
 
-#    def __str__(self):
-#        return str(self.jahrgangsstufe)
 
 class AuszeichnungEinreichung(models.Model):
     """A class that represents the relation between submissions and awards"""
