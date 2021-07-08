@@ -146,7 +146,7 @@ class Beitrag(models.Model):
     regest = models.TextField(null=True, blank=True)
     signatur = models.CharField(max_length=255, null=True, blank=True)
     einzel_gruppe = models.BooleanField(default=True, blank=True, verbose_name="Einzelarbeit (Haken gesetzt=Einzelarbeit, Haken nicht gesetzt=Gruppenarbeit)")
-    umfang = models.IntegerField(null=True, blank=True)
+    umfang = models.CharField(null=True, blank=True, max_length=1024)
     zeitraumVon = models.IntegerField(null=True, blank=True)
     zeitraumBis = models.IntegerField(null=True, blank=True)
     tutor = models.ForeignKey(Tutor, on_delete=models.CASCADE, null=True, blank=True)
