@@ -10,10 +10,10 @@ html, body, #startseite {
   box-shadow: 0 1px 10px rgba(0,0,0,.1);
   height: 100px;
   /*background-color: #ebd5b3 !important;*/
-  /*background-image: url(header-background.png);*/
-  background-size: 800px;
+  background-image: url(WWUMuenster_Logo_2017_rgb.jpg);
+  background-size: 300px;
   background-repeat:no-repeat;
-  background-position: center center;
+  background-position: center right;
   color: black !important;
 }
 
