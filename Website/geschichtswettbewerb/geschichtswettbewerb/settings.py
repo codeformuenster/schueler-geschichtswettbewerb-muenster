@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'd%)-s%ioiq(iwt=272nlguu-2o9dtk
 #DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['geschichtswettbewerb.uni-muenster.de', 'd-3110s70.wiwi.uni-muenster.de', '128.176.157.41', 'd-3110s70.wiwi.uni-muenster.de', 'localhost',]
+ALLOWED_HOSTS = ['geschichtswettbewerb.uni-muenster.de', 'd-3110s70.wiwi.uni-muenster.de', '128.176.157.41', 'd-3110s70.wiwi.uni-muenster.de', 'localhost', '127.0.0.1']
 
 
 # Application definition

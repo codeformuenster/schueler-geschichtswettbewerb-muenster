@@ -5,8 +5,9 @@ const map = L.map('map', {
   zoom: 14,
 });
 
-L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', { attribution: attribution }).addTo(map);
-
+L.tileLayer('https://geo.stadt-muenster.de/basiskarte/{z}/{x}/{y}.png', { attribution: attribution }).addTo(map);
+//https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png
+//https://geo.stadt-muenster.de/basiskarte/{z}/{x}/{y}.png
 const markers = JSON.parse(document.getElementById('markers-data').textContent);
 
 let feature = L.geoJSON(markers).bindPopup(function (layer)

@@ -1,7 +1,7 @@
 html, body, #startseite {
   height: 100%;
   margin: 25;
-  background-color: #ebd5b3;
+  /*background-color: #ebd5b3;*/
   text-align: center;
   align-content: center;
 }
@@ -9,8 +9,8 @@ html, body, #startseite {
 .navbar-default {
   box-shadow: 0 1px 10px rgba(0,0,0,.1);
   height: 100px;
-  background-color: #ebd5b3 !important;
-  background-image: url(header-background.png);
+  /*background-color: #ebd5b3 !important;*/
+  /*background-image: url(header-background.png);*/
   background-size: 800px;
   background-repeat:no-repeat;
   background-position: center center;
@@ -32,15 +32,15 @@ html, body, #startseite {
 }
 
 .table-bordered {
-  background-color: #ebd5b3;
+  /*background-color: #ebd5b3;*/
 }
 
 .well {
-  background-color: #ebd5b3;
+  /*background-color: #ebd5b3;*/
 }
 
 .form {
-  background-color: #ebd5b3;
+  /*background-color: #ebd5b3;*/
   float: left;
 }
 .form-control {
@@ -50,7 +50,7 @@ html, body, #startseite {
 .table {
   column-rule-color: black;
   border-collapse: collapse;
-  background-color: #ebd5b3;
+  /*background-color: #ebd5b3;*/
   text-align: left;
 }
 .td {
