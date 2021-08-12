@@ -35,7 +35,7 @@
   <div class="container">
     <form method="get">
        <div class="well">
-         <h4 style="margin-top: 0">Ortfilter</h4>
+         <h4 style="margin-top: 0">Beitragssuche</h4>
          <div class="row">
            <div class="form-group col-sm-4 col-md-3">
              {{ filter.form }}
@@ -54,21 +54,24 @@
          <button type="submit" class="btn btn-primary">
            <span class="glyphicon glyphicon-search"></span> Suche
          </button>
+         <a class='btn btn-primary' href="{% url 'karte:beitraege' %}"target="_blank" class="button">Detailsuche</a>
        </div>
      </form>
 
      <table class="table table-bordered", style="display: block; height: 200px; overflow: auto;">
        <thead>
          <tr>
+           <th>Beitragstitel</th>
            <th>Ortbezeichnung</th>
            <th>Detailansicht</th>
          </tr>
        </thead>
        <tbody>
-         {% for ort in filter.qs %}
+         {% for beitrag in filter.qs %}
            <tr>
-             <td>{{ ort.ortbezeichnung }}</td>
-             <td><a href="{{ort.id}}"target="_blank">(Detail)</a></td>
+             <td>{{ beitrag.titel }}</td>
+             <td>{{ beitrag.ort_set.all|join:", " }}</td>
+             <td><a href="{% url 'karte:submission-detail' pk=beitrag.id %}"target="_blank">(Detail)</a></td>
            </tr>
          {% empty %}
            <tr>

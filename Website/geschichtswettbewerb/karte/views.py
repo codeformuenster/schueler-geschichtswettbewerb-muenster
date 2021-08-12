@@ -19,9 +19,20 @@ def index(request):
     }
     return render(request, 'index.html', context = context)
 
+
+class StartView(generic.ListView):
+    model = Beitrag
+    #template_name = 'index.html'
+    def get_context_data(self, **kwargs):
+        """returns the data for the starting page"""
+        context = super().get_context_data(**kwargs)
+        context['filter'] = SimpleFilter(self.request.GET, queryset=self.get_queryset())
+        return context
+
+
 class PlaceMapView(generic.ListView):
     """View for the map with all place entries using the Ort model and map.html template"""
-    model = Ort
+    model = Beitrag
     model2 = Persoenlichkeit
     template_name = 'index.html'
     def get_context_data(self, **kwargs):
