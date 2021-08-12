@@ -33,12 +33,13 @@ html, body, #startseite {
 }
 
 .navbar-brand {
-    text-align: left;
+    text-align: center;
+    float: none;
     color: black;
   }
 
 .navbar-header{
-  text-align: : left;
+  text-align: : center;
   position: absolute;
 }
 
