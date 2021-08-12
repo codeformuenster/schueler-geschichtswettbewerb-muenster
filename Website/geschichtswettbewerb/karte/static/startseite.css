@@ -9,12 +9,27 @@ html, body, #startseite {
 .navbar-default {
   box-shadow: 0 1px 10px rgba(0,0,0,.1);
   height: 100px;
+  align-content: center;
   /*background-color: #ebd5b3 !important;*/
-  background-image: url(WWUMuenster_Logo_2017_rgb.jpg);
+  /*background-image: url(WWUMuenster_Logo_2017_rgb.jpg);*/
   background-size: 300px;
   background-repeat:no-repeat;
   background-position: center right;
   color: black !important;
+}
+
+#wwu_logo {
+  float:left;
+  height: 80px;
+  width: 240px;
+  margin-bottom: 10px;
+}
+
+#stadt_muenster_logo {
+  float:right;
+  height: 80px;
+  width: 300px;
+  margin-bottom: 10px;
 }
 
 .navbar-brand {
