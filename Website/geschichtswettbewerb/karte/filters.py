@@ -16,6 +16,7 @@ class OrtFilter(django_filters.FilterSet):
                                 |Q(ort__ortbezeichnung__icontains=value)
                                 |Q(institutionen__name__icontains=value)
                                 |Q(grundlagen__name__icontains=value))
+                                
     class Meta:
         """Class to apply the filter on the ortbezeichnung attribute of the Ort model"""
         model = Beitrag
