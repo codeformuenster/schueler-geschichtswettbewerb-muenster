@@ -4,6 +4,7 @@ html, body, #startseite {
   /*background-color: #ebd5b3;*/
   text-align: center;
   align-content: center;
+  margin-right: 200px;
 }
 
 .navbar-default {
@@ -20,13 +21,14 @@ html, body, #startseite {
 
 .sidebar {
   height: 100%;
-  width: 200px;
+  width: 400px;
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
   overflow-x: hidden;
   padding-top: 20px;
+  padding-right: 10px;
 }
 
 .sidebar div {
@@ -35,7 +37,7 @@ html, body, #startseite {
 }
 
 .main {
-  margin-right: 200px;
+  /*margin-right: 200px;*/
   padding: 0px 10px;
 }
 
