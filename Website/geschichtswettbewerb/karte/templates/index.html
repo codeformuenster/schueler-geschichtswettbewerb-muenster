@@ -101,6 +101,7 @@
          {% endfor %}
        </tbody>
      </table> -->
+     <div style="height:  500px; overflow: auto;">
      {% for beitrag in filter.qs %}
       <div class="resultDivTitle">
         {{ beitrag.signatur }}  - {{ beitrag.titel }}
@@ -117,7 +118,7 @@
      {% empty %}
 
      {% endfor %}
-
+</div>
 </div>
 
 </body>

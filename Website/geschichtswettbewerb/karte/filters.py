@@ -6,9 +6,9 @@ from django import forms
 class OrtFilter(django_filters.FilterSet):
     """Class to filter place data"""
     everything = django_filters.CharFilter(label='everything', method='lookupEverything')
-    wettbewerbChoices={
-        ('', '')
-    }
+    wettbewerbChoices=set()#{
+    #    ('', '')
+    #}
     i=1
     for x in Wettbewerb.objects.all():
         wettbewerbChoices.add((str(i), x.jahr))

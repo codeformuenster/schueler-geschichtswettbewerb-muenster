@@ -19,8 +19,8 @@
 
 <form method="get" target="_blank">
   <div class="well">
-    <h1 style="margin-top: 0">Beitragsfilter</h1>
-    <p>In den folgenden Filtern können alle Kategorien ausgewählt werden, nach denen Beiträge gefiltert werden sollen.</p>
+    <h1>Beitragsfilter</h1>
+    <p>Mit diesen Filtern kann die gesamte Datenbank durchsucht werden</p>
     <div class="form-row">
     Filter zum Thema:
       <div class="form-group col">
@@ -169,6 +169,7 @@
     {% endfor %}
   </tbody>
 </table>-->
+<div style="height:  500px; overflow: auto;">
 {% for beitrag in filter.qs %}
  <div class="resultDivTitle">
    {{ beitrag.signatur }}  - {{ beitrag.titel }}
@@ -185,6 +186,7 @@
 {% empty %}
 
 {% endfor %}
+</div>
 <div>
   <h1>Karte</h1>
   <div id="map"></div>
