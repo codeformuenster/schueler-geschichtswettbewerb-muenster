@@ -161,7 +161,7 @@
     </input>
   </div>
 </form>
-
+<!--
 <table class="table", style="display: block; height: 500px; overflow: auto; border-color: black">
   <caption>Anzahl Beiträge: {{filter.qs.count}}</caption>
   <thead>
@@ -186,7 +186,23 @@
       </tr>
     {% endfor %}
   </tbody>
-</table>
+</table>-->
+{% for beitrag in filter.qs %}
+ <div class="resultDivTitle">
+   {{ beitrag.signatur }}  - {{ beitrag.titel }}
+ </div>
+ <div class="resultDivInformation">
+   <div>{% for autor in beitrag.autorin_set.all %}
+     {{ autor }}, {% for x in autor.autorinschule_set.all %}
+       {{ x.jahrgangsstufe }}
+       {% endfor %}, {{ autor.schule.all|join:", "}}
+   {% endfor %}</div>
+   <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
+
+ </div>
+{% empty %}
+
+{% endfor %}
 <div>
   <h1>Karte</h1>
   <div id="map"></div>
