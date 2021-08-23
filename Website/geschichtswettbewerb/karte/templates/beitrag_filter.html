@@ -5,6 +5,11 @@
 
 {% block filter %}
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'map.css' %}">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="{% static 'leaflet.markercluster.js' %}"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
 
   <title>Personenfilter</title>
@@ -12,7 +17,7 @@
 <body>
 
 
-<form method="get">
+<form method="get" target="_blank">
   <div class="well">
     <h1 style="margin-top: 0">Beitragsfilter</h1>
     <p>In den folgenden Filtern können alle Kategorien ausgewählt werden, nach denen Beiträge gefiltert werden sollen.</p>
@@ -43,12 +48,12 @@
       <div class="form-group col">
 
         Zeitraum Start (exakt):
-        {% render_field filter.form.zeitraumVon class="form-control" %}
+        {% render_field filter.form.zeitraumVon class="form-control" placeholder="TEST" %}
         Zeitraum Start (maximal):
         {% render_field filter.form.zeitraumVon__lt class="form-control" %}
         Zeitraum Start (mindestens):
         {% render_field filter.form.zeitraumVon__gt class="form-control" %}
-<div>
+      </div>
         <div class="form-group col">
 
         Zeitraum Ende (exakt):
@@ -152,7 +157,7 @@
       <span class="glyphicon glyphicon-search"></span> Suche
     </button>
     <input type="reset" class="btn btn-primary">
-      <span></span> 
+      <span></span>
     </input>
   </div>
 </form>
@@ -183,6 +188,33 @@
   </tbody>
 </table>
 <div>
+  <h1>Test</h1>
+  <script type="text/javascript">
+    const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    //var x = {{ort.location.x}};
+    //var y = {{ort.location.y}};
+    const map = L.map('map', {
+      center: [parseFloat("{{ ort.location.y }}".replace(/,/g, '.')), parseFloat("{{ ort.location.x }}".replace(/,/g, '.'))],
+      minZoom: 2,
+      zoom: 14,
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', { attribution: attribution }).addTo(map);
+  //var coordinates = {{ ort.location }};
+  //var marker = new 7.62082, 51.969
+  // {{ort.location.x }} and .y does not work properly
+    marker = new L.marker([parseFloat("{{ ort.location.y }}".replace(/,/g, '.')), parseFloat("{{ ort.location.x }}".replace(/,/g, '.'))]).addTo(map).bindPopup("{{ ort.ortbezeichnung }}");
+  //const markers = JSON.parse(document.getElementById('markers-data').textContent);
+
+  //let feature = L.geoJSON(markers).bindPopup(function (layer)
+  //{ return layer.feature.properties.ortbezeichnung + ' <a href="' + layer.feature.properties.pk + '" target="_blank">' + 'id: ' + layer.feature.properties.pk + '</a>';
+  //});//.addTo(map);
+  //map.addLayer(feature);
+
+    //map.fitBounds(feature.getBounds(), { padding: [100, 100] });
+
+    //map.fitWorld();
+  </script>
 </div>
 </body>
 

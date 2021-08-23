@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div>
+  <h1>Liste von Wettbewerben</h1>
+
+  <table class="table", style="display: block; height: 500px; overflow: auto; border-color: black">
+    <thead>
+      <tr>
+        <th>Titel</th>
+        <th>Jahr Von</th>
+        <th>Jahr Bis</th>
+        <th></th>
+      </tr>
+    </thead>
+  {% for wettbewerb in object_list %}
+    <tr>
+      <td>{{wettbewerb.thema}}</td>
+      <td>{{wettbewerb.jahr}}</td>
+      <td>{{wettbewerb.jahrBis}}</td>
+      <td><a href='wettbewerbe/{{wettbewerb.id}}'target)"_blank">Detailansicht</a></td>
+    </tr>
+  {% endfor %}
+</div>
+
+{% endblock %}

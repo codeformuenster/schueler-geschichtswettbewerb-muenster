@@ -72,6 +72,7 @@ class SubmissionFilterView(generic.ListView):
         """returns the place data that is to be filtered in the view"""
         context = super().get_context_data(**kwargs)
         context['filter'] = BeitragFilter(self.request.GET, queryset=self.get_queryset())
+        context['markers'] = json.loads(serialize('geojson', Ort.objects.all()))
         return context
 
 class SubmissionDetailView(generic.DetailView):
@@ -81,4 +82,24 @@ class SubmissionDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         """returns all submission data"""
         context = super().get_context_data(**kwargs)
+        return context
+
+class CompetitionListView(generic.ListView):
+    model = Wettbewerb
+    template_name = 'competition_list.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+class CompetitionDetailView(generic.DetailView):
+    model = Wettbewerb
+    template_name = 'competition_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        placeQuerySet = Ort.objects.filter(Q(beitraege__wettbewerb=self.get_object()))
+        context['markers'] = json.loads(serialize('geojson', list(placeQuerySet)))
+        context['autorinnen'] = Autorin.objects.filter(Q(beitrag__wettbewerb=self.get_object()))
+        context['awards'] = AuszeichnungEinreichung.objects.filter(Q(einreichung__wettbewerb=self.get_object()))
         return context

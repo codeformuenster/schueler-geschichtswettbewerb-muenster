@@ -4,7 +4,7 @@ html, body, #startseite {
   /*background-color: #ebd5b3;*/
   text-align: center;
   align-content: center;
-  margin-right: 200px;
+  margin-right: 350px;
 }
 
 .navbar-default {
@@ -21,7 +21,7 @@ html, body, #startseite {
 
 .sidebar {
   height: 100%;
-  width: 400px;
+  width: 300px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -29,6 +29,9 @@ html, body, #startseite {
   overflow-x: hidden;
   padding-top: 20px;
   padding-right: 10px;
+  align-items: center;
+  align-content: center;
+  align-self: center;
 }
 
 .sidebar div {
@@ -40,6 +43,7 @@ html, body, #startseite {
   /*margin-right: 200px;*/
   padding: 0px 10px;
 }
+
 
 #wwu_logo {
   float:left;

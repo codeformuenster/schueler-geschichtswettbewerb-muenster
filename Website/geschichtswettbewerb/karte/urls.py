@@ -13,5 +13,7 @@ urlpatterns = [
     path('karte/<int:pk>', views.PlaceDetailView.as_view(), name='ort-detail'),
     path('orte/<int:pk>', views.PlaceDetailView.as_view(), name='ort-detail'),
     path('beitraege/<int:pk>', views.SubmissionDetailView.as_view(), name='submission-detail'),
+    path('wettbewerbe',  views.CompetitionListView.as_view(), name='wettbewerbe'),
+    path('wettbewerbe/<int:pk>',  views.CompetitionDetailView.as_view(), name='wettbewerb-detail'),
 
 ]
