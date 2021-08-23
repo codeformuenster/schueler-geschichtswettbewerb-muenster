@@ -1,11 +1,18 @@
 from .models import *
 import django_filters
 from django.db.models import Q
+from django import forms
 
 class OrtFilter(django_filters.FilterSet):
     """Class to filter place data"""
     everything = django_filters.CharFilter(label='everything', method='lookupEverything')
-
+    wettbewerbChoices={
+        ('', '')
+    }
+    i=1
+    for x in Wettbewerb.objects.all():
+        wettbewerbChoices.add((str(i), x.jahr))
+    wettbewerb = django_filters.ChoiceFilter(choices=wettbewerbChoices, empty_label="Wettbewerbsjahrgang")
     def lookupEverything(self, queryset, name, value):
         return queryset.filter(Q(titel__icontains=value)
                                 |Q(regest__icontains=value)
@@ -23,7 +30,7 @@ class OrtFilter(django_filters.FilterSet):
 
         fields = {
             'ort__ortbezeichnung': ['icontains'],
-            'wettbewerb': ['exact'],
+        #    'wettbewerb': ['exact'],
             'zeitraumVon': ['gt',],
             'zeitraumBis': ['lt'],
         }

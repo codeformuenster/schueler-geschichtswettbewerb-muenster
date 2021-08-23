@@ -23,7 +23,6 @@
     <p>In den folgenden Filtern können alle Kategorien ausgewählt werden, nach denen Beiträge gefiltert werden sollen.</p>
     <div class="form-row">
     Filter zum Thema:
-    <details open>
       <div class="form-group col">
     <!--    Titel enthält:
         {% render_field filter.form.titel__icontains class="form-control" %}
@@ -39,12 +38,10 @@
         Signatur:
         {% render_field filter.form.signatur__icontains class="form-control" %}
       </div>
-    </details>
     </div>
 
     <div class="form-row">
     Filter zum Themenzeitraum der Beiträge:
-    <details>
       <div class="form-group col">
 
         Zeitraum Start (exakt):
@@ -63,30 +60,24 @@
         Zeitraum Ende (mindestens):
         {% render_field filter.form.zeitraumBis__gt class="form-control" %}
       </div>
-    </details>
   </div>
   <div class="form-row">
 
     Filter zum Beitragtypen
-    <details>
       {{ filter.form.typ.label_tag }}
       {% render_field filter.form.typ class="form-control" %}
-    </details>
   </div>
 
   <div class="form-row">
 
     Filter zu den verwendeten Quellen
-    <details>
       {{ filter.form.grundlagen.label_tag }}
       {% render_field filter.form.grundlagen class="form-control" %}
-    </details>
   </div>
 
   <div class="form-row">
 
     Filter bezüglich der Wettbewerbe:
-    <details>
       {% render_field filter.form.wettbewerb class="form-control" %}
       Wettbewerbsjahr:
       {% render_field filter.form.wettbewerb__jahr class="form-control" %}
@@ -96,12 +87,10 @@
       {% render_field filter.form.wettbewerb__jahr__lt class="form-control" %}
       Beiträge mit Auszeichnung:
       {% render_field filter.form.auszeichnungeinreichung__auszeichnung class="form-control" %}
-    </details>
   </div>
   <div class="form-row">
 
     Filter bezüglich der Autoren und Arbeitsweise der Schüler:
-    <details>
       Jahrgangsstufe (exakt):
       {% render_field filter.form.jahrgang class="form-control" %}
 
@@ -122,36 +111,29 @@
 
       Beiträge mit Dokumenttyp:
       {% render_field filter.form.dokument__typ class="form-control" %}
-    </details>
   </div>
   <div class="form-row">
 
     Filter zum Ort der Beiträge:
-    <details>
       {% render_field filter.form.ort class="form-control" %}
       Ortbezeichnung enthält:
       {% render_field filter.form.ort__ortbezeichnung__icontains class="form-control" %}
-    </details>
   </div>
   <div class="form-row">
 
     Filter zu untersuchten Persönlichkeiten der Beiträge:
-    <details>
       Persönlichkeiten
       {% render_field filter.form.persoenlichkeiten class="form-control" %}
 
       Persönlichkeit enthält:
       {% render_field filter.form.persoenlichkeiten__name__icontains class="form-control" %}
-    </details>
   </div>
   <div class="form-row">
 
     Filter zu behandelten Institutionen:
-    <details>
       {% render_field filter.form.institutionen class="form-control" %}
       Institution enthält:
       {% render_field filter.form.institutionen__name__icontains class="form-control" %}
-    </details>
   </div>
     <button type="submit" class="btn btn-primary">
       <span class="glyphicon glyphicon-search"></span> Suche
