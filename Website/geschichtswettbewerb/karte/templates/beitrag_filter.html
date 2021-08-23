@@ -188,13 +188,16 @@
   </tbody>
 </table>
 <div>
-  <h1>Test</h1>
+  <h1>Karte</h1>
+  <div id="map"></div>
+  {{ markers|json_script:"markers-data" }}
+  <!--
   <script type="text/javascript">
     const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     //var x = {{ort.location.x}};
     //var y = {{ort.location.y}};
     const map = L.map('map', {
-      center: [parseFloat("{{ ort.location.y }}".replace(/,/g, '.')), parseFloat("{{ ort.location.x }}".replace(/,/g, '.'))],
+      center: [51.969, 7.62082],
       minZoom: 2,
       zoom: 14,
     });
@@ -214,7 +217,8 @@
     //map.fitBounds(feature.getBounds(), { padding: [100, 100] });
 
     //map.fitWorld();
-  </script>
+  </script>-->
+  <script src="{% static 'map.js' %}"></script>
 </div>
 </body>
 

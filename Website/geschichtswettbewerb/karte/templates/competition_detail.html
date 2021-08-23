@@ -44,14 +44,17 @@
 
 
   <h1>Karte</h1>
+  <div id="map"></div>
   <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge in diesem Wettbewerb geschrieben wurden.</p><body>
     {{ markers|json_script:"markers-data" }}
+    <script src="{% static 'map.js' %}"></script>
+    <!--
     <script type="text/javascript">
       const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       //var x = {{ort.location.x}};
       //var y = {{ort.location.y}};
       const map = L.map('map', {
-        center: [7.62082, 51.969],
+        center: [51.969, 7.62082],
         minZoom: 2,
         zoom: 14,
       });
@@ -76,7 +79,7 @@
       //map.fitBounds(feature.getBounds(), { padding: [100, 100] });
 
       //map.fitWorld();
-    </script></div>
+    </script>--></div>
 
 </body>
 

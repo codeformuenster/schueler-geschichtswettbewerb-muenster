@@ -1,30 +1,75 @@
 {% load static %}
+<head>
+<style>
+.collapsible {
+  background-color: #aab315;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #aab315;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+}
+</style>
+</head>
+
+<body>
 <div  class='sidebar'>
   <div>
     <h4>Wissenswertes</h4>
   </div>
   <div>
-    <details>
-      <summary><h4>Der Geschichtswettbewerb</h4></summary>
-      <p>
-        Im Turnus von zwei Jahren loben Bundespräsident und Körber-Stiftung den <a href=https://www.koerber-stiftung.de/geschichtswettbewerb>Geschichtswettbewerb des Bundespräsidenten</a> aus. In diesem Wettbewerb werden Kinder und Jugendliche seit 1973 dazu aufgerufen, ihre Lokal- oder Familien-geschichte zu erforschen. Eine Übersicht über alle Wettbewerbsthemen gibt es <a href={% url 'karte:wettbewerbe' %}> hier</a>.
-      </p>
-    </details>
+  <button type="button" class="collapsible">Der Geschichtswettbewerb</button>
+  <div class="content">
+    <p>
+      Im Turnus von zwei Jahren loben Bundespräsident und Körber-Stiftung den <a href=https://www.koerber-stiftung.de/geschichtswettbewerb>Geschichtswettbewerb des Bundespräsidenten</a> aus. In diesem Wettbewerb werden Kinder und Jugendliche seit 1973 dazu aufgerufen, ihre Lokal- oder Familien-geschichte zu erforschen. Eine Übersicht über alle Wettbewerbsthemen gibt es <a href={% url 'karte:wettbewerbe' %}> hier</a>.
+    </p>
+  </div>
   </div>
   <div>
-    <details>
-      <summary><h4>Die Schülerforschungen</h4></summary>
-      <p>
-        In keiner anderen Stadt haben seit 1973 so viele Kinder und Jugendliche am Geschichtswettbewerb des Bundespräsidenten teilgenommen, wie in Münster. In den letzten knapp 50 Jahren entstanden hier rund 1.700 Arbeiten, die auch historische Themen für die Stadtgeschichte neu erschlossen haben. Das <a href=https://stadt-muenster.de/archiv>Stadtarchiv Münster</a> sammelt und archiviert diese Schülerarbeiten in seinem Lesesaal, wo sie einen einzigartigen Quellenkorpus zur Stadtgeschichtsforschung bilden.
-      </p>
-    </details>
+    <button type="button" class="collapsible">Die Schülerforschungen</button>
+    <div class="content">
+    <p>
+      In keiner anderen Stadt haben seit 1973 so viele Kinder und Jugendliche am Geschichtswettbewerb des Bundespräsidenten teilgenommen, wie in Münster. In den letzten knapp 50 Jahren entstanden hier rund 1.700 Arbeiten, die auch historische Themen für die Stadtgeschichte neu erschlossen haben. Das <a href=https://stadt-muenster.de/archiv>Stadtarchiv Münster</a> sammelt und archiviert diese Schülerarbeiten in seinem Lesesaal, wo sie einen einzigartigen Quellenkorpus zur Stadtgeschichtsforschung bilden.
+    </p>
+  </div>
   </div>
   <div>
-    <details>
-      <summary><h4>Das Projekt</h4></summary>
-      <p>
-        Gemeinsam mit dem <a href=https://stadt-muenster.de/archiv>Stadtarchiv Münster</a> hat das <a href=https://www.uni-muenster.de/Geschichte/hist-dida/>Institut für Didaktik der Geschichte</a> an der WWU die Beiträge, die Münsteraner Kinder und Jugendliche im Geschichtswettbewerb einreichen, erfasst. Im Rahmen des <a href=https://muensterhack.de/>Münster Hack 2020</a> und in Zusammenarbeit mit dem <a href=https://www.ercis.org/>European Research Center for Information Systems</a> wurde so eine einzigartige Datenbank erarbeitet, die zeigt, wie sich Münsteraner Kinder und Jugendliche mit ihren Beiträgen zum Geschichtswettbewerb in die Erforschung der eigenen Stadtgeschichte einbringen.
-      </p>
-    </details>
+    <button type="button" class="collapsible">Das Projekt</button>
+    <div class="content">
+    <p>
+      Gemeinsam mit dem <a href=https://stadt-muenster.de/archiv>Stadtarchiv Münster</a> hat das <a href=https://www.uni-muenster.de/Geschichte/hist-dida/>Institut für Didaktik der Geschichte</a> an der WWU die Beiträge, die Münsteraner Kinder und Jugendliche im Geschichtswettbewerb einreichen, erfasst. Im Rahmen des <a href=https://muensterhack.de/>Münster Hack 2020</a> und in Zusammenarbeit mit dem <a href=https://www.ercis.org/>European Research Center for Information Systems</a> wurde so eine einzigartige Datenbank erarbeitet, die zeigt, wie sich Münsteraner Kinder und Jugendliche mit ihren Beiträgen zum Geschichtswettbewerb in die Erforschung der eigenen Stadtgeschichte einbringen.
+    </p>
   </div>
+  </div>
+  <script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+  </script>
 </div>
+</body>

@@ -21,11 +21,15 @@
 </head>
 <body>
   {% include 'header.html' %}
+  <div class="main-container">
+    <div class="main-content">
+      {% block content %}{% endblock %}
+      {% block map %} {% endblock %}
+      {% block detail %} {% endblock %}
+      {% block filter %} {% endblock %}
+    </div>
   {% include 'sidebar.html' %}
-  {% block content %}{% endblock %}
-  {% block map %} {% endblock %}
-  {% block detail %} {% endblock %}
-  {% block filter %} {% endblock %}
+  </div>
   <footer>
     <div>Impressum</div>
     <div>Gefördert durch</div>

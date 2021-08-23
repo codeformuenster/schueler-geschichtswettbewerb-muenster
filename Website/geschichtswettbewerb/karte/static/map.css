@@ -7,8 +7,6 @@ html, body {
 }
 #map {
   width: 90%;
-  height: 75%;
-  /*background-color: #ebd5b3;*/
-  align-self: center;
-  align-content: center;
+  height: 600px;
+  margin: 0 auto;
 }
