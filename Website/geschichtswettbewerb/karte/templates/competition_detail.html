@@ -43,44 +43,14 @@
 </div>
 
 
-
-  <h3>Karte</h3>
-  <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge in diesem Wettbewerb geschrieben wurden.</p><body>
+  <div style="margin: 10px;">
+    <h3>Karte</h3>
+    <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge in diesem Wettbewerb geschrieben wurden.</p><body>
+  </div>
   <div id="map"></div>
     {{ markers|json_script:"markers-data" }}
     <script src="{% static 'map.js' %}"></script>
-    <!--
-    <script type="text/javascript">
-      const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      //var x = {{ort.location.x}};
-      //var y = {{ort.location.y}};
-      const map = L.map('map', {
-        center: [51.969, 7.62082],
-        minZoom: 2,
-        zoom: 14,
-      });
-
-      L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', { attribution: attribution }).addTo(map);
-      const markers = JSON.parse(document.getElementById('markers-data').textContent);
-
-      let feature = L.geoJSON(markers).bindPopup(function (layer)
-      { return layer.feature.properties.ortbezeichnung + ' <a href="' + layer.feature.properties.pk + '" target="_blank">' + 'Detailansicht</a>';
-      });//.addTo(map);
-      map.addLayer(feature);
-    //var marker = new 7.62082, 51.969
-    // {{ort.location.x }} and .y does not work properly
-      //marker = new L.marker([parseFloat("{{ ort.location.y }}".replace(/,/g, '.')), parseFloat("{{ ort.location.x }}".replace(/,/g, '.'))]).addTo(map).bindPopup("{{ ort.ortbezeichnung }}");
-    //const markers = JSON.parse(document.getElementById('markers-data').textContent);
-
-    //let feature = L.geoJSON(markers).bindPopup(function (layer)
-    //{ return layer.feature.properties.ortbezeichnung + ' <a href="' + layer.feature.properties.pk + '" target="_blank">' + 'id: ' + layer.feature.properties.pk + '</a>';
-    //});//.addTo(map);
-    //map.addLayer(feature);
-
-      //map.fitBounds(feature.getBounds(), { padding: [100, 100] });
-
-      //map.fitWorld();
-    </script>--></div>
+  </div>
 
 </body>
 

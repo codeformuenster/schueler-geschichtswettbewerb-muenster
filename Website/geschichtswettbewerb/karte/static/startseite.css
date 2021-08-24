@@ -124,10 +124,15 @@ html, body {
   margin-top: 5px;
 }
 
+.competition-content-right {
+  margin-right: 10px;
+}
+
 .competition-content-left {
   background-color: #005b79;
   border-radius: 1rem;
   color: white;
+  margin-left: 10px;
 }
 
 .first, .second, .third {
