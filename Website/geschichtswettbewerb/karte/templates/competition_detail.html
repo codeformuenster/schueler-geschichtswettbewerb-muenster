@@ -12,20 +12,20 @@
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
-<div>
-  <div>
+  <div class="competition-title">
     <h2>{{ object.kurztitel }}  ({{object.jahr}} - {{object.jahrBis}})</h2>
   </div>
-  <div>
-    {{ object.zusammenfassung }}
+<div class="competition-detail">
+  <div class="competition-content-left">
+    <div>{{ object.zusammenfassung }}</div>
   </div>
-  <div>
-    <div>
+  <div class="competition-content-right">
+    <div class="first">
       Anzahl Beiträge aus Münster {{ object.beitrag_set.all.count }}
     </div>
-    <div>
+    <div class="second">
       Anzahl Teilnehmer:innen aus Münster {{ autorinnen.count }}
-
+    </div>
 <!--
       {% for x in object.beitrag_set.all %}
       <li>
@@ -36,12 +36,10 @@
 
     Double check if autorinnen.count is correct
 -->
-    </div>
-
-    <div>
+    <div class="third">
       Anzahl der Preise in Münster: {{ awards.count }}
     </div>
-
+  </div>
 </div>
 
 

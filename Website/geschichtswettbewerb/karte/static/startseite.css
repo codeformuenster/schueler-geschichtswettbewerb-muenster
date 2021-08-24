@@ -2,7 +2,7 @@ html, body {
   height: 100%;
   margin: 25;
   /*background-color: #ebd5b3;*/
-  text-align: center;
+  text-align: justify;
   align-content: center;
 }
 
@@ -112,6 +112,33 @@ html, body {
    width: 48%;
    margin-top: 5px;
  }
+.competition-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.competition-content-left, .competition-content-right {
+  width:48%;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.competition-content-left {
+  background-color: #005b79;
+  border-radius: 1rem;
+  color: white;
+}
+
+.first, .second, .third {
+  background-color: #005b79;
+  border-radius: 1rem;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  text-align: center;
+}
+
 .form {
   background-color: #005b79;
   float: left;
@@ -163,4 +190,12 @@ html, body {
 
 .main-content {
       margin-right: 300px;
+}
+
+.competition-title {
+  border: 1px solid;
+  margin-bottom: 1.5rem;
+  border-color: #005b79;
+  padding: 0.4rem;
+  border-radius: 1rem;
 }
