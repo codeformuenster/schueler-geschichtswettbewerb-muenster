@@ -97,8 +97,9 @@ html, body {
   }
 
   .left-container,  .right-container {
-    width:50%;
+    width:48%;
     padding: 5px;
+    margin-top: 5px;
   }
 
   .left-container-buttons {
