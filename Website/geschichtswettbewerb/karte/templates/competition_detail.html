@@ -13,7 +13,9 @@
 </head>
 <body>
 <div>
-  <h4>{{ object.kurztitel }}</h4>
+  <div>
+    <h2>{{ object.kurztitel }}  ({{object.jahr}} - {{object.jahrBis}})</h2>
+  </div>
   <div>
     {{ object.zusammenfassung }}
   </div>
@@ -34,18 +36,19 @@
 
     Double check if autorinnen.count is correct
 -->
+    </div>
+
     <div>
       Anzahl der Preise in Münster: {{ awards.count }}
     </div>
-  </div>
 
 </div>
 
 
 
-  <h1>Karte</h1>
-  <div id="map"></div>
+  <h3>Karte</h3>
   <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge in diesem Wettbewerb geschrieben wurden.</p><body>
+  <div id="map"></div>
     {{ markers|json_script:"markers-data" }}
     <script src="{% static 'map.js' %}"></script>
     <!--

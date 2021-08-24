@@ -47,6 +47,7 @@
         <th>Materialgrundlagen</th>
         <th>Beitragsart</th>
         <th>Auszeichnung</th>
+        <th>Wettbewernsjahrgang</th>
       </tr>
     </thead>
     <tbody>
@@ -62,6 +63,11 @@
         <td>{% for i in beitrag.auszeichnungeinreichung_set.all %}
           {{ i.auszeichnung }}
         {% endfor %}</td>
+        <td>
+          {% for w in beitrag.wettbewerb.all %}
+          <a href="{% url 'karte:wettbewerb-detail' pk=w.id %}"target="_blank">{{w.jahr}}</a>
+          {% endfor %}
+        </td>
       </tr>
     </tbody>
   </table>
