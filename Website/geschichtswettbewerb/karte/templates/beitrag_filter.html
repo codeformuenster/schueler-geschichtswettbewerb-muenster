@@ -24,19 +24,18 @@
     <div class="form-row">
     Filter zum Thema:
       <div class="form-group col">
-    <!--    Titel enthält:
-        {% render_field filter.form.titel__icontains class="form-control" %}
+    <!--    Titel enthält:-->
+        {% render_field filter.form.titel__icontains class="form-control" placeholder="Beitragstitel enthält" %}
 
-        Regest enthält
-        {% render_field filter.form.regest__icontains class="form-control" %}
-    -->
-        Suche nach Beiträgen zu folgendem Thema:
-        {% render_field filter.form.topic class="form-control" %}
+        {% render_field filter.form.regest__icontains class="form-control" placeholder="Beitragszusammenfassung enthält" %}
 
+        <!--Suche nach Beiträgen zu folgendem Thema:
+        {% render_field filter.form.topic class="form-control" placeholder="Beitragstitel enthält" title="" %}
+-->
       </div>
       <div class="form-group col">
         Signatur:
-        {% render_field filter.form.signatur__icontains class="form-control" %}
+        {% render_field filter.form.signatur__icontains class="form-control" placeholder="Signatur" title="Signatur, unter der der Beitrag im Stadtarchiv archiviert wurde" %}
       </div>
     </div>
 
@@ -44,96 +43,96 @@
     Filter zum Themenzeitraum der Beiträge:
       <div class="form-group col">
 
-        Zeitraum Start (exakt):
+        <!--Zeitraum Start (exakt):
         {% render_field filter.form.zeitraumVon class="form-control" placeholder="TEST" %}
         Zeitraum Start (maximal):
-        {% render_field filter.form.zeitraumVon__lt class="form-control" %}
-        Zeitraum Start (mindestens):
-        {% render_field filter.form.zeitraumVon__gt class="form-control" %}
+        {% render_field filter.form.zeitraumVon__lt class="form-control" placeholder="" %}
+        Zeitraum Start (mindestens):-->
+        {% render_field filter.form.zeitraumVon__gt class="form-control" placeholder="Zeitraum Von" title="Beginn des Zeitraums, der in der Arbeit untersucht wird" %}
       </div>
         <div class="form-group col">
 
-        Zeitraum Ende (exakt):
-        {% render_field filter.form.zeitraumBis class="form-control" %}
-        Zeitraum Ende (maximal):
-        {% render_field filter.form.zeitraumBis__lt class="form-control" %}
-        Zeitraum Ende (mindestens):
-        {% render_field filter.form.zeitraumBis__gt class="form-control" %}
+        <!--Zeitraum Ende (exakt):
+        {% render_field filter.form.zeitraumBis class="form-control"  placeholder="" %}
+        Zeitraum Ende (maximal):-->
+        {% render_field filter.form.zeitraumBis__lt class="form-control" placeholder="Zeitraum Bis" title="Ende des Zeitraums, der in der Arbeit untersucht wird" %}
+      <!--  Zeitraum Ende (mindestens):
+        {% render_field filter.form.zeitraumBis__gt class="form-control" placeholder="" %}-->
       </div>
   </div>
   <div class="form-row">
 
     Filter zum Beitragtypen
       {{ filter.form.typ.label_tag }}
-      {% render_field filter.form.typ class="form-control" %}
+      {% render_field filter.form.typ class="form-control" placeholder="Beitragsformat" title="Format, in dem der Beitrag verfasst wurde"  %}
   </div>
 
   <div class="form-row">
 
-    Filter zu den verwendeten Quellen
-      {{ filter.form.grundlagen.label_tag }}
-      {% render_field filter.form.grundlagen class="form-control" %}
+    <!--Filter zu den verwendeten Quellen
+      {{ filter.form.grundlagen.label_tag }}-->
+      {% render_field filter.form.grundlagen class="form-control"  placeholder="Materialgrundlage" %}
   </div>
 
   <div class="form-row">
 
-    Filter bezüglich der Wettbewerbe:
-      {% render_field filter.form.wettbewerb class="form-control" %}
-      Wettbewerbsjahr:
-      {% render_field filter.form.wettbewerb__jahr class="form-control" %}
-      Wettbewerbsjahr (mindestens):
-      {% render_field filter.form.wettbewerb__jahr__gt class="form-control" %}
+    <!--Filter bezüglich der Wettbewerbe:
+      {% render_field filter.form.wettbewerb class="form-control" placeholder="" %}
+      Wettbewerbsjahr:-->
+      {% render_field filter.form.wettbewerb__jahr class="form-control" placeholder="Wettbewerbsjahrgang" %}
+      <!--Wettbewerbsjahr (mindestens):
+      {% render_field filter.form.wettbewerb__jahr__gt class="form-control" placeholder="" %}
       Wettbewerbsjahr (maximal):
-      {% render_field filter.form.wettbewerb__jahr__lt class="form-control" %}
+      {% render_field filter.form.wettbewerb__jahr__lt class="form-control" placeholder="" %}
       Beiträge mit Auszeichnung:
-      {% render_field filter.form.auszeichnungeinreichung__auszeichnung class="form-control" %}
+      {% render_field filter.form.auszeichnungeinreichung__auszeichnung class="form-control" placeholder="" %}-->
   </div>
   <div class="form-row">
 
-    Filter bezüglich der Autoren und Arbeitsweise der Schüler:
+  <!--  Filter bezüglich der Autoren und Arbeitsweise der Schüler:
       Jahrgangsstufe (exakt):
-      {% render_field filter.form.jahrgang class="form-control" %}
+      {% render_field filter.form.jahrgang class="form-control" placeholder="" %}
 
-      Jahrgangsstufe (mindestens):
-      {% render_field filter.form.jahrgangMin class="form-control" %}
+      Jahrgangsstufe (mindestens):-->
+      {% render_field filter.form.jahrgangMin class="form-control" placeholder="Jahrgangsstufe von" title="Jahrgangsstufe, in der die Kinder und Jugendlichen waren"  %}
 
       Jahrgangsstufe (maximal):
-      {% render_field filter.form.jahrgangMax class="form-control" %}
+      {% render_field filter.form.jahrgangMax class="form-control" placeholder="Jahrgangsstufe bis" title="Jahrgangsstufe, in der die Kinder und Jugendlichen waren" %}
 
       Schulart:
-      {% render_field filter.form.autorin__autorinschule__schule__art class="form-control" %}
+      {% render_field filter.form.autorin__autorinschule__schule__art class="form-control" placeholder="Schulform" %}
 
       Einzelarbeit oder Gruppenarbeit:
-      {% render_field filter.form.einzel_gruppe class="form-control" %}
+      {% render_field filter.form.einzel_gruppe class="form-control" placeholder="Einzel- oder Gruppenarbeit?" title="Ob die Kinder und Jugendlichen allein oder gemeinsam teilgenommenn haben" %}
 
       Wurde der Beitrag tutoriert?
-      {% render_field filter.form.tutor__isnull class="form-control" %}
+      {% render_field filter.form.tutor__isnull class="form-control"  placeholder="Tutorierte Beiträge" %}
 
       Beiträge mit Dokumenttyp:
-      {% render_field filter.form.dokument__typ class="form-control" %}
+      {% render_field filter.form.dokument__typ class="form-control" placeholder="Dokumente des Beitrags" title="Dokumentarten, die zu einem Beitrag vorhanden sind" %}
   </div>
   <div class="form-row">
 
-    Filter zum Ort der Beiträge:
-      {% render_field filter.form.ort class="form-control" %}
-      Ortbezeichnung enthält:
-      {% render_field filter.form.ort__ortbezeichnung__icontains class="form-control" %}
+  <!--  Filter zum Ort der Beiträge:
+      {% render_field filter.form.ort class="form-control" placeholder="Ort" %}
+      Ortbezeichnung enthält:-->
+      {% render_field filter.form.ort__ortbezeichnung__icontains class="form-control" placeholder="Ort" %}
   </div>
   <div class="form-row">
 
-    Filter zu untersuchten Persönlichkeiten der Beiträge:
-      Persönlichkeiten
-      {% render_field filter.form.persoenlichkeiten class="form-control" %}
+    <!--Filter zu untersuchten Persönlichkeiten der Beiträge:
+      Persönlichkeiten-->
+      {% render_field filter.form.persoenlichkeiten class="form-control" placeholder="Historische Persönlichkeit" title="Historische Persönlichkeit, die in der Arbeit untersucht wird" %}
 
-      Persönlichkeit enthält:
-      {% render_field filter.form.persoenlichkeiten__name__icontains class="form-control" %}
+    <!--  Persönlichkeit enthält:
+      {% render_field filter.form.persoenlichkeiten__name__icontains class="form-control" placeholder="" %}-->
   </div>
   <div class="form-row">
 
-    Filter zu behandelten Institutionen:
-      {% render_field filter.form.institutionen class="form-control" %}
-      Institution enthält:
-      {% render_field filter.form.institutionen__name__icontains class="form-control" %}
+    <!--Filter zu behandelten Institutionen:-->
+      {% render_field filter.form.institutionen class="form-control" placeholder="Institution" title="Institution, die in der Arbeit untersucht wird" %}
+      <!--Institution enthält:
+      {% render_field filter.form.institutionen__name__icontains class="form-control" placeholder="" %}-->
   </div>
     <button type="submit" class="btn btn-primary">
       <span class="glyphicon glyphicon-search"></span> Suche
