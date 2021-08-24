@@ -18,6 +18,7 @@
 
 <h1>Stadtgeschichte für die Zukunft: Schülerforschungen aus Münster</h1>
 <p>Mit diesen Filtern kann die gesamte Datenbank durchsucht werden</p>
+<p>Hinweis: Bei Filtern wie „Historische Persönlichkeit“ oder „Wettbewerb“ können durch Drücken der ‚Strg‘-Taste mehrere Persönlichkeiten oder Wettbewerbe ausgewählt werden.</p>
 
 <form method="get" target="_blank">
   <div class="well">
@@ -72,139 +73,18 @@
        {% render_field filter.form.auszeichnungeinreichung__auszeichnung class="form-control" placeholder="Auszeichnung" %}
 
     </div>
-    <!--
-    <div class="form-row">
-    Filter zum Thema:
-      <div class="form-group col">
-        Titel enthält:
 
-
-      Suche nach Beiträgen zu folgendem Thema:
-        {% render_field filter.form.topic class="form-control" placeholder="Beitragstitel enthält" title="" %}
-
-      </div>
-      <div class="form-group col">
-        Signatur:
-      </div>
-    </div>
-
-    <div class="form-row">
-    Filter zum Themenzeitraum der Beiträge:
-      <div class="form-group col">
-
-        Zeitraum Start (exakt):
-        {% render_field filter.form.zeitraumVon class="form-control" placeholder="TEST" %}
-        Zeitraum Start (maximal):
-        {% render_field filter.form.zeitraumVon__lt class="form-control" placeholder="" %}
-        Zeitraum Start (mindestens):
-      </div>
-        <div class="form-group col">
-
-        Zeitraum Ende (exakt):
-        {% render_field filter.form.zeitraumBis class="form-control"  placeholder="" %}
-        Zeitraum Ende (maximal):
-        Zeitraum Ende (mindestens):
-        {% render_field filter.form.zeitraumBis__gt class="form-control" placeholder="" %}
-      </div>
-  </div>
-  <div class="form-row">
-
-    Filter zum Beitragtypen
-      {{ filter.form.typ.label_tag }}
-  </div>
-
-  <div class="form-row">
-
-    Filter zu den verwendeten Quellen
-      {{ filter.form.grundlagen.label_tag }}
-  </div>
-
-  <div class="form-row">
-
-    Filter bezüglich der Wettbewerbe:
-      {% render_field filter.form.wettbewerb class="form-control" placeholder="" %}
-      Wettbewerbsjahr:
-      Wettbewerbsjahr (mindestens):
-      {% render_field filter.form.wettbewerb__jahr__gt class="form-control" placeholder="" %}
-      Wettbewerbsjahr (maximal):
-      {% render_field filter.form.wettbewerb__jahr__lt class="form-control" placeholder="" %}
-      Beiträge mit Auszeichnung:
-  </div>
-  <div class="form-row">
-
-    Filter bezüglich der Autoren und Arbeitsweise der Schüler:
-      Jahrgangsstufe (exakt):
-      {% render_field filter.form.jahrgang class="form-control" placeholder="" %}
-
-      Jahrgangsstufe (mindestens):
-
-      Jahrgangsstufe (maximal):
-
-      Schulart:
-
-      Einzelarbeit oder Gruppenarbeit:
-
-      Wurde der Beitrag tutoriert?
-
-      Beiträge mit Dokumenttyp:
-  </div>
-  <div class="form-row">
-
-    Filter zum Ort der Beiträge:
-      {% render_field filter.form.ort class="form-control" placeholder="Ort" %}
-      Ortbezeichnung enthält:
-  </div>
-  <div class="form-row">
-
-    Filter zu untersuchten Persönlichkeiten der Beiträge:
-      Persönlichkeiten
-
-      Persönlichkeit enthält:
-      {% render_field filter.form.persoenlichkeiten__name__icontains class="form-control" placeholder="" %}
-  </div>
-  <div class="form-row">
-
-    Filter zu behandelten Institutionen:
-      Institution enthält:
-      {% render_field filter.form.institutionen__name__icontains class="form-control" placeholder="" %}
-  </div>-->
     <button type="submit" class="btn btn-primary">
       <span class="glyphicon glyphicon-search"></span> Suche
     </button>
     <input type="reset" class="btn btn-primary">
-    <!--  <span></span>-->
     </input>
   </div>
 </form>
 <div> Es wurden {{ filter.qs.count }} Beiträge gefunden </div>
 <div> Wer die Arbeiten lesen möchte, kann sie in der Präsenzbibliothek des Stadtarchivs nutzen. Weitere Infos: <a href="www.stadt-muenster.de/archiv">www.stadt-muenster.de/archiv</a> </div>
 
-<!--
-<table class="table", style="display: block; height: 500px; overflow: auto; border-color: black">
-  <caption>Anzahl Beiträge: {{filter.qs.count}}</caption>
-  <thead>
-    <tr>
-      <th>Titel</th>
-      <th>Signatur</th>
-      <th>Wettbewerb</th>
-      <th>Detailansicht</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for beitrag in filter.qs %}
-      <tr>
-        <td>{{ beitrag.titel }}</td>
-        <td>{{ beitrag.signatur }}</td>
-        <td>{{ beitrag.wettbewerb.all | join:", "}}</td>
-        <td><a href="{{beitrag.id}}"target="_blank">(Detail)</a></td>
-      </tr>
-    {% empty %}
-      <tr>
-        <td colspan="5">No data</td>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>-->
+
 <div style="height:  500px; overflow: auto;">
 {% for beitrag in filter.qs %}
  <div class="resultDivTitle">
@@ -229,33 +109,6 @@
   <h1>Karte</h1>
   <div id="map"></div>
   {{ markers|json_script:"markers-data" }}
-  <!--
-  <script type="text/javascript">
-    const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    //var x = {{ort.location.x}};
-    //var y = {{ort.location.y}};
-    const map = L.map('map', {
-      center: [51.969, 7.62082],
-      minZoom: 2,
-      zoom: 14,
-    });
-
-    L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', { attribution: attribution }).addTo(map);
-  //var coordinates = {{ ort.location }};
-  //var marker = new 7.62082, 51.969
-  // {{ort.location.x }} and .y does not work properly
-    marker = new L.marker([parseFloat("{{ ort.location.y }}".replace(/,/g, '.')), parseFloat("{{ ort.location.x }}".replace(/,/g, '.'))]).addTo(map).bindPopup("{{ ort.ortbezeichnung }}");
-  //const markers = JSON.parse(document.getElementById('markers-data').textContent);
-
-  //let feature = L.geoJSON(markers).bindPopup(function (layer)
-  //{ return layer.feature.properties.ortbezeichnung + ' <a href="' + layer.feature.properties.pk + '" target="_blank">' + 'id: ' + layer.feature.properties.pk + '</a>';
-  //});//.addTo(map);
-  //map.addLayer(feature);
-
-    //map.fitBounds(feature.getBounds(), { padding: [100, 100] });
-
-    //map.fitWorld();
-  </script>-->
   <script src="{% static 'map.js' %}"></script>
 </div>
 </body>

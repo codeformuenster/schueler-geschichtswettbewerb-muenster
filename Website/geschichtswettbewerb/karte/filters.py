@@ -102,7 +102,7 @@ class BeitragFilter(django_filters.FilterSet):
     for x in Wettbewerb.objects.all():
         wettbewerbChoices.add((str(i), x.jahr))
 
-    wettbewerb = django_filters.ChoiceFilter(choices=wettbewerbChoices, empty_label="Wettbewerbsjahrgang")
+    #wettbewerb = django_filters.ChoiceFilter(choices=wettbewerbChoices, empty_label="Wettbewerbsjahrgang")
 
     institutionChoices=set()
     i=1
@@ -147,7 +147,7 @@ class BeitragFilter(django_filters.FilterSet):
             'zeitraumVon': ['exact', 'gt', 'lt',],
             'zeitraumBis': ['exact', 'gt', 'lt'],
             #'typ': ['exact'],
-            #'wettbewerb': ['exact'],
+            'wettbewerb': ['exact'],
             #'wettbewerb__jahr' : ['exact', 'gt', 'lt'],
             'ort' : ['exact'],
             'ort__ortbezeichnung' : ['icontains'],
