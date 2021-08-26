@@ -96,7 +96,7 @@
       </tr>
     </tbody>
   </table>
--->
+
 <table class="submission-detail-table">
   <tr>
     <td style="padding:0 15px 0 15px;"><h4>{{ beitrag.titel }}</h4></td>
@@ -112,11 +112,11 @@
             {% endif %}
           {% endfor %}
       {% endfor %}</td>
-    <td style="padding:0 15px 0 15px;"><!--{% for autor in beitrag.autorin_set.all %}
+    <td style="padding:0 15px 0 15px;">{% for autor in beitrag.autorin_set.all %}
       {% for x in autor.autorinschule_set.all %}
         {{ x }}
       {% endfor %}
-      {% endfor %}-->
+      {% endfor %}
     </td>
   </tr>
   <tr>
@@ -147,6 +147,86 @@
     <td style="padding:0 15px 0 15px;">{{ beitrag.zeitraumBis }}</td>
     <td style="padding:0 15px 0 15px;">{{ beitrag.institutionen.all|join:", " }}</td>
   </tr>
-</table>
+</table>-->
+<div class="submission-detail-heading">
+  
+</div>
+<div class="submission-detail">
+<div class="submission-left-container">
+  <div>
+    <h3>{{ beitrag.titel }}</h3>
+  </div>
+  <div class="submission-content">
+    {% for autor in beitrag.autorin_set.all %}
+        {{ autor }},
+        {% for y in autor.schule.all %}
+          {{ y }},
+        {% endfor %}
+        {% for x in autor.autorinschule_set.all %}
+          {% if x.jahrgangsstufe != None %}
+            JG:{{ x.jahrgangsstufe }},
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+  </div>
+  <div class="submission-content">
+    {{ beitrag.typ.all|join:", " }}
+  </div>
+  <div class="submission-content">
+    {{ beitrag.dokument_set.all|join:", " }}
+  </div>
+  <div>
+
+  </div>
+  <div class="submission-content">
+    Wettbewerb: <br>
+    {% for w in beitrag.wettbewerb.all %}
+      {{w}}<a href="{% url 'karte:wettbewerb-detail' pk=w.id %}"target="_blank" style="color:#aab315;"> (Detail)</a>
+    {% endfor %}
+  </div>
+  <div class="submission-content">
+    Zeitraum von: <br>
+    {{ beitrag.zeitraumVon }}
+  </div>
+  <div class="submission-content">
+    Zeitraum bis: <br>
+    {{ beitrag.zeitraumBis }}
+  </div>
+</div>
+<div class="submission-right-container">
+  <div>
+    <h3>Signatur: {{ beitrag.signatur }}</h3>
+  </div>
+  <div>
+
+  </div>
+  <div class="submission-content">
+    Umfang: <br>
+    {{ beitrag.umfang }}
+  </div>
+  <div class="submission-content">
+    Vorhandene Dokumente: <br>
+    {{ beitag.dokument_set.all|join:", "   }}
+  </div>
+  <div class="submission-content">
+    Auszeichnungen: <br>
+    {% for i in beitrag.auszeichnungeinreichung_set.all %}
+      {{ i.auszeichnung }}
+    {% endfor %}
+  </div>
+  <div class="submission-content">
+    Untersuchte Orte: <br>
+    {{ beitrag.ort_set.all|join:", " }}
+  </div>
+  <div class="submission-content">
+    Persönlichkeiten: <br>
+    {{ beitrag.persoenlichkeiten.all|join:", " }}
+  </div>
+  <div class="submission-content">
+    Institutionen: <br>
+    {{ beitrag.institutionen.all|join:", " }}
+  </div>
+</div>
+</div>
 </body>
 {% endblock %}

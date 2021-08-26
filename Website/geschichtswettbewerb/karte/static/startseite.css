@@ -112,6 +112,7 @@ html, body {
    width: 48%;
    margin-top: 5px;
  }
+
 .competition-detail {
   display: flex;
   flex-wrap: wrap;
@@ -147,6 +148,31 @@ html, body {
   padding: 5px;
   margin-top: 5px;
   text-align: center;
+}
+
+.submission-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.submission-left-container, .submission-right-container {
+  margin-top: 5px;
+  width:48%;
+  padding: 5px;
+}
+
+.submission-right-container {
+  margin-right: 10px;
+}
+
+.submission-content {
+  background-color: #005b79;
+  color: white;
+  margin-bottom: 5px;
+  border-radius: 1rem;
+  padding: 5px;
+
 }
 
 .form {
@@ -186,7 +212,7 @@ html, body {
 }
 
 .start-filter  {
-  padding-left: 10px;
+  /*padding-left: 10px;*/
   margin-left: 10px;
   width: 100%;
 }

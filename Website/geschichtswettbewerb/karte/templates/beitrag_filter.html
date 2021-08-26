@@ -213,7 +213,10 @@
      {% if x.jahrgangsstufe != None %}
        JG:{{ x.jahrgangsstufe }},
      {% endif %}
-       {% endfor %}, {{ autor.schule.all|join:", "}}
+       {% endfor %},
+       {% for y in autor.schule.all %}
+         {{ y.schule }},
+       {% endfor %}<!--{{ autor.schule.all|join:", "}}-->
    {% endfor %}</div>
    <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
    <div>{% for w in beitrag.wettbewerb.all %} {{ w.jahr }} {% endfor %}</div>
