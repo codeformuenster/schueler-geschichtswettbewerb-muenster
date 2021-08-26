@@ -12,7 +12,36 @@
   <script src="{% static 'leaflet.markercluster.js' %}"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <title>Personenfilter</title>
+
+  <style>
+  .collapsible {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+  }
+
+  .active, .collapsible:hover {
+    background-color: white;
+  }
+
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+  }
+  </style>
 </head>
 <body>
 
@@ -50,7 +79,18 @@
 
       {% render_field filter.form.institutionen class="form-control" placeholder="Institution" title="Institution, die in der Arbeit untersucht wird" %}
 
-      {% render_field filter.form.wettbewerb class="form-control" placeholder="Wettbewerbsjahrgang" %}
+      <div class="panel-group">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
+              </h4>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse">
+              <div class="panel-body">{% render_field filter.form.wettbewerb class="form-control" placeholder="Wettbewerbsjahrgang" %}</div>
+            </div>
+          </div>
+        </div>
 
       {% render_field filter.form.schule class="form-control" placeholder="Wettbewerbsjahrgang" %}
 

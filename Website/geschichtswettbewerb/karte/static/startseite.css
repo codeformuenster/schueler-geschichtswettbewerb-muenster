@@ -184,6 +184,11 @@ html, body {
   padding: 0.4rem;
 }
 
+.start-filter  {
+  padding-left: 10px;
+  margin-left: 10px;
+  width: 100%;
+}
 .resultDivInformation {
   border: 1px solid;
   /* border-width: 20px; */
