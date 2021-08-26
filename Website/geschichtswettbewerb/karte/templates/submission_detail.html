@@ -99,8 +99,53 @@
 -->
 <table class="submission-detail-table">
   <tr>
-    <td></td>
-    <td></td>
+    <td style="padding:0 15px 0 15px;"><h4>{{ beitrag.titel }}</h4></td>
+    <td style="padding:0 15px 0 15px;"><h4>{{ beitrag.signatur }}</h4></td>
+  </tr>
+  <tr>
+    <td style="padding:0 15px 0 15px;">{% for autor in beitrag.autorin_set.all %}
+        {{ autor }},
+        {{ autor.schule.all|join:", " }},
+        {% for x in autor.autorinschule_set.all %}
+          {% if x.jahrgangsstufe != None %}
+            JG:{{ x.jahrgangsstufe }},
+            {% endif %}
+          {% endfor %}
+      {% endfor %}</td>
+    <td style="padding:0 15px 0 15px;"><!--{% for autor in beitrag.autorin_set.all %}
+      {% for x in autor.autorinschule_set.all %}
+        {{ x }}
+      {% endfor %}
+      {% endfor %}-->
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:0 15px 0 15px;">{{ beitrag.typ.all|join:", " }}</td>
+    <td style="padding:0 15px 0 15px;">{{ beitrag. }}</td>
+  </tr>
+  <tr>
+    <td style="padding:0 15px 0 15px;"></td>
+    <td style="padding:0 15px 0 15px;">{{ beitrag. }}</td>
+  </tr>
+  <tr>
+    <td style="padding:0 15px 0 15px;">{{ beitrag. }}</td>
+    <td style="padding:0 15px 0 15px;">{% for i in beitrag.auszeichnungeinreichung_set.all %}
+      {{ i.auszeichnung }}
+    {% endfor %}</td>
+  </tr>
+  <tr>
+    <td style="padding:0 15px 0 15px;">{% for w in beitrag.wettbewerb.all %}
+    <a href="{% url 'karte:wettbewerb-detail' pk=w.id %}"target="_blank">{{w}}</a>
+    {% endfor %}</td>
+    <td style="padding:0 15px 0 15px;">{{ beitrag.ort_set.all|join:", " }}</td>
+  </tr>
+  <tr>
+    <td style="padding:0 15px 0 15px;">{{ beitrag.zeitraumVon }}</td>
+    <td style="padding:0 15px 0 15px;">{{ beitrag.persoenlichkeiten.all|join:", " }}</td>
+  </tr>
+  <tr>
+    <td style="padding:0 15px 0 15px;">{{ beitrag.zeitraumBis }}</td>
+    <td style="padding:0 15px 0 15px;">{{ beitrag.institutionen.all|join:", " }}</td>
   </tr>
 </table>
 </body>
