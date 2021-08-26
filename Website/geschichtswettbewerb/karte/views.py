@@ -26,7 +26,11 @@ class StartView(generic.ListView):
     def get_context_data(self, **kwargs):
         """returns the data for the starting page"""
         context = super().get_context_data(**kwargs)
-        context['filter'] = SimpleFilter(self.request.GET, queryset=self.get_queryset())
+        submitted = 'submitted' in self.request.GET
+        data = self.request.GET if submitted else None
+        #context['filter'] = SimpleFilter(self.request.GET, queryset=self.get_queryset())
+        context['filter'] = SimpleFilter(data, queryset=self.get_queryset())
+
         return context
 
 
@@ -39,7 +43,13 @@ class PlaceMapView(generic.ListView):
         """returns the data for all place markers in a geojson file"""
         context = super().get_context_data(**kwargs)
         context['markers'] = json.loads(serialize('geojson', Ort.objects.all()))
-        context['filter'] = OrtFilter(self.request.GET, queryset=self.get_queryset())
+
+        submitted = 'submitted' in self.request.GET
+        data = self.request.GET if submitted else None
+
+        #context['filter'] = OrtFilter(self.request.GET, queryset=self.get_queryset())
+        context['filter'] = OrtFilter(data, queryset=self.get_queryset())
+
         return context
 
 class PlaceListView(generic.ListView):
