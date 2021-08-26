@@ -9,12 +9,12 @@
   <link rel="stylesheet" type="text/css" href="{% static 'map.css' %}">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <script src="{% static 'leaflet.markercluster.js' %}"></script>
-  <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
+<!--  <script src="{% static 'leaflet.markercluster.js' %}"></script>-->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
 
   <title>Personenfilter</title>
 
@@ -55,6 +55,8 @@
     <div class="left-container">
       {% render_field filter.form.titel__icontains class="form-control" placeholder="Beitragstitel enthält" %}
 
+      {% render_field filter.form.regest__icontains class="form-control" placeholder="Beitragszusammenfassung enthält" %}
+
       {% render_field filter.form.zeitraumVon__gt class="form-control" placeholder="Zeitraum Von" title="Beginn des Zeitraums, der in der Arbeit untersucht wird" %}
 
       {% render_field filter.form.zeitraumBis__lt class="form-control" placeholder="Zeitraum Bis" title="Ende des Zeitraums, der in der Arbeit untersucht wird" %}
@@ -67,50 +69,125 @@
 
       {% render_field filter.form.jahrgangMax class="form-control" placeholder="Jahrgangsstufe bis" title="Jahrgangsstufe, in der die Kinder und Jugendlichen waren" %}
 
-      {% render_field filter.form.typ class="form-control" placeholder="Beitragsformat" title="Format, in dem der Beitrag verfasst wurde"  %}
+      {% render_field filter.form.einzel_gruppe class="form-control" placeholder="Einzel- oder Gruppenarbeit?" title="Ob die Kinder und Jugendlichen allein oder gemeinsam teilgenommenn haben" %}
 
-      {% render_field filter.form.dokument__typ class="form-control" placeholder="Dokumente des Beitrags" title="Dokumentarten, die zu einem Beitrag vorhanden sind" %}
+      <select name="tutor" selected="TEST" placeholder="Tutorierte Beiträge" class="form-control" id="id_tutor">
+        <option value="unknown" selected="">Tutoriert?</option>
+
+        <option value="true">Nein</option>
+
+        <option value="false">Ja</option>
+
+      </select>
 
     </div>
     <div class="right-container">
-      {% render_field filter.form.regest__icontains class="form-control" placeholder="Beitragszusammenfassung enthält" %}
-
-      {% render_field filter.form.persoenlichkeiten class="form-control" placeholder="Historische Persönlichkeit" title="Historische Persönlichkeit, die in der Arbeit untersucht wird" %}
-
-      {% render_field filter.form.institutionen class="form-control" placeholder="Institution" title="Institution, die in der Arbeit untersucht wird" %}
-
       <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p class="panel-title">
+              <a data-toggle="collapse" href="#collapse8">Historische Persönlichkeit</a>
+            </p>
+          </div>
+          <div id="collapse8" class="panel-collapse collapse">
+            <div class="panel-body">{% render_field filter.form.persoenlichkeiten class="form-control" placeholder="Historische Persönlichkeit" title="Historische Persönlichkeit, die in der Arbeit untersucht wird" %}</div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p class="panel-title">
+              <a data-toggle="collapse" href="#collapse9">Institution</a>
+            </p>
+          </div>
+          <div id="collapse9" class="panel-collapse collapse">
+            <div class="panel-body">{% render_field filter.form.institutionen class="form-control" placeholder="Institution" title="Institution, die in der Arbeit untersucht wird" %}</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p class="panel-title">
+              <a data-toggle="collapse" href="#collapse6">Beitragsformat</a>
+            </p>
+          </div>
+          <div id="collapse6" class="panel-collapse collapse">
+            <div class="panel-body">{% render_field filter.form.typ class="form-control" placeholder="Beitragsformat" title="Format, in dem der Beitrag verfasst wurde"  %}</div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <p class="panel-title">
+              <a data-toggle="collapse" href="#collapse7">Beitragsdokumente</a>
+            </p>
+          </div>
+          <div id="collapse7" class="panel-collapse collapse">
+            <div class="panel-body">{% render_field filter.form.dokument__typ class="form-control" placeholder="Dokumente des Beitrags" title="Dokumentarten, die zu einem Beitrag vorhanden sind" %}</div>
+          </div>
+        </div>
+
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" href="#collapse1">Collapsible panel</a>
-              </h4>
+              <p class="panel-title">
+                <a data-toggle="collapse" href="#collapse1">Wettbewerbsjahrgang</a>
+              </p>
             </div>
             <div id="collapse1" class="panel-collapse collapse">
               <div class="panel-body">{% render_field filter.form.wettbewerb class="form-control" placeholder="Wettbewerbsjahrgang" %}</div>
             </div>
           </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <p class="panel-title">
+                  <a data-toggle="collapse" href="#collapse2">Schule</a>
+                </p>
+              </div>
+              <div id="collapse2" class="panel-collapse collapse">
+                <div class="panel-body">{% render_field filter.form.autorin__autorinschule__schule class="form-control" placeholder="Schule" %}</div>
+              </div>
+            </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <p class="panel-title">
+                    <a data-toggle="collapse" href="#collapse3">Schulform</a>
+                  </p>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                  <div class="panel-body">{% render_field filter.form.autorin__autorinschule__schule__art class="form-control" placeholder="Schulform" %}</div>
+                </div>
+              </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <p class="panel-title">
+                <a data-toggle="collapse" href="#collapse4">Materialgrundlage</a>
+              </p>
+            </div>
+            <div id="collapse4" class="panel-collapse collapse">
+              <div class="panel-body">{% render_field filter.form.grundlagen class="form-control"  placeholder="Materialgrundlage" %}</div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <p class="panel-title">
+                <a data-toggle="collapse" href="#collapse5">Auszeichnung</a>
+              </p>
+            </div>
+            <div id="collapse5" class="panel-collapse collapse">
+              <div class="panel-body">{% render_field filter.form.auszeichnungeinreichung__auszeichnung class="form-control" placeholder="Auszeichnung" %}</div>
+            </div>
+          </div>
+
         </div>
 
-      {% render_field filter.form.schule class="form-control" placeholder="Wettbewerbsjahrgang" %}
-
-      {% render_field filter.form.autorin__autorinschule__schule__art class="form-control" placeholder="Schulform" %}
-
-      {% render_field filter.form.grundlagen class="form-control"  placeholder="Materialgrundlage" %}
 
       <!--{% render_field filter.form.tutor class="form-control"  placeholder="Tutorierte Beiträge" selected="TEST" %}-->
-      <select name="tutor" selected="TEST" placeholder="Tutorierte Beiträge" class="form-control" id="id_tutor">
-        <option value="unknown" selected="">Tutoriert?</option>
 
-        <option value="true">Ja</option>
 
-        <option value="false">Nein</option>
 
-      </select>
-
-       {% render_field filter.form.einzel_gruppe class="form-control" placeholder="Einzel- oder Gruppenarbeit?" title="Ob die Kinder und Jugendlichen allein oder gemeinsam teilgenommenn haben" %}
-
-       {% render_field filter.form.auszeichnungeinreichung__auszeichnung class="form-control" placeholder="Auszeichnung" %}
 
     </div>
 

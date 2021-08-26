@@ -158,7 +158,7 @@ class Beitrag(models.Model):
 
     class Meta:
         verbose_name_plural = "Beiträge"
-        ordering = ('signatur',)
+        ordering = ('wettbewerb__jahr', 'signatur')
 
     def __str__(self):
         """returns the titel and id of the model as string"""

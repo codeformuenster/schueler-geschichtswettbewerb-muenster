@@ -67,13 +67,13 @@ class BeitragFilter(django_filters.FilterSet):
 
     einzel_gruppe = django_filters.ChoiceFilter(label='einzel', choices=GROUP_CHOICES, empty_label="Einzel- oder Gruppenarbeit")
 
-    autorin__autorinschule__schule__art = django_filters.ModelChoiceFilter(label = 'schulart', queryset=Schulart.objects.all(), widget=forms.Select, empty_label="Schulform")
+    autorin__autorinschule__schule__art = django_filters.ModelMultipleChoiceFilter(label = 'schulart', queryset=Schulart.objects.all())
 
-    dokument__typ = django_filters.ModelChoiceFilter(label = 'dokumentTypen', queryset=DokumentTyp.objects.all(), widget=forms.Select, empty_label="Dokumenttyp")
+    dokument__typ = django_filters.ModelMultipleChoiceFilter(label = 'dokumentTypen', queryset=DokumentTyp.objects.all())
 
-    auszeichnungeinreichung__auszeichnung = django_filters.ModelChoiceFilter(label = 'auszeichnungen', queryset=Auszeichnung.objects.all(), widget=forms.Select, empty_label="Auszeichnung")
+    auszeichnungeinreichung__auszeichnung = django_filters.ModelMultipleChoiceFilter(label = 'auszeichnungen', queryset=Auszeichnung.objects.all())
 
-    autorin__autorinschule__schule = django_filters.ModelChoiceFilter(label = 'schule', queryset=Schule.objects.all(), widget=forms.Select, empty_label="Schule")
+    autorin__autorinschule__schule = django_filters.ModelMultipleChoiceFilter(label = 'schule', queryset=Schule.objects.all())
 
     jahrgang = django_filters.NumberFilter(label='jahrgang', method='lookupGradeExact')
     jahrgangMin = django_filters.NumberFilter(label='jahrgang', method='lookupGradeGt')
@@ -109,28 +109,28 @@ class BeitragFilter(django_filters.FilterSet):
     for x in Institution.objects.all():
         institutionChoices.add((str(i), x.name))
 
-    institutionen = django_filters.ChoiceFilter(choices=institutionChoices, empty_label="Institution")
+    #institutionen = django_filters.ChoiceFilter(choices=institutionChoices, empty_label="Institution")
 
     persoenlichkeitChoices=set()
     i=1
     for x in Persoenlichkeit.objects.all():
         persoenlichkeitChoices.add((str(i), x.name))
 
-    persoenlichkeiten = django_filters.ChoiceFilter(choices=persoenlichkeitChoices, empty_label="Historische Persönlichkeit")
+    #persoenlichkeiten = django_filters.ChoiceFilter(choices=persoenlichkeitChoices, empty_label="Historische Persönlichkeit")
 
     mgChoices=set()
     i=1
     for x in Materialgrundlage.objects.all():
         mgChoices.add((str(i), x.name))
 
-    grundlagen = django_filters.ChoiceFilter(choices=mgChoices, empty_label="Materialgrundlage")
+    #grundlagen = django_filters.ChoiceFilter(choices=mgChoices, empty_label="Materialgrundlage")
 
     typChoices=set()
     i=1
     for x in Beitragsart.objects.all():
         typChoices.add((str(i), x.name))
 
-    typ = django_filters.ChoiceFilter(choices=typChoices, empty_label="Beitragtyp")
+    #typ = django_filters.ChoiceFilter(choices=typChoices, empty_label="Beitragtyp")
 
 
     #def lookupSchool(self, queryset, name, value):
@@ -142,17 +142,19 @@ class BeitragFilter(django_filters.FilterSet):
             'titel': ['icontains'],
             'regest': ['icontains', 'exact'],
             'signatur': ['icontains', 'exact'],
-            #'persoenlichkeiten': ['exact'],
+            'persoenlichkeiten': ['exact'],
             'persoenlichkeiten__name': ['icontains'],
             'zeitraumVon': ['exact', 'gt', 'lt',],
             'zeitraumBis': ['exact', 'gt', 'lt'],
-            #'typ': ['exact'],
+            'typ': ['exact'],
             'wettbewerb': ['exact'],
             #'wettbewerb__jahr' : ['exact', 'gt', 'lt'],
             'ort' : ['exact'],
             'ort__ortbezeichnung' : ['icontains'],
-            #'institutionen': ['exact'],
+            'institutionen': ['exact'],
             'institutionen__name': ['icontains'],
-        #    'grundlagen': ['exact'],
+            'grundlagen': ['exact'],
             #'tutor': ['exact', 'isnull'],
+            'autorin__autorinschule__schule': ['exact'],
+            #'auszeichnungeinreichung__auszeichnung' : ['exact'],
         }
