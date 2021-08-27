@@ -83,18 +83,23 @@ html, body {
   color: black !important;
 }
 
-.table-bordered {
-  /*background-color: #ebd5b3;*/
+.submission-result {
+  margin-left: 10px;
+  height:  500px;
+  overflow: auto;
+}
+
+.detail-filter-headline {
+  margin-left: 10px;
+  width: 100%;
 }
 
 .well {
-  /*background-color: #ebd5b3;*/
   background-color: #005b79;
   color: white;
 }
 
-  .well, .lower {
-    /*background-color: #ebd5b3;*/
+.well, .lower {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

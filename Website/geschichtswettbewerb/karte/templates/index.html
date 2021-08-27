@@ -25,9 +25,10 @@
   <!--<script src="{% static 'leaflet.markercluster.js' %}"></script>-->
 </head>
 <body>
-
-  <h1>Stadtgeschichte für die Zukunft: Schülerforschungen aus Münster</h1>
-  <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge geschrieben wurden.</p><body>
+  <div class="detail-filter-headline">
+    <h1>Stadtgeschichte für die Zukunft: Schülerforschungen aus Münster</h1>
+    <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge geschrieben wurden.</p><body>
+  </div>
     <div id="map"></div>
     {{ markers|json_script:"markers-data" }}
     <script src="{% static 'map.js' %}"></script>
@@ -56,9 +57,10 @@
          </div>
        </div>
      </form>
+   </div>
 
 
-     <div style="height:  500px; overflow: auto;">
+     <div class="submission-result">
        {% if filter.is_bound %}
 
      {% for beitrag in filter.qs %}
@@ -84,7 +86,6 @@
 
      {% endfor %}
      {% endif %}
-</div>
 </div>
 
 </body>

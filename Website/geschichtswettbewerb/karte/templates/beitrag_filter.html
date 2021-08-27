@@ -44,11 +44,12 @@
   </style>
 </head>
 <body>
-
-<h1>Stadtgeschichte für die Zukunft: Schülerforschungen aus Münster</h1>
-<p>Mit diesen Filtern kann die gesamte Datenbank durchsucht werden</p>
-<p>Hinweis: Bei Filtern wie „Historische Persönlichkeit“ oder „Wettbewerb“ können durch Drücken der ‚Strg‘-Taste mehrere Persönlichkeiten oder Wettbewerbe ausgewählt werden.</p>
-
+<div class="detail-filter-headline">
+  <h1>Stadtgeschichte für die Zukunft: Schülerforschungen aus Münster</h1>
+  <p>Mit diesen Filtern kann die gesamte Datenbank durchsucht werden</p>
+  <p>Hinweis: Bei Filtern wie „Historische Persönlichkeit“ oder „Wettbewerb“ können durch Drücken der ‚Strg‘-Taste mehrere Persönlichkeiten oder Wettbewerbe ausgewählt werden.</p>
+</div>
+<div class="start-filter">
 <form method="get" target="_blank">
   <div class="well">
 
@@ -198,11 +199,12 @@
     </input>
   </div>
 </form>
-<div> Es wurden {{ filter.qs.count }} Beiträge gefunden </div>
-<div> Wer die Arbeiten lesen möchte, kann sie in der Präsenzbibliothek des Stadtarchivs nutzen. Weitere Infos: <a href="www.stadt-muenster.de/archiv">www.stadt-muenster.de/archiv</a> </div>
+</div>
 
+<div class="submission-result">
+  <div> Es wurden {{ filter.qs.count }} Beiträge gefunden </div>
+  <div> Wer die Arbeiten lesen möchte, kann sie in der Präsenzbibliothek des Stadtarchivs nutzen. Weitere Infos: <a href="www.stadt-muenster.de/archiv">www.stadt-muenster.de/archiv</a> </div>
 
-<div style="height:  500px; overflow: auto;">
 {% for beitrag in filter.qs %}
  <div class="resultDivTitle">
    {{ beitrag.signatur }}  - {{ beitrag.titel }}
