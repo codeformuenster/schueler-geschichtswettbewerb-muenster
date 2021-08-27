@@ -68,11 +68,15 @@ html, body {
     text-align: center;
     float: none;
     color: black;
+    font-size: 22px;
   }
 
 .navbar-header{
-  text-align: : center;
+  text-align: center;
   position: absolute;
+  float: left;
+  padding: 15px;
+  width: 100%;
 }
 
 .nav-link {

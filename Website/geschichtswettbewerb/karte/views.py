@@ -113,3 +113,11 @@ class CompetitionDetailView(generic.DetailView):
         context['autorinnen'] = Autorin.objects.filter(Q(beitrag__wettbewerb=self.get_object()))
         context['awards'] = AuszeichnungEinreichung.objects.filter(Q(einreichung__wettbewerb=self.get_object()))
         return context
+
+class ImpressumView(generic.ListView):
+    template_name = 'impressum.html'
+    model = Beitrag
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
