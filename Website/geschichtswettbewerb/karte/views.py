@@ -81,7 +81,11 @@ class SubmissionFilterView(generic.ListView):
     def get_context_data(self, **kwargs):
         """returns the place data that is to be filtered in the view"""
         context = super().get_context_data(**kwargs)
-        context['filter'] = BeitragFilter(self.request.GET, queryset=self.get_queryset())
+
+        submitted = 'submitted' in self.request.GET
+        data = self.request.GET if submitted else None
+
+        context['filter'] = BeitragFilter(data, queryset=self.get_queryset())
         context['markers'] = json.loads(serialize('geojson', Ort.objects.all()))
         return context
 

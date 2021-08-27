@@ -192,7 +192,7 @@
 
     </div>
 
-    <button type="submit" class="btn btn-primary">
+    <button type="submit" class="btn btn-primary" name="submitted">
       <span class="glyphicon glyphicon-search"></span> Suche
     </button>
     <input type="reset" class="btn btn-primary">
@@ -202,6 +202,8 @@
 </div>
 
 <div class="submission-result">
+  {% if filter.is_bound %}
+
   <div> Es wurden {{ filter.qs.count }} Beiträge gefunden </div>
   <div> Wer die Arbeiten lesen möchte, kann sie in der Präsenzbibliothek des Stadtarchivs nutzen. Weitere Infos: <a href="www.stadt-muenster.de/archiv">www.stadt-muenster.de/archiv</a> </div>
 
@@ -228,6 +230,7 @@
 {% empty %}
 
 {% endfor %}
+{% endif %}
 </div>
 <div>
   <h1>Karte</h1>
