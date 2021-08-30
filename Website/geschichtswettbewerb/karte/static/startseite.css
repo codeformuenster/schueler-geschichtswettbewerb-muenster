@@ -283,3 +283,11 @@ html, body {
     height: 34px;
     border-radius: 4px;
 }
+
+.submission-detail-heading {
+  margin-left: 5px;
+}
+
+.regest {
+  margin-left: 5px;
+}

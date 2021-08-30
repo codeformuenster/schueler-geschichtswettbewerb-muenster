@@ -6,226 +6,133 @@
 <head>
   <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
 </head>
-
 <body>
-  <!--
-  <h1>{{ beitrag.titel }} ({{ beitrag.signatur }})</h1>
-  <h4 style="text-align: left">Autoren:</h4>
-  <table class="table", style="display: block; overflow: auto;">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Schule (Schulart)</th>
-        <th>Jahrgangsstufe</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for autor in beitrag.autorin_set.all %}
-      <tr>
-        <td>{{ autor }}</td>
-        <td>{{ autor.schule.all|join:", " }}</td>
-        <td>{% for x in autor.autorinschule_set.all %}
-          {{ x.jahrgangsstufe }}
-          {% endfor %}
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  <h4 style="text-align: left">Regest:</h4>
-  <div style="text-align: justify">
-    {{ beitrag.regest }}
-  </div>
-  <table class="table", style="display: block; overflow: auto;">
-    <thead>
-      <tr>
-        <th>Umfang</th>
-        <th>Zeitraum Von</th>
-        <th>Zeitraum Bis</th>
-        <th>Persönlichkeiten</th>
-        <th>Institutionen</th>
-        <th>Orte</th>
-        <th>Materialgrundlagen</th>
-        <th>Beitragsart</th>
-        <th>Auszeichnung</th>
-        <th>Wettbewernsjahrgang</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ beitrag.umfang }}</td>
-        <td>{{ beitrag.zeitraumVon }}</td>
-        <td>{{ beitrag.zeitraumBis }}</td>
-        <td>{{ beitrag.persoenlichkeiten.all|join:", " }}</td>
-        <td>{{ beitrag.institutionen.all|join:", " }}</td>
-        <td>{{ beitrag.ort_set.all|join:", " }}</td>
-        <td>{{ beitrag.grundlagen.all|join:", " }}</td>
-        <td>{{ beitrag.typ.all|join:", " }}</td>
-        <td>{% for i in beitrag.auszeichnungeinreichung_set.all %}
-          {{ i.auszeichnung }}
-        {% endfor %}</td>
-        <td>
-          {% for w in beitrag.wettbewerb.all %}
-          <a href="{% url 'karte:wettbewerb-detail' pk=w.id %}"target="_blank">{{w.jahr}}</a>
-          {% endfor %}
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table class="table", style="display: block; overflow: auto;">
-    <thead>
-      <tr>
-        <th>Titel</th>
-        <th>Jahr</th>
-        <th>Detail</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-           {% for x in beitrag.wettbewerb.all %}
-            {{ x.thema }}
-          {% endfor %}
-</td>
-        <td>
-          {% for x in beitrag.wettbewerb.all %}
-{{ x.jahr }}
-{% endfor %}
-</td>
-      </tr>
-    </tbody>
-  </table>
-
-<table class="submission-detail-table">
-  <tr>
-    <td style="padding:0 15px 0 15px;"><h4>{{ beitrag.titel }}</h4></td>
-    <td style="padding:0 15px 0 15px;"><h4>{{ beitrag.signatur }}</h4></td>
-  </tr>
-  <tr>
-    <td style="padding:0 15px 0 15px;">{% for autor in beitrag.autorin_set.all %}
-        {{ autor }},
-        {{ autor.schule.all|join:", " }},
-        {% for x in autor.autorinschule_set.all %}
-          {% if x.jahrgangsstufe != None %}
-            JG:{{ x.jahrgangsstufe }},
-            {% endif %}
-          {% endfor %}
-      {% endfor %}</td>
-    <td style="padding:0 15px 0 15px;">{% for autor in beitrag.autorin_set.all %}
-      {% for x in autor.autorinschule_set.all %}
-        {{ x }}
-      {% endfor %}
-      {% endfor %}
-    </td>
-  </tr>
-  <tr>
-    <td style="padding:0 15px 0 15px;">{{ beitrag.typ.all|join:", " }}</td>
-    <td style="padding:0 15px 0 15px;">{{ beitrag. }}</td>
-  </tr>
-  <tr>
-    <td style="padding:0 15px 0 15px;"></td>
-    <td style="padding:0 15px 0 15px;">{{ beitrag. }}</td>
-  </tr>
-  <tr>
-    <td style="padding:0 15px 0 15px;">{{ beitrag. }}</td>
-    <td style="padding:0 15px 0 15px;">{% for i in beitrag.auszeichnungeinreichung_set.all %}
-      {{ i.auszeichnung }}
-    {% endfor %}</td>
-  </tr>
-  <tr>
-    <td style="padding:0 15px 0 15px;">{% for w in beitrag.wettbewerb.all %}
-    <a href="{% url 'karte:wettbewerb-detail' pk=w.id %}"target="_blank">{{w}}</a>
-    {% endfor %}</td>
-    <td style="padding:0 15px 0 15px;">{{ beitrag.ort_set.all|join:", " }}</td>
-  </tr>
-  <tr>
-    <td style="padding:0 15px 0 15px;">{{ beitrag.zeitraumVon }}</td>
-    <td style="padding:0 15px 0 15px;">{{ beitrag.persoenlichkeiten.all|join:", " }}</td>
-  </tr>
-  <tr>
-    <td style="padding:0 15px 0 15px;">{{ beitrag.zeitraumBis }}</td>
-    <td style="padding:0 15px 0 15px;">{{ beitrag.institutionen.all|join:", " }}</td>
-  </tr>
-</table>-->
 <div class="submission-detail-heading">
-
+  <h3>{{ beitrag.titel }}</h3>
+  <h4>
+    {{ beitrag.autorin_set.all|join:", " }}
+  </h4>
 </div>
 <div class="submission-detail">
 <div class="submission-left-container">
-  <div>
-    <h3>{{ beitrag.titel }}</h3>
+  <div class="submission-content">
+    Schulen:
+    {% for autor in beitrag.autorin_set.all %}
+      {{ autor.schule.all|join:", " }}
+      {% empty %}
+      nicht erfasst
+    {% endfor %}
   </div>
   <div class="submission-content">
+    Jahrgangsstufen:
     {% for autor in beitrag.autorin_set.all %}
-        {{ autor }},
-        {% for y in autor.schule.all %}
-          {{ y }},
-        {% endfor %}
         {% for x in autor.autorinschule_set.all %}
-          {% if x.jahrgangsstufe != None %}
-            JG:{{ x.jahrgangsstufe }},
+          {% if forloop.last %}
+            {% if x.jahrgangsstufe != None %}
+              {{ x.jahrgangsstufe }}
+            {% endif %}
+            {% else %}
+            {% if x.jahrgangsstufe != None %}
+              {{ x.jahrgangsstufe }},
+            {% endif %}
           {% endif %}
+          {% empty %}
+            nicht erfasst
         {% endfor %}
       {% endfor %}
   </div>
   <div class="submission-content">
-    {{ beitrag.typ.all|join:", " }}
+    Beitragsart:
+    {%  if beitrag.typ.all.count > 0 %}
+      {{ beitrag.typ.all|join:", " }}
+      {% else %}
+        nicht erfasst
+      {% endif %}
   </div>
   <div class="submission-content">
-    {{ beitrag.dokument_set.all|join:", " }}
+    Vorhandene Dokumente:
+    {%  if beitrag.dokument_set.all.count > 0 %}
+      {{ beitrag.dokument_set.all|join:", " }}
+    {% else %}
+      nicht erfasst
+    {% endif %}
   </div>
   <div>
 
   </div>
   <div class="submission-content">
-    Wettbewerb: <br>
+    Wettbewerb:
     {% for w in beitrag.wettbewerb.all %}
       {{w}}<a href="{% url 'karte:wettbewerb-detail' pk=w.id %}"target="_blank" style="color:#aab315;"> (Detail)</a>
+    {% empty %}
+        nicht erfasst
     {% endfor %}
   </div>
   <div class="submission-content">
-    Zeitraum von: <br>
-    {{ beitrag.zeitraumVon }}
+    Zeitraum von:
+    {% if beitrag.zeitraumVon != None %}
+      {{ beitrag.zeitraumVon }}
+    {% else %}
+      nicht erfasst
+    {% endif %}
   </div>
   <div class="submission-content">
-    Zeitraum bis: <br>
-    {{ beitrag.zeitraumBis }}
+    Zeitraum bis:
+    {% if beitrag.zeitraumBis != None %}
+      {{ beitrag.zeitraumBis }}
+    {% else %}
+      nicht erfasst
+    {% endif %}
   </div>
 </div>
 <div class="submission-right-container">
-  <div>
-    <h3>Signatur: {{ beitrag.signatur }}</h3>
-  </div>
-  <div>
-    Beitragszusammenfassung: <br> {{ beitrag.regest}}
+  <div class="submission-content">
+    Signatur: {{ beitrag.signatur }}
   </div>
   <div class="submission-content">
-    Umfang: <br>
-    {{ beitrag.umfang }}
+    Umfang:
+    {% if beitrag.umfang != None %}
+      {{ beitrag.umfang }}
+    {% else %}
+      nicht erfasst
+    {% endif %}
   </div>
   <div class="submission-content">
-    Vorhandene Dokumente: Beitrag<br>
-    {{ beitag.dokument_set.all|join:", "   }}
-  </div>
-  <div class="submission-content">
-    Auszeichnungen: <br>
+    Auszeichnungen:
     {% for i in beitrag.auszeichnungeinreichung_set.all %}
       {{ i.auszeichnung }}
+    {% empty %}
+      nicht erfasst
     {% endfor %}
   </div>
   <div class="submission-content">
-    Untersuchte Orte: <br>
-    {{ beitrag.ort_set.all|join:", " }}
+    Untersuchte Orte:
+    {%  if beitrag.ort_set.all.count > 0 %}
+      {{ beitrag.ort_set.all|join:", " }}
+    {% else %}
+      nicht erfasst
+    {% endif %}
   </div>
   <div class="submission-content">
-    Persönlichkeiten: <br>
-    {{ beitrag.persoenlichkeiten.all|join:", " }}
+    Persönlichkeiten:
+    {%  if beitrag.persoenlichkeiten.all.count > 0 %}
+      {{ beitrag.persoenlichkeiten.all|join:", " }}
+    {% else %}
+      nicht erfasst
+    {% endif %}
   </div>
   <div class="submission-content">
-    Institutionen: <br>
-    {{ beitrag.institutionen.all|join:", " }}
+    Institutionen:
+    {%  if beitrag.institutionen.all.count > 0 %}
+      {{ beitrag.institutionen.all|join:", " }}
+    {% else %}
+      nicht erfasst
+    {% endif %}
   </div>
+</div>
+<div class="regest">
+  <p>Beitragszusammenfassung:<br>
+  {{ beitrag.regest }}</p>
 </div>
 </div>
 </body>
