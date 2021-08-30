@@ -21,7 +21,7 @@ class OrtFilter(django_filters.FilterSet):
                                 #|Q(wettbewerb__icontains=value)
                                 |Q(ort__ortbezeichnung__icontains=value)
                                 |Q(institutionen__name__icontains=value)
-                                |Q(grundlagen__name__icontains=value))
+                                |Q(grundlagen__name__icontains=value)).distinct()
 
     class Meta:
         """Class to apply the filter on the ortbezeichnung attribute of the Ort model"""
