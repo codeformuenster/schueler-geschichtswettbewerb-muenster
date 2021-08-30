@@ -149,7 +149,7 @@
   </tr>
 </table>-->
 <div class="submission-detail-heading">
-  
+
 </div>
 <div class="submission-detail">
 <div class="submission-left-container">
@@ -198,14 +198,14 @@
     <h3>Signatur: {{ beitrag.signatur }}</h3>
   </div>
   <div>
-
+    Beitragszusammenfassung: <br> {{ beitrag.regest}}
   </div>
   <div class="submission-content">
     Umfang: <br>
     {{ beitrag.umfang }}
   </div>
   <div class="submission-content">
-    Vorhandene Dokumente: <br>
+    Vorhandene Dokumente: Beitrag<br>
     {{ beitag.dokument_set.all|join:", "   }}
   </div>
   <div class="submission-content">

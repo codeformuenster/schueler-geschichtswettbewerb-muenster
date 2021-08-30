@@ -71,6 +71,10 @@ html, body {
     font-size: 22px;
   }
 
+.header-button {
+  background-color: #005b79;
+  border-radius: 1rem;
+}
 .navbar-header{
   text-align: center;
   position: absolute;
@@ -144,9 +148,9 @@ html, body {
 }
 
 .competition-content-left {
-  background-color: #005b79;
+  /* background-color: #005b79; */
   border-radius: 1rem;
-  color: white;
+  color: black;
   margin-left: 10px;
 }
 
@@ -157,6 +161,7 @@ html, body {
   padding: 5px;
   margin-top: 5px;
   text-align: center;
+  filter: brightness(1.0);
 }
 
 .submission-detail {
