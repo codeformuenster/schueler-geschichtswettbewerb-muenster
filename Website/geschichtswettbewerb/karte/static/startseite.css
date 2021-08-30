@@ -18,7 +18,7 @@ html, body {
   box-shadow: 0 1px 10px rgba(0,0,0,.1);
   height: 100px;
   align-content: center;
-  /*background-color: #ebd5b3 !important;*/
+  background-color: white;
   /*background-image: url(WWUMuenster_Logo_2017_rgb.jpg);*/
   background-size: 300px;
   background-repeat:no-repeat;
@@ -42,6 +42,10 @@ html, body {
   padding: 6px 8px  6px 16px;
   display: block;
   background-color: white;
+}
+
+.sidebar-heading {
+  text-align: center;
 }
 
 .main {
@@ -72,8 +76,7 @@ html, body {
   }
 
 .header-button {
-  background-color: #005b79;
-  border-radius: 1rem;
+
 }
 .navbar-header{
   text-align: center;
