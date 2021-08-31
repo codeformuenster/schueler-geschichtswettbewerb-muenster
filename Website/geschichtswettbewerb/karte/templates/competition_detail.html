@@ -13,17 +13,17 @@
 </head>
 <body>
   <div class="competition-title">
-    <h2>{{ object.kurztitel }}  ({{object.jahr}} - {{object.jahrBis}})</h2>
+    <h2>{{ object.kurztitel }} ({{object.jahr}} - {{object.jahrBis}})</h2>
   </div>
 <div class="competition-detail">
-  <div class="competition-content-left">
-    <div class="competition-summary">{{ object.zusammenfassung }}</div>
+  <div class="competition-summary">
+    {{ object.zusammenfassung }}
   </div>
   <div class="competition-content-right">
-    <div class="first">
+    <div class="competition-left">
       Anzahl Beiträge aus Münster {{ object.beitrag_set.all.count }}
     </div>
-    <div class="second">
+    <div class="competition-middle">
       Anzahl Teilnehmende aus Münster {{ autorinnen.count }}
     </div>
 <!--
@@ -36,7 +36,7 @@
 
     Double check if autorinnen.count is correct
 -->
-    <div class="third">
+    <div class="competition-right">
       Anzahl der Preise in Münster: {{ awards.count }}
     </div>
   </div>
