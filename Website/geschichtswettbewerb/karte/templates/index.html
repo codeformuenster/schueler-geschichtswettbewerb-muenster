@@ -71,15 +71,10 @@
         <div>
         Schulen:
         {% for autor in beitrag.autorin_set.all %}
-          <!--IRGENDWAS {{autor.schule.all.0}}-->
           {% ifchanged autor.schule.all.0 %}
             {% for schule in autor.schule.all %}
               {% ifchanged schule %}{{ schule }};{% endifchanged %}
             {% endfor %}
-            <!--{% regroup autor.schule.all by schule.name as schule_list%}
-            {% for schule in schule_list.grouper %}
-              {{ schule }};
-            {% endfor %}-->
             {% endifchanged %}
             {% empty %}
               nicht erfasst
@@ -89,27 +84,8 @@
           Jahrgangsstufen:
           {% for autor in beitrag.autorin_set.all %}
           {% with counter=forloop.counter %}
-          <!--{% ifchanged autor.schule.all.counter.jahrgangsstufe %}
-            TESTITEST
-          {% endifchanged %}-->
-
-          <!--{{ autor.autorinschule_set.all.0.jahrgangsstufe }}!!!!!!!!!!!!!!
-          {% ifchanged autor.schule.all.counter.jahrgangsstufe %}
-              ASDWDASDWDASd
-          {% endifchanged %}-->
             {% ifchanged autor.autorinschule_set.all.0.jahrgangsstufe %}
             {% for x in autor.autorinschule_set.all %}
-              <!--{% ifchanged x.jahrgangsstufe %}
-                {% if forloop.parentloop.last %}
-                  {% if x.jahrgangsstufe != None %}
-                    {{ x.jahrgangsstufe }}
-                  {% endif %}
-                {% else %}
-                {% if x.jahrgangsstufe != None %}
-                  {{ x.jahrgangsstufe }};
-                {% endif %}
-                {% endif %}
-              {% endifchanged %}-->
               {% ifchanged x.jahrgangsstufe %} {{ x.jahrgangsstufe }}; {% endifchanged %}
               {% empty %}
                 nicht erfasst
@@ -117,26 +93,6 @@
               {% endifchanged %}
             {% endwith %}
           {% endfor %}
-            <!--
-          Jahrgangsstufen:
-          {% for autor in beitrag.autorin_set.all %}
-            {% ifchanged autor.schule.all.0.jahrgangsstufe %}
-              {% for x in autor.autorinschule_set.all %}
-                {% if forloop.parentloop.last %}
-                  {% if x.jahrgangsstufe != None %}
-                    {% ifchanged x.jahrgangsstufe %}{{ x.jahrgangsstufe }}{% endifchanged %}
-                  {% endif %}
-                {% else %}
-                  {% if x.jahrgangsstufe != None %}
-                    {% ifchanged x.jahrgangsstufe %}{{ x.jahrgangsstufe }};{% endifchanged %}
-                  {% endif %}
-                {% endif %}
-                {% empty %}
-                  nicht erfasst
-              {% endfor %}
-              {% endifchanged %}
-
-            {% endfor %}-->
           </div>
         <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
         <div>{% for w in beitrag.wettbewerb.all %} {{ w.jahr }} {% endfor %}</div>

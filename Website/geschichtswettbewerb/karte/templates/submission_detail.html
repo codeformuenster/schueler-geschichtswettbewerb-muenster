@@ -18,13 +18,29 @@
   <div class="submission-content">
     Schulen:
     {% for autor in beitrag.autorin_set.all %}
-      {{ autor.schule.all|join:", " }}
-      {% empty %}
-      nicht erfasst
-    {% endfor %}
+      {% ifchanged autor.schule.all.0 %}
+        {% for schule in autor.schule.all %}
+          {% ifchanged schule %}{{ schule }};{% endifchanged %}
+        {% endfor %}
+        {% endifchanged %}
+        {% empty %}
+          nicht erfasst
+      {% endfor %}
   </div>
   <div class="submission-content">
     Jahrgangsstufen:
+    {% for autor in beitrag.autorin_set.all %}
+    {% with counter=forloop.counter %}
+      {% ifchanged autor.autorinschule_set.all.0.jahrgangsstufe %}
+      {% for x in autor.autorinschule_set.all %}
+        {% ifchanged x.jahrgangsstufe %} {{ x.jahrgangsstufe }}; {% endifchanged %}
+        {% empty %}
+          nicht erfasst
+        {% endfor %}
+        {% endifchanged %}
+      {% endwith %}
+    {% endfor %}
+    <!--
     {% for autor in beitrag.autorin_set.all %}
         {% for x in autor.autorinschule_set.all %}
           {% if forloop.parentloop.last %}
@@ -39,7 +55,7 @@
           {% empty %}
             nicht erfasst
         {% endfor %}
-      {% endfor %}
+      {% endfor %}-->
   </div>
   <div class="submission-content">
     Beitragsart:
