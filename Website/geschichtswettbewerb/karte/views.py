@@ -50,6 +50,9 @@ class PlaceMapView(generic.ListView):
         #context['filter'] = OrtFilter(self.request.GET, queryset=self.get_queryset())
         context['filter'] = OrtFilter(data, queryset=self.get_queryset())
 
+        #context['schulen'] = SchuleSchulart.objects.filter(Q(schule__autorin_set__beitrag=self.get_queryset())).distinct()
+
+
         return context
 
 class PlaceListView(generic.ListView):

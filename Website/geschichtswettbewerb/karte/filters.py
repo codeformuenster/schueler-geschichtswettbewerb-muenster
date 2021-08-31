@@ -17,8 +17,20 @@ class OrtFilter(django_filters.FilterSet):
                                 |Q(regest__icontains=value)
                                 |Q(signatur__icontains=value)
                                 |Q(persoenlichkeiten__name__icontains=value)
-                                #|Q(typ__icontains=value)
-                                #|Q(wettbewerb__icontains=value)
+                                |Q(typ__name__icontains=value)
+                                |Q(wettbewerb__thema__icontains=value)
+                                |Q(wettbewerb__kurztitel__icontains=value)
+                                |Q(wettbewerb__zusammenfassung__icontains=value)
+                                |Q(grundlagen__name__icontains=value)
+                                |Q(autorin__autorinschule__schule__schule__name__icontains=value)
+                                |Q(autorin__autorinschule__schule__art__name__icontains=value)
+                                #|Q(
+                                #|Q(
+                                #|Q(
+                                #|Q(
+                                #|Q(
+                                #|Q(
+                                #|Q(
                                 |Q(ort__ortbezeichnung__icontains=value)
                                 |Q(institutionen__name__icontains=value)
                                 |Q(grundlagen__name__icontains=value)).distinct()
