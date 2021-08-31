@@ -135,6 +135,13 @@ html, body {
   justify-content: space-between;
 }
 
+.competition-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 12px;
+}
+
 .competition-content-left, .competition-content-right {
   width:100%;
   padding: 5px;
@@ -167,6 +174,21 @@ html, body {
   margin-top: 5px;
   text-align: center;
   width: 32%;
+}
+
+.competition-overview {
+  background-color: #005b79;
+  border-radius: 1rem;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  text-align: center;
+  width: 32%;
+  height: 50px;
+}
+
+.competition-overview:hover {
+  color: #E8E8E8;
 }
 
 .first, .second, .third {

@@ -186,9 +186,9 @@ img {vertical-align: middle;}
     <img src="{% static 'Samuel_GW_Festakt_2016_17.jpg' %}" style="width:100%">
     <div class="text">Caption Six</div>
   </div>
-  <!-- Next and previous buttons -->
+  <!-- Next and previous buttons
   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
 </div>
 <br>
 
@@ -202,6 +202,7 @@ img {vertical-align: middle;}
 <script src="{% static 'automatic_slideshow.js' %}"></script>
 
 </div>
+<!--
 <div>
   <div class="dropdown">
    <button class="dropbtn">Dropdown</button>
@@ -211,8 +212,12 @@ img {vertical-align: middle;}
      {% endfor %}
    </div>
  </div>
-
-
+</div>
+-->
+<div class="competition-table">
+  {% for wettbewerb in object_list %}
+    <a class="competition-overview"  href='wettbewerbe/{{wettbewerb.id}}'>{{wettbewerb}}</a>
+  {% endfor %}
 </div>
 </body>
 {% endblock %}
