@@ -67,8 +67,9 @@
   </div>
   <div class="submission-content">
     Vorhandene Dokumente:
+    Beitrag
     {%  if beitrag.dokument_set.all.count > 0 %}
-      {{ beitrag.dokument_set.all|join:", " }}
+      , {{ beitrag.dokument_set.all|join:", " }}
     {% else %}
       nicht erfasst
     {% endif %}

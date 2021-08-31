@@ -24,13 +24,10 @@ class OrtFilter(django_filters.FilterSet):
                                 |Q(grundlagen__name__icontains=value)
                                 |Q(autorin__autorinschule__schule__schule__name__icontains=value)
                                 |Q(autorin__autorinschule__schule__art__name__icontains=value)
-                                #|Q(
-                                #|Q(
-                                #|Q(
-                                #|Q(
-                                #|Q(
-                                #|Q(
-                                #|Q(
+                                |Q(auszeichnungeinreichung__auszeichnung__name__icontains=value)
+                                |Q(dokument__typ__typName__icontains=value)
+                                |Q(ort__histName__name__icontains=value)
+                                |Q(ort__histRegion__name__icontains=value)
                                 |Q(ort__ortbezeichnung__icontains=value)
                                 |Q(institutionen__name__icontains=value)
                                 |Q(grundlagen__name__icontains=value)).distinct()
