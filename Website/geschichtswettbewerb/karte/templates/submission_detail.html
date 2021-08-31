@@ -27,11 +27,11 @@
     Jahrgangsstufen:
     {% for autor in beitrag.autorin_set.all %}
         {% for x in autor.autorinschule_set.all %}
-          {% if forloop.last %}
+          {% if forloop.parentloop.last %}
             {% if x.jahrgangsstufe != None %}
               {{ x.jahrgangsstufe }}
             {% endif %}
-            {% else %}
+          {% else %}
             {% if x.jahrgangsstufe != None %}
               {{ x.jahrgangsstufe }},
             {% endif %}

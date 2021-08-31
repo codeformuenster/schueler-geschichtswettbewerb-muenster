@@ -68,16 +68,31 @@
         {{ beitrag.signatur }}  - {{ beitrag.titel }}
       </div>
       <div class="resultDivInformation">
-        <div>{% for autor in beitrag.autorin_set.all %}
-          {{ autor }}, {% for x in autor.autorinschule_set.all %}
-            {% if x.jahrgangsstufe != None %}
-              JG:{{ x.jahrgangsstufe }},
-            {% endif %}
+        <div>
+        Schulen:
+          {% for autor in beitrag.autorin_set.all %}
+            {{ autor.schule.all|join:", " }}
+            {% empty %}
+              nicht erfasst
+          {% endfor %}
+        </div>
+        <div>Jahrgangsstufen:
+          {% for autor in beitrag.autorin_set.all %}
+              {% for x in autor.autorinschule_set.all %}
+                {% if forloop.parentloop.last %}
+                  {% if x.jahrgangsstufe != None %}
+                    {{ x.jahrgangsstufe }}
+                  {% endif %}
+                {% else %}
+                  {% if x.jahrgangsstufe != None %}
+                    {{ x.jahrgangsstufe }}, 
+                  {% endif %}
+                {% endif %}
+                {% empty %}
+                  nicht erfasst
+              {% endfor %}
             {% endfor %}
-            {% for y in autor.schule.all %}
-              {{ y.schule }},
-            {% endfor %}<!--{{ autor.schule.all|join:", "}}-->
-        {% endfor %}</div>
+          </div>
         <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
         <div>{% for w in beitrag.wettbewerb.all %} {{ w.jahr }} {% endfor %}</div>
         <div><a href="{% url 'karte:submission-detail' pk=beitrag.id %}"target="_blank">Detailansicht</a></div>
