@@ -334,3 +334,12 @@ html, body {
   height: 475px;
   overflow:hidden;
 }
+
+.impressum-content {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.impressum-content h1, .impressum-content h2, .impressum-content h3, .impressum-content h4 {
+  color: #005b79;
+}
