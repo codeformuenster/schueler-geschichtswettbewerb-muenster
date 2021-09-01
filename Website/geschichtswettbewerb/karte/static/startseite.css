@@ -185,6 +185,7 @@ html, body {
   text-align: center;
   width: 32%;
   height: 50px;
+  overflow: auto;
 }
 
 .competition-overview:hover {
