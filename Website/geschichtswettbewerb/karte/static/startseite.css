@@ -191,6 +191,14 @@ html, body {
   color: #E8E8E8;
 }
 
+.competition-overview:visited {
+  color: #E8E8E8;
+}
+
+.competition-overview:active {
+  color: #E8E8E8;
+}
+
 .first, .second, .third {
   background-color: #005b79;
   border-radius: 1rem;
