@@ -6,7 +6,6 @@ from django.views.generic import RedirectView
 app_name = 'karte'
 
 urlpatterns = [
-    #path('', views.index, name='index'),
     path('', PlaceMapView.as_view(), name='karte'),
     path('orte/', views.PlaceListView.as_view(), name='orte'),
     path('beitraege/', views.SubmissionFilterView.as_view(), name='beitraege'),
