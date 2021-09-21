@@ -1,56 +1,249 @@
-html, body, #startseite {
+html, body {
   height: 100%;
   margin: 25;
-  background-color: #ebd5b3;
-  text-align: center;
+  /*background-color: #ebd5b3;*/
+  text-align: justify;
   align-content: center;
+}
+
+#startseite {
+/*  margin-right: 350px;*/
+}
+
+.startContent {
+  margin-right: 150px;
 }
 
 .navbar-default {
   box-shadow: 0 1px 10px rgba(0,0,0,.1);
   height: 100px;
-  background-color: #ebd5b3 !important;
-  background-image: url(header-background.png);
-  background-size: 800px;
+  align-content: center;
+  background-color: white;
+  /*background-image: url(WWUMuenster_Logo_2017_rgb.jpg);*/
+  background-size: 300px;
   background-repeat:no-repeat;
-  background-position: center center;
+  background-position: center right;
   color: black !important;
 }
 
+.sidebar {
+  width: 300px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-right: 10px;
+  margin-top: 100px;
+}
+
+.sidebar div {
+  padding: 6px 8px  6px 16px;
+  display: block;
+  background-color: white;
+}
+
+.sidebar-heading {
+  text-align: center;
+}
+
+.main {
+  /*margin-right: 200px;*/
+  padding: 0px 10px;
+}
+
+
+#wwu_logo {
+  float:left;
+  height: 80px;
+  width: 240px;
+  margin-bottom: 10px;
+}
+
+#stadt_muenster_logo {
+  float:right;
+  height: 80px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
 .navbar-brand {
-    text-align: left;
+    text-align: center;
+    float: none;
     color: black;
+    font-size: 22px;
   }
 
+.header-button {
+
+}
 .navbar-header{
-  text-align: : left;
+  text-align: center;
   position: absolute;
+  float: left;
+  padding: 15px;
+  width: 100%;
 }
 
 .nav-link {
   color: black !important;
 }
 
-.table-bordered {
-  background-color: #ebd5b3;
+.submission-result {
+  margin-left: 10px;
+  height:  500px;
+  overflow: auto;
+}
+
+.detail-filter-headline {
+  margin-left: 10px;
+  width: 100%;
 }
 
 .well {
-  background-color: #ebd5b3;
+  background-color: #005b79;
+  color: white;
+}
+
+.well, .lower {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .left-container,  .right-container {
+    width:48%;
+    padding: 5px;
+    margin-top: 5px;
+  }
+
+  .left-container-buttons {
+    display: flex;
+      margin-top: 5px;
+      align-items: center;
+      justify-content: space-between;
+  }
+ .lower input {
+   width: 48%;
+   margin-top: 5px;
+ }
+
+.competition-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.competition-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 12px;
+}
+
+.competition-content-left, .competition-content-right {
+  width:100%;
+  padding: 5px;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 17px;
+  margin-left: 7px;
+}
+
+.competition-summary {
+  font-size: 17px;
+  margin-left: 12px;
+  margin-right: 5px;
+}
+
+.competition-content-left {
+  /* background-color: #005b79; */
+  border-radius: 1rem;
+  color: black;
+  margin-left: 10px;
+}
+
+.competition-left, .competition-middle, .competition-right {
+  background-color: #005b79;
+  border-radius: 1rem;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  text-align: center;
+  width: 32%;
+}
+
+.competition-overview {
+  background-color: #005b79;
+  border-radius: 1rem;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  text-align: center;
+  width: 32%;
+  height: 50px;
+}
+
+.competition-overview:hover {
+  color: #E8E8E8;
+}
+
+.first, .second, .third {
+  background-color: #005b79;
+  border-radius: 1rem;
+  color: white;
+  padding: 5px;
+  margin-top: 5px;
+  text-align: center;
+  filter: brightness(1.0);
+}
+
+.submission-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.submission-left-container, .submission-right-container {
+  margin-top: 5px;
+  width:48%;
+  padding: 5px;
+}
+
+.submission-right-container {
+  margin-right: 10px;
+}
+
+.submission-content {
+  background-color: #005b79;
+  color: white;
+  margin-bottom: 5px;
+  border-radius: 1rem;
+  padding: 5px;
+
 }
 
 .form {
-  background-color: #ebd5b3;
+  background-color: #005b79;
   float: left;
 }
 .form-control {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.container {
+  margin-right: 10px;
   width: 100%;
 }
 
 .table {
   column-rule-color: black;
   border-collapse: collapse;
-  background-color: #ebd5b3;
+  /*background-color: #ebd5b3;*/
   text-align: left;
 }
 .td {
@@ -61,4 +254,92 @@ html, body, #startseite {
 }
 .details{
   display: list-item;
+}
+.resultDivTitle {
+  font-weight: 500;
+  background-color: #005b79;
+  color: white;
+  padding: 0.4rem;
+}
+
+.start-filter  {
+  /*padding-left: 10px;*/
+  margin-left: 10px;
+  width: 100%;
+}
+.resultDivInformation {
+  border: 1px solid;
+  /* border-width: 20px; */
+  margin-bottom: 1.5rem;
+  border-color: #005b79;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 0.4rem;
+}
+
+.resultDivInformation div {
+  text-align: left;
+}
+
+.main-content {
+      margin-right: 300px;
+}
+
+.competition-title {
+  border: 1px solid;
+  margin-bottom: 1.5rem;
+  border-color: #005b79;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  margin-left: 12px;
+}
+
+.panel-title {
+  font-size: 14px;
+  background-color: white;
+}
+
+.panel-default>.panel-heading {
+  background-color: white;
+  /*height: 34px;*/
+  padding: 6px 12px;
+  /*margin-top: 0px;
+  margin-bottom: 5px;*/
+}
+
+.panel-body {
+  padding: 1px;
+  margin-bottom: 5px;
+}
+
+.panel-group {
+  margin-bottom: 5px;
+}
+
+.panel-group .panel {
+    margin-bottom: 0;
+    height: 34px;
+    border-radius: 4px;
+}
+
+.submission-detail-heading {
+  margin-left: 5px;
+}
+
+.regest {
+  margin-left: 5px;
+}
+
+.slideshow-container {
+  height: 475px;
+  overflow:hidden;
+}
+
+.impressum-content {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.impressum-content h1, .impressum-content h2, .impressum-content h3, .impressum-content h4 {
+  color: #005b79;
 }
