@@ -171,6 +171,6 @@ class BeitragFilter(django_filters.FilterSet):
             'institutionen__name': ['icontains'],
             'grundlagen': ['exact'],
             #'tutor': ['exact', 'isnull'],
-            'autorin__autorinschule__schule': ['exact'],
+            'autorin__schools': ['exact'],
             #'auszeichnungeinreichung__auszeichnung' : ['exact'],
         }
