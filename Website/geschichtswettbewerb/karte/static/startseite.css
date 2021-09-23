@@ -357,8 +357,10 @@ html, body {
 }
 
 .slideshow-container {
-  height: 475px;
   overflow:hidden;
+}
+.slideshow-image {
+  height: 475px;
 }
 
 .impressum-content {
