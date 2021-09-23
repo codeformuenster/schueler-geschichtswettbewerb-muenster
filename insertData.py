@@ -186,6 +186,15 @@ def enterGrades(grade):
     mycursor.execute(Q)
     db.commit()
 
+def getCoordinates():
+    """prints all places with their coordinates"""
+    Q = 'SELECT id, ortbezeichnung, ST_X(location), ST_Y(location) FROM karte_ort'
+    mycursor.execute(Q)
+    for x in mycursor:
+        print('('  + str(x[0]) + ', \'' + x[1] + '\', ' + 'Point(' + str(x[2]) + ',' + str(x[3]) + ')),')
+
+
+getCoordinates()
 #print(data[0][0], len(data))
 #for i in range(0, len(data)):
 #    print(math.isnan(float(data[i][1])), "NEXT", i)
