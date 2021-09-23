@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'geschichtswettbewerb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.mysql',
-        'NAME': 'geweNewDump',
+        'NAME': 'geschichtswettbewerb',
         'USER': 'website',
         'PASSWORD': 'SarmatiaEuropaca1*',
         'HOST': 'localhost',
