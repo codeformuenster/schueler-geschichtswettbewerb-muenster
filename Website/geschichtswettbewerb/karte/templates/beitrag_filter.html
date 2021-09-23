@@ -211,8 +211,8 @@
  <div class="resultDivInformation">
    <div>
    Schulen:
-     {% for autor in beitrag.autorin_set.all %}
-       {{ autor.schule.all|join:", " }}
+   {% for autor in beitrag.autorin_set.all %}
+    {{ autor.schools.all|join:", "}};
        {% empty %}
          nicht erfasst
      {% endfor %}

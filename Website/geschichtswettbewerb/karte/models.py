@@ -203,6 +203,7 @@ class Autorin(models.Model):
     vorname = models.CharField(max_length=255, null=True, blank=True)
     nachname = models.CharField(max_length=255, null=True, blank=True)
     schule = models.ManyToManyField(SchuleSchulart, through='AutorinSchule', blank=True)
+    schools = models.ManyToManyField(Schule, blank=True)
     beitrag = models.ForeignKey(Beitrag, on_delete=models.CASCADE)
 
     class Meta:

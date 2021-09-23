@@ -122,11 +122,7 @@
         <div>
         Schulen:
         {% for autor in beitrag.autorin_set.all %}
-          {% ifchanged autor.schule.all.0 %}
-            {% for schule in autor.schule.all %}
-              {% ifchanged schule %}{{ schule }};{% endifchanged %}
-            {% endfor %}
-            {% endifchanged %}
+         {{ autor.schools.all|join:", "}};
             {% empty %}
               nicht erfasst
           {% endfor %}
