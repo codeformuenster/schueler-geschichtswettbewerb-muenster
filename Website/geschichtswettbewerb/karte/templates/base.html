@@ -18,6 +18,7 @@
 <body>
   {% include 'header.html' %}
   <div class="main-container">
+      {% block heading %} {% endblock %}
     <div class="main-content">
       {% block content %}{% endblock %}
       {% block map %} {% endblock %}

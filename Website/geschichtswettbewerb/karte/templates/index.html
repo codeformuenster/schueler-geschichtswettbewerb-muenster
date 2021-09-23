@@ -1,16 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% load widget_tweaks %}
-
+{% block heading %}
+{% endblock%}
 {% block content %}
-<!--
-<h1>Geschichtswettbewerb</h1>
 
-<p>Der Geschichtswettbewerb des Bundespräsidenten ist der größte historische Forschungswettbewerb für junge Menschen in Deutschland. Seit 1973 sind rund 33.500 Beiträge vor allem von Schülerinnen und Schülern entstanden. Der Wettbewerb will bei Kindern und Jugendlichen unter 21 Jahren das Interesse für die eigene Geschichte wecken, selbständiges Lernen und Forschen fördern sowie gesellschaftliches Verantwortungsbewusstsein stärken. Ausgeschrieben wird der Geschichtswettbewerb zu wechselnden Themen in einem zweijährigen Turnus durch die Körber-Stiftung (www.koerber-stiftung.de/geschichtswettbewerb). Besonders gelungene Beiträge werden durch Landes- und Bundespreise prämiert.</p>
-<h1>Münsters besondere Leistungen</h1>
-<p>In keiner anderen Stadt haben seit 1973 so viele Kinder und Jugendliche am Geschichtswettbewerb des Bundespräsidenten teilgenommen wie in Münster. In den letzten knapp 50 Jahren entstanden an die 1700 Arbeiten, die historische Themen für die Stadtgeschichte auch neu erschlossen haben. Gemeinsam mit dem Stadtarchiv Münster hat das Institut der Didaktik der Geschichte an der Uni Münster diese Forschungsbeiträge vollständig erfasst. Diese Datensammlung enthält unter anderem Angaben zu Autoren, Inhalten, Ortsbezügen oder Auszeichnungen und ist bundesweit einzigartig. Während des Münsterhacks 2020 entstanden hieraus ein strukturiertes Datenmodell und darauf aufbauend eine Datenbankanwendung. Deren Nutzungsmöglichkeiten für die Geschichtslandschaft in Münster sind vielfältig: Sie ermöglicht Überblicke über Themen, untersuchte Orte oder Fragestellungen aller im Stadtarchiv analog gesammelten und einsehbaren Schülerbeiträge. Darüber hinaus kann sie Zusammenhänge zwischen den Beitragsformaten, Vorgehensweisen der Verfasserinnen und Verfasser und möglichen Auszeichnungen darstellen. Damit werden die Daten auch für die universitäre Forschung über Geschichte und schulisches Geschichtslernen interessant.</p>
-
--->
 {% endblock %}
 
 {% block map %}
@@ -19,14 +13,58 @@
   <title>Markers Map</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{% static 'map.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <!--<script src="{% static 'leaflet.markercluster.js' %}"></script>-->
+
+  <style>
+  .collapsible {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+  }
+
+  .active, .collapsible:hover {
+    background-color: white;
+  }
+
+  .content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+  }
+  .panel-collapse {
+      border-top-color: #ddd;
+      z-index: 10;
+      position: relative;
+    }
+
+  .panel-body {
+    position: relative;
+    z-index: -1;
+  }
+  .panel-collapse collapse {
+    position: relative;
+    z-index: -1;
+  }
+  </style>
 </head>
 <body>
   <div class="detail-filter-headline">
     <h1>Stadtgeschichte für die Zukunft: Schülerforschungen aus Münster</h1>
+
     <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge geschrieben wurden.</p><body>
   </div>
     <div id="map"></div>
@@ -48,7 +86,19 @@
          </div>
          <div  class="right-container">
            <div class="upper">
-             {% render_field filter.form.wettbewerb class="form-control" placeholder="Wettbewerbsjahrgang" %}
+             <div class="panel-group">
+
+               <div class="panel panel-default">
+                 <div class="panel-heading">
+                   <p class="panel-title">
+                     <a data-toggle="collapse" href="#collapse1">Wettbewerb</a>
+                   </p>
+                 </div>
+                 <div id="collapse1" class="panel-collapse collapse" style="z-index:1;">
+                   <div class="panel-body">{% render_field filter.form.wettbewerb class="form-control" placeholder="Wettbewerbsjahrgang" %}</div>
+                 </div>
+               </div>
+         </div>
            </div>
            <div class="lower">
              {% render_field filter.form.zeitraumVon__gt class="form-control" placeholder="Zeitraum von" %}
@@ -62,6 +112,7 @@
 
      <div class="submission-result">
        {% if filter.is_bound %}
+       <div> Es wurden {{ filter.qs.count }} Beiträge gefunden </div>
 
      {% for beitrag in filter.qs %}
       <div class="resultDivTitle">

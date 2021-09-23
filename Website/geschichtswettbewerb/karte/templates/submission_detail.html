@@ -16,7 +16,7 @@
 <div class="submission-detail">
 <div class="submission-left-container">
   <div class="submission-content">
-    Schulen:
+    <b>Schulen:</b>
     {% for autor in beitrag.autorin_set.all %}
       {% ifchanged autor.schule.all.0 %}
         {% for schule in autor.schule.all %}
@@ -28,7 +28,7 @@
       {% endfor %}
   </div>
   <div class="submission-content">
-    Jahrgangsstufen:
+    <b>Jahrgangsstufen:</b>
     {% for autor in beitrag.autorin_set.all %}
     {% with counter=forloop.counter %}
       {% ifchanged autor.autorinschule_set.all.0.jahrgangsstufe %}
@@ -58,7 +58,7 @@
       {% endfor %}-->
   </div>
   <div class="submission-content">
-    Beitragsart:
+    <b>Beitragsart:</b>
     {%  if beitrag.typ.all.count > 0 %}
       {{ beitrag.typ.all|join:", " }}
       {% else %}
@@ -66,17 +66,17 @@
       {% endif %}
   </div>
   <div class="submission-content">
-    Vorhandene Dokumente:
-    Beitrag
+    <b>Vorhandene Dokumente:</b>
+    Beitrag,
     {%  if beitrag.dokument_set.all.count > 0 %}
-    , {{ beitrag.dokument_set.all|join:", " }}
+      {{ beitrag.dokument_set.all|join:", " }}
     {% endif %}
   </div>
   <div>
 
   </div>
   <div class="submission-content">
-    Wettbewerb:
+    <b>Wettbewerb:</b>
     {% for w in beitrag.wettbewerb.all %}
       {{w}}<a href="{% url 'karte:wettbewerb-detail' pk=w.id %}"target="_blank" style="color:#aab315;"> (Detail)</a>
     {% empty %}
@@ -84,7 +84,7 @@
     {% endfor %}
   </div>
   <div class="submission-content">
-    Zeitraum von:
+    <b>Zeitraum von:</b>
     {% if beitrag.zeitraumVon != None %}
       {{ beitrag.zeitraumVon }}
     {% else %}
@@ -92,7 +92,7 @@
     {% endif %}
   </div>
   <div class="submission-content">
-    Zeitraum bis:
+    <b>Zeitraum bis:</b>
     {% if beitrag.zeitraumBis != None %}
       {{ beitrag.zeitraumBis }}
     {% else %}
@@ -102,10 +102,10 @@
 </div>
 <div class="submission-right-container">
   <div class="submission-content">
-    Signatur: {{ beitrag.signatur }}
+    <b>Signatur:</b> {{ beitrag.signatur }}
   </div>
   <div class="submission-content">
-    Umfang:
+    <b>Umfang:</b>
     {% if beitrag.umfang != None %}
       {{ beitrag.umfang }}
     {% else %}
@@ -113,7 +113,7 @@
     {% endif %}
   </div>
   <div class="submission-content">
-    Auszeichnungen:
+    <b>Auszeichnungen:</b>
     {% for i in beitrag.auszeichnungeinreichung_set.all %}
       {{ i.auszeichnung }}
     {% empty %}
@@ -121,7 +121,7 @@
     {% endfor %}
   </div>
   <div class="submission-content">
-    Untersuchte Orte:
+    <b>Untersuchte Orte:</b>
     {%  if beitrag.ort_set.all.count > 0 %}
       {{ beitrag.ort_set.all|join:", " }}
     {% else %}
@@ -129,7 +129,7 @@
     {% endif %}
   </div>
   <div class="submission-content">
-    Persönlichkeiten:
+    <b>Persönlichkeiten:</b>
     {%  if beitrag.persoenlichkeiten.all.count > 0 %}
       {{ beitrag.persoenlichkeiten.all|join:", " }}
     {% else %}
@@ -137,19 +137,22 @@
     {% endif %}
   </div>
   <div class="submission-content">
-    Institutionen:
+    <b>Institutionen:</b>
     {%  if beitrag.institutionen.all.count > 0 %}
       {{ beitrag.institutionen.all|join:", " }}
     {% else %}
       nicht erfasst
     {% endif %}
   </div>
+  <div class="submission-content">
+    <b>Tutoriert:</b> {% if beitrag.tutor != None %} Ja {% else %} Nein {% endif %}
+  </div>
 </div>
 <div class="regest">
-  <div class="submission-content">
-    <p>Beitragszusammenfassung:<br>
+  <div class="regest-title">
+    <b>Beitragszusammenfassung:</b>
   </div>
-  {{ beitrag.regest }}</p>
+  <p>{{ beitrag.regest }}</p>
 </div>
 </div>
 </body>

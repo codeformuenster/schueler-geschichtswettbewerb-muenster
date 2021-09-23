@@ -11,7 +11,7 @@ class OrtFilter(django_filters.FilterSet):
     for x in Wettbewerb.objects.all():
         wettbewerbChoices.add((str(i), x.jahr))
 
-    wettbewerb = django_filters.ChoiceFilter(choices=wettbewerbChoices, empty_label="Wettbewerbsjahrgang")
+#    wettbewerb = django_filters.ChoiceFilter(choices=wettbewerbChoices, empty_label="Wettbewerbsjahrgang")
     def lookupEverything(self, queryset, name, value):
         return queryset.filter(Q(titel__icontains=value)
                                 |Q(regest__icontains=value)
@@ -38,7 +38,7 @@ class OrtFilter(django_filters.FilterSet):
 
         fields = {
             'ort__ortbezeichnung': ['icontains'],
-        #    'wettbewerb': ['exact'],
+            'wettbewerb': ['exact'],
             'zeitraumVon': ['gt',],
             'zeitraumBis': ['lt'],
         }
@@ -87,6 +87,8 @@ class BeitragFilter(django_filters.FilterSet):
     jahrgang = django_filters.NumberFilter(label='jahrgang', method='lookupGradeExact')
     jahrgangMin = django_filters.NumberFilter(label='jahrgang', method='lookupGradeGt')
     jahrgangMax = django_filters.NumberFilter(label='jahrgang', method='lookupGradeLt')
+    zeitraumVon = django_filters.NumberFilter(label='zeitraum', method='lookupYearFromInterval')
+    zeitraumBis = django_filters.NumberFilter(label='zeitraum', method='lookupYearToInterval')
 
     tutor = django_filters.BooleanFilter(field_name='tutor', method='tutorIsNull')
 
@@ -105,6 +107,11 @@ class BeitragFilter(django_filters.FilterSet):
     def lookupGradeLt(self, queryset, name, value):
         return queryset.filter(Q(beitragwettbewerb__beitrag__autorin__autorinschule__jahrgangsstufe__lt=value)).distinct()
 
+    def lookupYearFromInterval(self, queryset, name, value):
+        return queryset.filter(Q(zeitraumVon__gte=value-15) & Q(zeitraumVon__lte=value + 15)).distinct()
+
+    def lookupYearToInterval(self, queryset, name, value):
+        return queryset.filter(Q(zeitraumBis__gte=(value-15)) & Q(zeitraumBis__lte=(value+15))).distinct()
 
     wettbewerbChoices=set()
     i=1
@@ -153,8 +160,8 @@ class BeitragFilter(django_filters.FilterSet):
             'signatur': ['icontains', 'exact'],
             'persoenlichkeiten': ['exact'],
             'persoenlichkeiten__name': ['icontains'],
-            'zeitraumVon': ['exact', 'gt', 'lt',],
-            'zeitraumBis': ['exact', 'gt', 'lt'],
+            #'zeitraumVon': ['exact', 'gt', 'lt',],
+            #'zeitraumBis': ['exact', 'gt', 'lt'],
             'typ': ['exact'],
             'wettbewerb': ['exact'],
             #'wettbewerb__jahr' : ['exact', 'gt', 'lt'],

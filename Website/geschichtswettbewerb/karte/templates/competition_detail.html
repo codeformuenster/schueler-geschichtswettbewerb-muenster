@@ -21,10 +21,10 @@
   </div>
   <div class="competition-content-right">
     <div class="competition-left">
-      Anzahl Beiträge aus Münster {{ object.beitrag_set.all.count }}
+      Anzahl Beiträge aus Münster: {{ object.beitrag_set.all.count }}
     </div>
     <div class="competition-middle">
-      Anzahl Teilnehmende aus Münster {{ autorinnen.count }}
+      Anzahl Teilnehmende aus Münster: {{ autorinnen.count }}
     </div>
 <!--
       {% for x in object.beitrag_set.all %}
@@ -37,7 +37,11 @@
     Double check if autorinnen.count is correct
 -->
     <div class="competition-right">
+      {% if awards.count == 0 %}
+        Anzahl der Preise in Münster: nicht erfasst
+      {% else %}
       Anzahl der Preise in Münster: {{ awards.count }}
+      {% endif %}
     </div>
   </div>
 </div>
@@ -61,7 +65,7 @@
     const markers = JSON.parse(document.getElementById('markers-data').textContent);
 
     let feature = L.geoJSON(markers).bindPopup(function (layer)
-    { return layer.feature.properties.ortbezeichnung + ' <a href="' + layer.feature.properties.pk + '" target="_blank">' + 'Detailansicht</a>';
+    { return layer.feature.properties.ortbezeichnung + ' <a href="' + {% url 'karte:karte' %} + layer.feature.properties.pk + '" target="_blank">' + 'Detailansicht</a>';
     });
     map.addLayer(feature);
 </script>

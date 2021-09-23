@@ -6,9 +6,9 @@ import math
 
 db = mysql.connector.connect(
     host="127.0.0.1",
-    user="root",
-    passwd="",
-    database="geschichtswettbewerb",
+    user="website",
+    passwd="SarmatiaEuropaca1*",
+    database="geweNewDump",
     auth_plugin='caching_sha2_password'
 )
 
@@ -16,7 +16,7 @@ mycursor = db.cursor()
 """There is a function for every database table to enter data with the given columns as parameters"""
 
 """read the file from which the data is to be entered"""
-data = pd.read_excel('path.xlsx').to_numpy()
+data = pd.read_excel('beitrag_jahrgangsstufe.xlsx').to_numpy()
 
 def enterSubmission(id, title, regest, signatur, einzel_gruppe, umfang, zeitraumVon, zeitraumBis, tutor):
     """Enter submissions with a tutor"""
@@ -173,3 +173,21 @@ def enterBeitrGrundlagen(bID, mgID):
     Q = 'INSERT INTO karte_beitrag_grundlagen(beitrag_id, materialgrundlage_id) Values (%d, %d)'%(bID, mgID)
     mycursor.execute(Q)
     db.commit()
+
+def enterSubmissionGrade(bID, grade):
+    """Enter the relation between submissions and source materials with submission_id and grade_id"""
+    Q = 'INSERT INTO karte_beitrag_jahrgaenge (beitrag_id, jahrgangsstufe_id) Values (%d, %d)'%(bID, grade)
+    mycursor.execute(Q)
+    db.commit()
+
+def enterGrades(grade):
+    """enter a new grade to the table jahrgangsstufe"""
+    Q = 'INSERT INTO karte_jahrgangsstufe (id, stufe) Values (%d, %d)'%(grade, grade)
+    mycursor.execute(Q)
+    db.commit()
+
+#print(data[0][0], len(data))
+#for i in range(0, len(data)):
+#    print(math.isnan(float(data[i][1])), "NEXT", i)
+#    if(math.isnan(float(data[i][1])) == False):
+#        enterSubmissionGrade(int(data[i][0]), int(data[i][1]))

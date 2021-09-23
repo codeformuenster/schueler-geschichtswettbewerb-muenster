@@ -140,6 +140,11 @@ class Beitragsart(models.Model):
         """returns the name and id of the model as string"""
         return self.name
 
+class Jahrgangsstufe(models.Model):
+    stufe = models.IntegerField()
+    class Meta:
+        verbose_name_plural = "Jahrgangsstufen"
+
 class Beitrag(models.Model):
     """A class that represents the model for submissions, containing a titel, regest, signatur, einzel_gruppe, umfang, zeitraumVon, zeitraumBis and tutor and an id as attributes"""
     titel = models.CharField(max_length=1024, null=True)
@@ -155,6 +160,7 @@ class Beitrag(models.Model):
     institutionen = models.ManyToManyField(Institution, blank=True)
     typ = models.ManyToManyField(Beitragsart, blank=True)
     wettbewerb = models.ManyToManyField(Wettbewerb, through='BeitragWettbewerb', blank=True)
+    jahrgaenge = models.ManyToManyField(Jahrgangsstufe, blank=True)
 
     class Meta:
         verbose_name_plural = "Beiträge"
