@@ -132,7 +132,12 @@
           {% endfor %}
         </div>
         <div>
-          Jahrgangsstufen:
+          {% if beitrag.jahrgaenge.all %}
+            Jahrgangsstufen: {{ beitrag.jahrgaenge.all|join:", "}}
+          {% else %}
+            Jahrgangsstufen: nicht erfasst
+          {% endif %}
+          <!--
           {% for autor in beitrag.autorin_set.all %}
           {% with counter=forloop.counter %}
             {% ifchanged autor.autorinschule_set.all.0.jahrgangsstufe %}
@@ -143,7 +148,7 @@
               {% endfor %}
               {% endifchanged %}
             {% endwith %}
-          {% endfor %}
+          {% endfor %}-->
           </div>
         <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
         <div>{% for w in beitrag.wettbewerb.all %} {{ w.jahr }} {% endfor %}</div>

@@ -29,33 +29,11 @@
   </div>
   <div class="submission-content">
     <b>Jahrgangsstufen:</b>
-    {% for autor in beitrag.autorin_set.all %}
-    {% with counter=forloop.counter %}
-      {% ifchanged autor.autorinschule_set.all.0.jahrgangsstufe %}
-      {% for x in autor.autorinschule_set.all %}
-        {% ifchanged x.jahrgangsstufe %} {{ x.jahrgangsstufe }}; {% endifchanged %}
-        {% empty %}
+        {% if beitrag.jahrgaenge.all %}
+          {{ beitrag.jahrgaenge.all|join:", "}}
+        {% else %}
           nicht erfasst
-        {% endfor %}
-        {% endifchanged %}
-      {% endwith %}
-    {% endfor %}
-    <!--
-    {% for autor in beitrag.autorin_set.all %}
-        {% for x in autor.autorinschule_set.all %}
-          {% if forloop.parentloop.last %}
-            {% if x.jahrgangsstufe != None %}
-              {{ x.jahrgangsstufe }}
-            {% endif %}
-          {% else %}
-            {% if x.jahrgangsstufe != None %}
-              {{ x.jahrgangsstufe }},
-            {% endif %}
-          {% endif %}
-          {% empty %}
-            nicht erfasst
-        {% endfor %}
-      {% endfor %}-->
+        {% endif %}
   </div>
   <div class="submission-content">
     <b>Beitragsart:</b>

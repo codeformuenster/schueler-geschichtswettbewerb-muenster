@@ -217,22 +217,12 @@
          nicht erfasst
      {% endfor %}
    </div>
-   <div>Jahrgangsstufen:
-     {% for autor in beitrag.autorin_set.all %}
-         {% for x in autor.autorinschule_set.all %}
-           {% if forloop.parentloop.last %}
-             {% if x.jahrgangsstufe != None %}
-               {{ x.jahrgangsstufe }}
-             {% endif %}
-           {% else %}
-             {% if x.jahrgangsstufe != None %}
-               {{ x.jahrgangsstufe }},
-             {% endif %}
-           {% endif %}
-           {% empty %}
-             nicht erfasst
-         {% endfor %}
-       {% endfor %}
+   <div>
+     {% if beitrag.jahrgaenge.all %}
+       Jahrgangsstufen: {{ beitrag.jahrgaenge.all|join:", "}}
+     {% else %}
+       Jahrgangsstufen: nicht erfasst
+     {% endif %}
      </div>
    <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
    <div>{% for w in beitrag.wettbewerb.all %} {{ w.jahr }} {% endfor %}</div>

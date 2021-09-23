@@ -145,6 +145,9 @@ class Jahrgangsstufe(models.Model):
     class Meta:
         verbose_name_plural = "Jahrgangsstufen"
 
+    def __str__(self):
+        return str(self.stufe)
+
 class Beitrag(models.Model):
     """A class that represents the model for submissions, containing a titel, regest, signatur, einzel_gruppe, umfang, zeitraumVon, zeitraumBis and tutor and an id as attributes"""
     titel = models.CharField(max_length=1024, null=True)
