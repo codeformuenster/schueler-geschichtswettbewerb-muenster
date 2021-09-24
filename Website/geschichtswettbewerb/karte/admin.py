@@ -18,7 +18,7 @@ admin.site.register(Persoenlichkeit)
 admin.site.register(Beitragsart)
 #admin.site.register(BeitragWettbewerb)
 admin.site.register(Autorin)
-admin.site.register(AutorinSchule)
+#admin.site.register(AutorinSchule)
 admin.site.register(AuszeichnungEinreichung)
 admin.site.register(HistorischerOrt)
 admin.site.register(HistorischeRegion)
@@ -45,22 +45,24 @@ class BeitragWettbewerbInline(admin.TabularInline):
     model = BeitragWettbewerb
     extra = 1
 
+class BeitragJahrgangInline(admin.TabularInline):
+    model =  Jahrgangsstufe
+    extra = 1
+
 class BeitragAdmin(admin.ModelAdmin):
     inlines = (BeitragWettbewerbInline, DokumentInline)
 
 @admin.register(LogEntry)
 class LogEntryAdmin(admin.ModelAdmin):
-    # to have a date-based drilldown navigation in the admin page
+    """class to log admin activity"""
     date_hierarchy = 'action_time'
 
-    # to filter the resultes by users, content types and action flags
     list_filter = [
         'user',
         'content_type',
         'action_flag'
     ]
 
-    # when searching the user will be able to search in both object_repr and change_message
     search_fields = [
         'object_repr',
         'change_message'
@@ -89,7 +91,7 @@ class LogEntryAdmin(admin.ModelAdmin):
                 escape(obj.object_repr),
             )
         return mark_safe(link)
-        
+
 admin.site.register(Schule, SchulAdmin)
 admin.site.register(Schulart, SchulartAdmin)
 admin.site.register(Wettbewerb)
