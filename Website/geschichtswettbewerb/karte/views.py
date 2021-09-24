@@ -39,6 +39,7 @@ class PlaceMapView(generic.ListView):
     model = Beitrag
     model2 = Persoenlichkeit
     template_name = 'index.html'
+    paginate_by=50
     def get_context_data(self, **kwargs):
         """returns the data for all place markers in a geojson file"""
         context = super().get_context_data(**kwargs)
