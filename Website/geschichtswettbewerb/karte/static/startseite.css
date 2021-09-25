@@ -362,7 +362,17 @@ html, body {
   }
   .main-container {
     margin-left: 2%;
-    }
+  }
+
+  .competition-overview {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .competition-overview {
+    width: 100%;
+  }
 }
 
 
@@ -420,7 +430,7 @@ html, body {
   overflow:hidden;
 }
 .slideshow-image {
-  height: 475px;
+  height: auto;
 }
 
 .impressum-content {
