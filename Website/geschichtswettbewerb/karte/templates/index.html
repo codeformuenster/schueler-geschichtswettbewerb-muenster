@@ -71,7 +71,7 @@
 
     <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge geschrieben wurden.</p><body>
   </div>
-    <div id="map"></div>
+    <div id="map" class="map-container"></div>
     {{ markers|json_script:"markers-data" }}
     <script src="{% static 'map.js' %}"></script>
 
