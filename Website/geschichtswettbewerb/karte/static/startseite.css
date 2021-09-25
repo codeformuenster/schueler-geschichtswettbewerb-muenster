@@ -322,6 +322,8 @@ html, body {
   margin-bottom: 10px;
   bottom: 0;
   height: 50px;
+  text-align: center;
+  padding-left: 25px;
 }
 
 @media screen and (max-width: 800px) {
