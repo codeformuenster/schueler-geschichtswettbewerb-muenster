@@ -341,13 +341,9 @@ html, body {
     margin-bottom: 10px;
     margin-left: 10px;
   }
-  .footer {
-    margin-top:20px;
-    margin-left: 10%;
-    margin-right: 21%;
-    margin-bottom: 10px;
-    bottom: 0;
-    height: 50px;
+
+  .competition-left, .competition-right, .competition-middle {
+    width: 100%;
   }
 
 }
@@ -366,6 +362,9 @@ html, body {
 
   .competition-overview {
     width: 48%;
+  }
+  .left-container, .right-container {
+    width: 100%;
   }
 }
 
