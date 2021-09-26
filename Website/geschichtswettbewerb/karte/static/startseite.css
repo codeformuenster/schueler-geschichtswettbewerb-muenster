@@ -16,14 +16,7 @@ html, body {
 
 .navbar-default {
   box-shadow: 0 1px 10px rgba(0,0,0,.1);
-  height: 100px;
-  align-content: center;
   background-color: white;
-  /*background-image: url(WWUMuenster_Logo_2017_rgb.jpg);*/
-  background-size: 300px;
-  background-repeat:no-repeat;
-  background-position: center right;
-  color: black !important;
 }
 
 .sidebar {
@@ -328,7 +321,7 @@ html, body {
 
 @media screen and (max-width: 800px) {
   .main-container {
-    margin-right: 2%;
+    margin-right: 6%;
     margin-left: 2%;
     }
     .sidebar {
@@ -336,6 +329,7 @@ html, body {
     margin-top: 20px;
     top: unset;
     margin-bottom: 100px;
+    position: relative;
   }
   .map-container {
     width: 100%;
@@ -346,6 +340,11 @@ html, body {
 
   .competition-left, .competition-right, .competition-middle {
     width: 100%;
+  }
+
+  .footer {
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
 }

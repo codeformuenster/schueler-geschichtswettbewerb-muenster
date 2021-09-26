@@ -25,10 +25,13 @@
       {% block detail %} {% endblock %}
       {% block filter %} {% endblock %}
     </div>
-  {% include 'sidebar.html' %}
+  <div class="sidebar-div">
+    {% include 'sidebar.html' %}
   </div>
   <footer class="footer">
     <div><a href={% url 'karte:impressum' %}>Impressum</a></div>
   </footer>
+  </div>
+
 </body>
 </html>
