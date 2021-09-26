@@ -54,6 +54,7 @@
 </p>
 </div>
 <div class="start-filter">
+  <!-- The detail filter for all submissions -->
 <form method="get" target="_blank">
   <div class="well">
 
@@ -98,7 +99,6 @@
             <div class="panel-body">{% render_field filter.form.persoenlichkeiten class="form-control" placeholder="Historische Persönlichkeit" title="Historische Persönlichkeit, die in der Arbeit untersucht wird" %}</div>
           </div>
         </div>
-
         <div class="panel panel-default">
           <div class="panel-heading">
             <p class="panel-title">
@@ -141,7 +141,6 @@
               <div class="panel-body">{% render_field filter.form.wettbewerb class="form-control" placeholder="Wettbewerbsjahrgang" %}</div>
             </div>
           </div>
-
             <div class="panel panel-default">
               <div class="panel-heading">
                 <p class="panel-title">
@@ -152,7 +151,6 @@
                 <div class="panel-body">{% render_field filter.form.autorin__schools class="form-control" placeholder="Schule" %}</div>
               </div>
             </div>
-
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <p class="panel-title">
@@ -163,7 +161,6 @@
                   <div class="panel-body">{% render_field filter.form.autorin__autorinschule__schule__art class="form-control" placeholder="Schulform" %}</div>
                 </div>
               </div>
-
           <div class="panel panel-default">
             <div class="panel-heading">
               <p class="panel-title">
@@ -174,7 +171,6 @@
               <div class="panel-body">{% render_field filter.form.grundlagen class="form-control"  placeholder="Materialgrundlage" %}</div>
             </div>
           </div>
-
           <div class="panel panel-default">
             <div class="panel-heading">
               <p class="panel-title">
@@ -185,9 +181,7 @@
               <div class="panel-body">{% render_field filter.form.auszeichnungeinreichung__auszeichnung class="form-control" placeholder="Auszeichnung" %}</div>
             </div>
           </div>
-
         </div>
-
     </div>
 
     <button type="submit" class="btn btn-primary" name="submitted">
@@ -199,49 +193,39 @@
 </form>
 </div>
 
+<!-- Display of the filter results -->
 <div class="submission-result">
   {% if filter.is_bound %}
+    <div> Es wurden {{ filter.qs.count }} Beiträge gefunden </div>
+    <div> Wer die Arbeiten lesen möchte, kann sie in der Präsenzbibliothek des Stadtarchivs nutzen. Weitere Infos: <a href="www.stadt-muenster.de/archiv">www.stadt-muenster.de/archiv</a> </div>
+    {% for beitrag in filter.qs %}
+      <div class="resultDivTitle">
+        {{ beitrag.signatur }}  - {{ beitrag.titel }}
+      </div>
+      <div class="resultDivInformation">
+        <div>
+          Schulen:
+          {% for autor in beitrag.autorin_set.all %}
+            {{ autor.schools.all|join:", "}};
+          {% empty %}
+            nicht erfasst
+          {% endfor %}
+        </div>
+        <div>
+          {% if beitrag.jahrgaenge.all %}
+            Jahrgangsstufen: {{ beitrag.jahrgaenge.all|join:", "}}
+          {% else %}
+            Jahrgangsstufen: nicht erfasst
+          {% endif %}
+        </div>
+        <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
+        <div>{% for w in beitrag.wettbewerb.all %} {{ w.jahr }} {% endfor %}</div>
+        <div><a href="{{beitrag.id}}"target="_blank">Detailansicht</a></div>
+      </div>
+    {% empty %}
 
-  <div> Es wurden {{ filter.qs.count }} Beiträge gefunden </div>
-  <div> Wer die Arbeiten lesen möchte, kann sie in der Präsenzbibliothek des Stadtarchivs nutzen. Weitere Infos: <a href="www.stadt-muenster.de/archiv">www.stadt-muenster.de/archiv</a> </div>
-
-{% for beitrag in filter.qs %}
- <div class="resultDivTitle">
-   {{ beitrag.signatur }}  - {{ beitrag.titel }}
- </div>
- <div class="resultDivInformation">
-   <div>
-   Schulen:
-   {% for autor in beitrag.autorin_set.all %}
-    {{ autor.schools.all|join:", "}};
-       {% empty %}
-         nicht erfasst
-     {% endfor %}
-   </div>
-   <div>
-     {% if beitrag.jahrgaenge.all %}
-       Jahrgangsstufen: {{ beitrag.jahrgaenge.all|join:", "}}
-     {% else %}
-       Jahrgangsstufen: nicht erfasst
-     {% endif %}
-     </div>
-   <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
-   <div>{% for w in beitrag.wettbewerb.all %} {{ w.jahr }} {% endfor %}</div>
-   <div><a href="{{beitrag.id}}"target="_blank">Detailansicht</a></div>
-
- </div>
-{% empty %}
-
-{% endfor %}
-{% endif %}
+    {% endfor %}
+  {% endif %}
 </div>
-<!--
-<div>
-  <h1>Karte</h1>
-  <div id="map"></div>
-  {{ markers|json_script:"markers-data" }}
-  <script src="{% static 'map.js' %}"></script>
-</div>-->
 </body>
-
 {% endblock %}

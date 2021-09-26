@@ -20,11 +20,6 @@
   <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
   <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-  <!--<link rel="stylesheet" type="text/css" href="https://github.com/Leaflet/Leaflet/blob/master/dist/leaflet.css">
-  <script src="https://github.com/Leaflet/Leaflet/blob/master/src/Leaflet.js"></script>
--->
-
-  <!--<script src="{% static 'leaflet.markercluster.js' %}"></script>-->
 
   <style>
   .collapsible {
@@ -71,10 +66,12 @@
 
     <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge geschrieben wurden.</p><body>
   </div>
+  <!-- Display of the map and the markers -->
     <div id="map" class="map-container"></div>
     {{ markers|json_script:"markers-data" }}
     <script src="{% static 'map.js' %}"></script>
 
+    <!-- The submission filter -->
   <div class="start-filter">
     <form method="get">
        <div class="well">
@@ -113,7 +110,7 @@
      </form>
    </div>
 
-
+   <!-- The results of the filter -->
      <div class="submission-result">
        {% if filter.is_bound %}
        <div> Es wurden {{ filter.qs.count }} Beiträge gefunden </div>
@@ -137,25 +134,12 @@
           {% else %}
             Jahrgangsstufen: nicht erfasst
           {% endif %}
-          <!--
-          {% for autor in beitrag.autorin_set.all %}
-          {% with counter=forloop.counter %}
-            {% ifchanged autor.autorinschule_set.all.0.jahrgangsstufe %}
-            {% for x in autor.autorinschule_set.all %}
-              {% ifchanged x.jahrgangsstufe %} {{ x.jahrgangsstufe }}; {% endifchanged %}
-              {% empty %}
-                nicht erfasst
-              {% endfor %}
-              {% endifchanged %}
-            {% endwith %}
-          {% endfor %}-->
           </div>
         <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
         <div>{% for w in beitrag.wettbewerb.all %} {{ w.jahr }} {% endfor %}</div>
         <div><a href="{% url 'karte:submission-detail' pk=beitrag.id %}"target="_blank">Detailansicht</a></div>
       </div>
      {% empty %}
-
      {% endfor %}
      {% endif %}
 </div>

@@ -141,6 +141,7 @@ class Beitragsart(models.Model):
         return self.name
 
 class Jahrgangsstufe(models.Model):
+    """A class that represents the model for student grades"""
     stufe = models.IntegerField()
     class Meta:
         verbose_name_plural = "Jahrgangsstufen"

@@ -1,3 +1,4 @@
+//Script for the image slideshow
 var slideIndex = 0;
 showSlides();
 

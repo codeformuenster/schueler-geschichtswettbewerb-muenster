@@ -66,51 +66,48 @@ img {vertical-align: middle;}
 }
 
 
-  </style>
+</style>
   <link rel="stylesheet" type="text/css" href="{% static 'startseite.css' %}">
 </head>
 <body>
 <div>
-<div class="slideshow-container">
-
-  <div class="mySlides fade">
-    <div class="numbertext">1 / 6</div>
-    <img src="{% static 'GW_2019_Gruppe_1.jpg' %}" style="width:100%" class="slideshow-image">
-    <div class="caption-text">Festakt für alle Münsteraner Teilnehmer:innen im Geschichtswettbewerb 2018/2019 mit Oberbürgermeister Markus Lewe</div>
+  <!-- image slideshow -->
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 6</div>
+      <img src="{% static 'GW_2019_Gruppe_1.jpg' %}" style="width:100%" class="slideshow-image">
+      <div class="caption-text">Festakt für alle Münsteraner Teilnehmer:innen im Geschichtswettbewerb 2018/2019 mit Oberbürgermeister Markus Lewe</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 6</div>
+      <img src="{% static 'Schulerbild_Hittorf_20190710_113457.jpg' %}" style="width:100%" class="slideshow-image">
+      <div class="caption-text">Schülerinnen forschen im Stadtarchiv Münster</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 6</div>
+      <img src="{% static '47_Festveranstaltung_Geschichtswettbewerb_2017_Gruppenfoto.jpg' %}" style="width:100%" class="slideshow-image">
+      <div class="caption-text">Gruppenfoto aller Wettbewerbs-Teilnehmer:innen aus Münster am Geschichtswettbewerb 2016/2017</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">4 / 6</div>
+      <img src="{% static 'Schulerbild_Hittorf_20190710_113702.jpg' %}" style="width:100%" class="slideshow-image">
+      <div class="caption-text">Schüler bei der Quellensuche im Stadtarchiv Münster</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">5 / 6</div>
+      <img src="{% static '2009-06-29_Bonn18.jpg' %}" style="width:100%" class="slideshow-image">
+      <div class="caption-text">Ausstellung von Auszügen aus Schülerarbeiten im Stadthaus</div>
+    </div>
+    <div class="mySlides fade">
+      <div class="numbertext">6 / 6</div>
+      <img src="{% static 'GW_Festakt_2017_Rathaus_010_.JPG' %}" style="width:100%" class="slideshow-image">
+      <div class="caption-text">Übergabe der Beitragsdokumentationen aus Münster an die Teilnehmenden des Wettbewerbs 2018/2019</div>
+    </div>
   </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 6</div>
-    <img src="{% static 'Schulerbild_Hittorf_20190710_113457.jpg' %}" style="width:100%" class="slideshow-image">
-    <div class="caption-text">Schülerinnen forschen im Stadtarchiv Münster</div>
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext">3 / 6</div>
-    <img src="{% static '47_Festveranstaltung_Geschichtswettbewerb_2017_Gruppenfoto.jpg' %}" style="width:100%" class="slideshow-image">
-    <div class="caption-text">Gruppenfoto aller Wettbewerbs-Teilnehmer:innen aus Münster am Geschichtswettbewerb 2016/2017</div>
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext">4 / 6</div>
-    <img src="{% static 'Schulerbild_Hittorf_20190710_113702.jpg' %}" style="width:100%" class="slideshow-image">
-    <div class="caption-text">Schüler bei der Quellensuche im Stadtarchiv Münster</div>
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext">5 / 6</div>
-    <img src="{% static '2009-06-29_Bonn18.jpg' %}" style="width:100%" class="slideshow-image">
-    <div class="caption-text">Ausstellung von Auszügen aus Schülerarbeiten im Stadthaus</div>
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext">6 / 6</div>
-    <img src="{% static 'GW_Festakt_2017_Rathaus_010_.JPG' %}" style="width:100%" class="slideshow-image">
-    <div class="caption-text">Übergabe der Beitragsdokumentationen aus Münster an die Teilnehmenden des Wettbewerbs 2018/2019</div>
-  </div>
+  <br>
+  <script src="{% static 'automatic_slideshow.js' %}"></script>
 </div>
-<br>
-
-
-<script src="{% static 'automatic_slideshow.js' %}"></script>
-
-</div>
+<!-- table of competitions -->
 <div class="competition-table">
   {% for wettbewerb in object_list %}
     <a class="competition-overview"  href='wettbewerbe/{{wettbewerb.id}}'><b>{{wettbewerb}}</b></a>

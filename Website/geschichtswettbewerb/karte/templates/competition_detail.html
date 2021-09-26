@@ -26,16 +26,6 @@
     <div class="competition-middle">
       Anzahl Teilnehmende aus Münster: {{ autorinnen.count }}
     </div>
-<!--
-      {% for x in object.beitrag_set.all %}
-      <li>
-        {{ x.autorin_set.all.count }}
-      </li>
-      {% endfor %}
-    </div>
-
-    Double check if autorinnen.count is correct
--->
     <div class="competition-right">
       {% if awards.count == 0 %}
         Anzahl der Preise in Münster: nicht erfasst
@@ -46,7 +36,7 @@
   </div>
 </div>
 
-
+<!-- displays a map with all markers of submissions of the selected competition -->
   <div style="margin: 10px;">
     <h3>Karte</h3>
     <p>Auf der Karte sind alle Orte markiert, zu denen Beiträge in diesem Wettbewerb geschrieben wurden.</p><body>

@@ -1,3 +1,4 @@
+//Script for the collapsible sidebar and filter elements
 var coll = document.getElementsByClassName("collapsible");
 var i;
 
