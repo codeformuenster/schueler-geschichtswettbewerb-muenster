@@ -394,7 +394,7 @@ CREATE TABLE `karte_autorin_schools` (
   KEY `karte_autorin_schools_schule_id_e5364df7_fk_karte_schule_id` (`schule_id`),
   CONSTRAINT `karte_autorin_schools_autorin_id_15652f0c_fk_karte_autorin_id` FOREIGN KEY (`autorin_id`) REFERENCES `karte_autorin` (`id`),
   CONSTRAINT `karte_autorin_schools_schule_id_e5364df7_fk_karte_schule_id` FOREIGN KEY (`schule_id`) REFERENCES `karte_schule` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4097 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4097 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -545,7 +545,7 @@ CREATE TABLE `karte_beitrag_jahrgaenge` (
   KEY `karte_beitrag_jahrga_jahrgangsstufe_id_ba966659_fk_karte_jah` (`jahrgangsstufe_id`),
   CONSTRAINT `karte_beitrag_jahrga_jahrgangsstufe_id_ba966659_fk_karte_jah` FOREIGN KEY (`jahrgangsstufe_id`) REFERENCES `karte_jahrgangsstufe` (`id`),
   CONSTRAINT `karte_beitrag_jahrgaenge_beitrag_id_9270e9fe_fk_karte_beitrag_id` FOREIGN KEY (`beitrag_id`) REFERENCES `karte_beitrag` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1613 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1613 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -807,7 +807,7 @@ CREATE TABLE `karte_jahrgangsstufe` (
   `id` int NOT NULL AUTO_INCREMENT,
   `stufe` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
