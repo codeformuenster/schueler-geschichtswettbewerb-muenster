@@ -79,6 +79,7 @@ class CompetitionDetailView(generic.DetailView):
         context['markers'] = json.loads(serialize('geojson', list(placeQuerySet)))
         context['autorinnen'] = Autorin.objects.filter(Q(beitrag__wettbewerb=self.get_object()))
         context['awards'] = AuszeichnungEinreichung.objects.filter(Q(einreichung__wettbewerb=self.get_object()))
+        context['submissions'] = Beitrag.objects.filter(Q(wettbewerb=self.get_object()))
         return context
 
 class ImpressumView(generic.ListView):
