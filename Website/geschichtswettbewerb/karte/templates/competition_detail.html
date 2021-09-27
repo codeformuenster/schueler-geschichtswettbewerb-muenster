@@ -37,34 +37,6 @@
 </div>
 
 
-<div class="submission-result">
-  {% for beitrag in submissions %}
-   <div class="resultDivTitle">
-     {{ beitrag.signatur }}  - {{ beitrag.titel }}
-   </div>
-   <div class="resultDivInformation">
-     <div>
-     Schulen:
-     {% for autor in beitrag.autorin_set.all %}
-      {{ autor.schools.all|join:", "}};
-         {% empty %}
-           nicht erfasst
-       {% endfor %}
-     </div>
-     <div>
-       {% if beitrag.jahrgaenge.all %}
-         Jahrgangsstufen: {{ beitrag.jahrgaenge.all|join:", "}}
-       {% else %}
-         Jahrgangsstufen: nicht erfasst
-       {% endif %}
-       </div>
-     <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
-     <div>{% for w in beitrag.wettbewerb.all %} {{ w.jahr }} {% endfor %}</div>
-     <div><a href="{% url 'karte:submission-detail' pk=beitrag.id %}"target="_blank">Detailansicht</a></div>
-   </div>
-  {% empty %}
-  {% endfor %}
-</div>
 
 <!-- displays a map with all markers of submissions of the selected competition -->
   <div style="margin: 10px;">
@@ -91,6 +63,35 @@
 </script>
   </div>
 
+
+  <div class="submission-result">
+    {% for beitrag in submissions %}
+     <div class="resultDivTitle">
+       {{ beitrag.signatur }}  - {{ beitrag.titel }}
+     </div>
+     <div class="resultDivInformation">
+       <div>
+       Schulen:
+       {% for autor in beitrag.autorin_set.all %}
+        {{ autor.schools.all|join:", "}};
+           {% empty %}
+             nicht erfasst
+         {% endfor %}
+       </div>
+       <div>
+         {% if beitrag.jahrgaenge.all %}
+           Jahrgangsstufen: {{ beitrag.jahrgaenge.all|join:", "}}
+         {% else %}
+           Jahrgangsstufen: nicht erfasst
+         {% endif %}
+         </div>
+       <div>{{ beitrag.typ.all|join:", " }},  {{ beitrag.umfang }}</div>
+       <div>{% for w in beitrag.wettbewerb.all %} {{ w.jahr }} {% endfor %}</div>
+       <div><a href="{% url 'karte:submission-detail' pk=beitrag.id %}"target="_blank">Detailansicht</a></div>
+     </div>
+    {% empty %}
+    {% endfor %}
+  </div>
 </body>
 
 {% endblock %}
