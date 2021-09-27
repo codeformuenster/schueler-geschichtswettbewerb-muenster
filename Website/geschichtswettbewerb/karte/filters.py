@@ -15,10 +15,10 @@ class OrtFilter(django_filters.FilterSet):
                                 |Q(typ__name__icontains=value)
                                 |Q(wettbewerb__thema__icontains=value)
                                 |Q(wettbewerb__kurztitel__icontains=value)
-                                |Q(wettbewerb__zusammenfassung__icontains=value)
+                                #|Q(wettbewerb__zusammenfassung__icontains=value)
                                 |Q(grundlagen__name__icontains=value)
-                                |Q(autorin__autorinschule__schule__schule__name__icontains=value)
-                                |Q(autorin__autorinschule__schule__art__name__icontains=value)
+                                |Q(autorin__schools__name__icontains=value)
+                                |Q(autorin__schools__art__name__icontains=value)
                                 |Q(auszeichnungeinreichung__auszeichnung__name__icontains=value)
                                 |Q(dokument__typ__typName__icontains=value)
                                 |Q(ort__histName__name__icontains=value)
@@ -38,24 +38,6 @@ class OrtFilter(django_filters.FilterSet):
             'zeitraumBis': ['lt'],
         }
 
-class SimpleFilter(django_filters.FilterSet):
-    """Class for the simple filter in the front page"""
-    everything = django_filters.CharFilter(label='everything', method='lookupEverything')
-
-    def lookupEverything(self, queryset, name, value):
-        return queryset.filter(Q(titel__icontains=value)
-                                |Q(regest__icontains=value)
-                                |Q(signatur__icontains=value)
-                                |Q(persoenlichkeiten__name__icontains=value)
-                                |Q(typ__icontains=value)
-                                |Q(wettbewerb__icontains=value)
-                                |Q(ort__ortbezeichnung__icontains=value)
-                                |Q(institutionen__name__icontains=value)
-                                |Q(grundlagen__name__icontains=value))
-    class Meta:
-        model=Beitrag
-        fields = {}
-
 GROUP_CHOICES = {
     ('0', 'Gruppenarbeit'),
     ('1', 'Einzelarbeit'),
@@ -67,7 +49,7 @@ class BeitragFilter(django_filters.FilterSet):
 
     einzel_gruppe = django_filters.ChoiceFilter(label='einzel', choices=GROUP_CHOICES, empty_label="Einzel- oder Gruppenarbeit")
 
-    autorin__autorinschule__schule__art = django_filters.ModelMultipleChoiceFilter(label = 'schulart', queryset=Schulart.objects.all())
+    autorin__schools__art = django_filters.ModelMultipleChoiceFilter(label = 'schulart', queryset=Schulart.objects.all())
 
     dokument__typ = django_filters.ModelMultipleChoiceFilter(label = 'dokumentTypen', queryset=DokumentTyp.objects.all())
 
@@ -75,7 +57,6 @@ class BeitragFilter(django_filters.FilterSet):
 
     autorin__autorinschule__schule = django_filters.ModelMultipleChoiceFilter(label = 'schule', queryset=Schule.objects.all())
 
-    jahrgang = django_filters.NumberFilter(label='jahrgang', method='lookupGradeExact')
     jahrgangMin = django_filters.NumberFilter(label='jahrgang', method='lookupGradeGt')
     jahrgangMax = django_filters.NumberFilter(label='jahrgang', method='lookupGradeLt')
     zeitraumVon = django_filters.NumberFilter(label='zeitraum', method='lookupYearFromInterval')
@@ -89,14 +70,11 @@ class BeitragFilter(django_filters.FilterSet):
     def lookupTopic(self, queryset, name, value):
         return queryset.filter(Q(titel__icontains=value)|Q(regest__icontains=value))
 
-    def lookupGradeExact(self, queryset, name, value):
-        return queryset.filter(Q(beitragwettbewerb__beitrag__autorin__autorinschule__jahrgangsstufe=value)).distinct()
-
     def lookupGradeGt(self, queryset, name, value):
-        return queryset.filter(Q(beitragwettbewerb__beitrag__autorin__autorinschule__jahrgangsstufe__gt=value)).distinct()
+        return queryset.filter(Q(beitragwettbewerb__beitrag__jahrgaenge__stufe__gte=value)).distinct()
 
     def lookupGradeLt(self, queryset, name, value):
-        return queryset.filter(Q(beitragwettbewerb__beitrag__autorin__autorinschule__jahrgangsstufe__lt=value)).distinct()
+        return queryset.filter(Q(beitragwettbewerb__beitrag__jahrgaenge__stufe__lte=value)).distinct()
 
     def lookupYearFromInterval(self, queryset, name, value):
         return queryset.filter(Q(zeitraumVon__gte=value-15) & Q(zeitraumVon__lte=value + 15)).distinct()
