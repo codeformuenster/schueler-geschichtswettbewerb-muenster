@@ -368,6 +368,9 @@ html, body {
   .left-container, .right-container {
     width: 100%;
   }
+  .navbar-header{
+    padding: 3px;
+  }
 }
 
 @media screen and (max-width: 450px) {
