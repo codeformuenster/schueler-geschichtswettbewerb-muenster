@@ -1,3 +1,12 @@
+# Schüler-Geschichtswettbebwerb Münster
+
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+
+Eine Webanwendung zur Visualisierung und Recherche in den Beiträgen von münsteraner Schülern zum Geschichtswettbewerb des Bundespräsidenten.
+
+
+## Setup instructions :gb:
+
 The website folder contains the prototype for the website.
 
 The url localhost/karte/karte presents the starting view of the prototype.
@@ -10,7 +19,7 @@ A django admin user exists with the following login data:
   user: admin
   password: Geschichtswettbewerb123
 
-with python manage.py createsuperuser a new one can be added.
+with `python manage.py createsuperuser` a new one can be added.
 Under localhost/admin the database entries can be edited. This includes the possibility to add new ones and remove entries.
 The page to edit place entries (localhost/admin/karte/ort) includes the functionality to reverse-geocode the entered place to a location.
 
@@ -18,12 +27,12 @@ In the Website/geschichtswettbewerb/geschichtswettbewerb/settings.py file the co
 
 All python packages needed for the django project and all other scripts are listed in the requirements.txt file. Additional software, that is necessary is listed below:
 
-python 3.8.2
-mysql 8.0.22
-gdal 3.2.1
-geos 3.9.1
+* python 3.8.2
+* mysql 8.0.22
+* gdal 3.2.1
+* geos 3.9.1
 
-With the command python manage.py runserver, the website will be started on the localhost. The command has to be run in the Website/geschichtswettbewerb directory.
+With the command `python manage.py runserver`, the website will be started on the localhost. The command has to be run in the Website/geschichtswettbewerb directory.
 
 The dump files contain the underlying database with all their entries.
 
