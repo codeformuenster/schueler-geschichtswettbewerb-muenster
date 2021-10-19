@@ -4,6 +4,8 @@
 
 Eine Webanwendung zur Visualisierung und Recherche in den Beiträgen von münsteraner Schülern zum Geschichtswettbewerb des Bundespräsidenten.
 
+Die von der Anwendung genutzten Daten wurden zum MÜNSTERHACK 2020 in Kooperation mit dem Stadtarchiv der Stadt Münster als Open Data veröffentlicht unter der folgenden Adresse: https://opendata.stadt-muenster.de/dataset/m%C3%BCnsteraner-beitr%C3%A4ge-zum-geschichtswettbewerb-des-bundespr%C3%A4sidenten-seit-1973
+
 
 ## Setup instructions :gb:
 
@@ -36,7 +38,7 @@ With the command `python manage.py runserver`, the website will be started on th
 
 The dump files contain the underlying database with all their entries.
 
-The insertData.py file is a simple script that can be used to enter .xlsx tables into the database.
+The insertData.py file is a simple script that can be used to enter .xlsx tables into the database. Use it to import the original open data Excel file into the database.
 
 The tables file contains all database tables in an .xlsx format that was used to correct all entries.
 
